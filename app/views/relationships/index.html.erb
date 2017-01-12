@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Relationships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organization one</th>
+      <th>Organization two</th>
+      <th>Current relationship</th>
+      <th>Expected relationship</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @relationships.each do |relationship| %>
+      <tr>
+        <td><%= relationship.organization_one_id %></td>
+        <td><%= relationship.organization_two_id %></td>
+        <td><%= relationship.current_relationship %></td>
+        <td><%= relationship.expected_relationship %></td>
+        <td><%= link_to 'Show', relationship %></td>
+        <td><%= link_to 'Edit', edit_relationship_path(relationship) %></td>
+        <td><%= link_to 'Destroy', relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Relationship', new_relationship_path %>

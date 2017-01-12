@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  longevity: 1
+  fecundity: 1
+  might: 1
+  will: 1
+  cunning: 1
+  sutlety: 1
+  perception: 1
+  sagacity: 1
+  scale: 1
+
+two:
+  name: MyString
+  description: MyString
+  longevity: 1
+  fecundity: 1
+  might: 1
+  will: 1
+  cunning: 1
+  sutlety: 1
+  perception: 1
+  sagacity: 1
+  scale: 1

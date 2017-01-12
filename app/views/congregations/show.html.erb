@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @congregation.population_id %>
+</p>
+
+<p>
+  <strong>Deity:</strong>
+  <%= @congregation.deity_id %>
+</p>
+
+<p>
+  <strong>Clergy:</strong>
+  <%= @congregation.clergy %>
+</p>
+
+<p>
+  <strong>Laity:</strong>
+  <%= @congregation.laity %>
+</p>
+
+<p>
+  <strong>Piety multiplier:</strong>
+  <%= @congregation.piety_multiplier %>
+</p>
+
+<p>
+  <strong>Manpower multiplier:</strong>
+  <%= @congregation.manpower_multiplier %>
+</p>
+
+<p>
+  <strong>Loyalty:</strong>
+  <%= @congregation.loyalty %>
+</p>
+
+<%= link_to 'Edit', edit_congregation_path(@congregation) %> |
+<%= link_to 'Back', congregations_path %>

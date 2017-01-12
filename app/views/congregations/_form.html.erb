@@ -1,0 +1,45 @@
+<%= form_for(@congregation) do |f| %>
+  <% if @congregation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@congregation.errors.count, "error") %> prohibited this congregation from being saved:</h2>
+
+      <ul>
+      <% @congregation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :population_id %><br>
+    <%= f.number_field :population_id %>
+  </div>
+  <div class="field">
+    <%= f.label :deity_id %><br>
+    <%= f.number_field :deity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :clergy %><br>
+    <%= f.number_field :clergy %>
+  </div>
+  <div class="field">
+    <%= f.label :laity %><br>
+    <%= f.number_field :laity %>
+  </div>
+  <div class="field">
+    <%= f.label :piety_multiplier %><br>
+    <%= f.number_field :piety_multiplier %>
+  </div>
+  <div class="field">
+    <%= f.label :manpower_multiplier %><br>
+    <%= f.number_field :manpower_multiplier %>
+  </div>
+  <div class="field">
+    <%= f.label :loyalty %><br>
+    <%= f.number_field :loyalty %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

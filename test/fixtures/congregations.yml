@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  population_id: 1
+  deity_id: 1
+  clergy: 1
+  laity: 1
+  piety_multiplier: 1
+  manpower_multiplier: 1
+  loyalty: 1
+
+two:
+  population_id: 1
+  deity_id: 1
+  clergy: 1
+  laity: 1
+  piety_multiplier: 1
+  manpower_multiplier: 1
+  loyalty: 1

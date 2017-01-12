@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @population.province_id %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @population.race_id %>
+</p>
+
+<p>
+  <strong>Piety:</strong>
+  <%= @population.piety %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @population.count %>
+</p>
+
+<p>
+  <strong>Loyalty:</strong>
+  <%= @population.loyalty %>
+</p>
+
+<%= link_to 'Edit', edit_population_path(@population) %> |
+<%= link_to 'Back', populations_path %>

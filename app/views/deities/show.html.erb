@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @deity.name %>
+</p>
+
+<p>
+  <strong>Actor:</strong>
+  <%= @deity.actor_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @deity.user_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @deity.description %>
+</p>
+
+<%= link_to 'Edit', edit_deity_path(@deity) %> |
+<%= link_to 'Back', deities_path %>

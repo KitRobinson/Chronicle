@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  resources :regions
+  resources :recipients
+  resources :messages
+  resources :posts
+  resources :users
+  resources :congregations
+  resources :populations
+  resources :relationships
+  resources :attitudes
+  resources :organizations
+  resources :artifacts
+  resources :races
+  resources :actors
+  resources :deities
+  resources :associations
+  resources :borders
+  resources :domains
+  resources :terrains
+  resources :provinces
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

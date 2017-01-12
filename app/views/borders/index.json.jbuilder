@@ -1,0 +1,1 @@
+json.array! @borders, partial: 'borders/border', as: :border

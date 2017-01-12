@@ -1,0 +1,77 @@
+<%= form_for(@actor) do |f| %>
+  <% if @actor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@actor.errors.count, "error") %> prohibited this actor from being saved:</h2>
+
+      <ul>
+      <% @actor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :race_id %><br>
+    <%= f.number_field :race_id %>
+  </div>
+  <div class="field">
+    <%= f.label :might %><br>
+    <%= f.number_field :might %>
+  </div>
+  <div class="field">
+    <%= f.label :will %><br>
+    <%= f.number_field :will %>
+  </div>
+  <div class="field">
+    <%= f.label :cunning %><br>
+    <%= f.number_field :cunning %>
+  </div>
+  <div class="field">
+    <%= f.label :subtlety %><br>
+    <%= f.number_field :subtlety %>
+  </div>
+  <div class="field">
+    <%= f.label :perception %><br>
+    <%= f.number_field :perception %>
+  </div>
+  <div class="field">
+    <%= f.label :sagacity %><br>
+    <%= f.number_field :sagacity %>
+  </div>
+  <div class="field">
+    <%= f.label :province_id %><br>
+    <%= f.number_field :province_id %>
+  </div>
+  <div class="field">
+    <%= f.label :organization_id %><br>
+    <%= f.number_field :organization_id %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.number_field :scale %>
+  </div>
+  <div class="field">
+    <%= f.label :count %><br>
+    <%= f.number_field :count %>
+  </div>
+  <div class="field">
+    <%= f.label :personality %><br>
+    <%= f.text_field :personality %>
+  </div>
+  <div class="field">
+    <%= f.label :mood %><br>
+    <%= f.text_field :mood %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization_one_id: 1
+  organization_two_id: 1
+  current_relationship: 1
+  expected_relationship: 1
+
+two:
+  organization_one_id: 1
+  organization_two_id: 1
+  current_relationship: 1
+  expected_relationship: 1

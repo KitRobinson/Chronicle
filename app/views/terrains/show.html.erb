@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @terrain.name %>
+</p>
+
+<p>
+  <strong>Development multiplier:</strong>
+  <%= @terrain.development_multiplier %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @terrain.difficulty %>
+</p>
+
+<%= link_to 'Edit', edit_terrain_path(@terrain) %> |
+<%= link_to 'Back', terrains_path %>

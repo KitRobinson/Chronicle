@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @province.name %>
+</p>
+
+<p>
+  <strong>Base dev:</strong>
+  <%= @province.base_dev %>
+</p>
+
+<p>
+  <strong>Is empyreal:</strong>
+  <%= @province.is_empyreal %>
+</p>
+
+<p>
+  <strong>Kingdom:</strong>
+  <%= @province.kingdom_id %>
+</p>
+
+<%= link_to 'Edit', edit_province_path(@province) %> |
+<%= link_to 'Back', provinces_path %>

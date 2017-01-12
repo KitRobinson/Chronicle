@@ -1,0 +1,2 @@
+json.extract! relationship, :id, :organization_one_id, :organization_two_id, :current_relationship, :expected_relationship, :created_at, :updated_at
+json.url relationship_url(relationship, format: :json)

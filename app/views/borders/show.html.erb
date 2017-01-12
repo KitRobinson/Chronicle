@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @border.province_id %>
+</p>
+
+<p>
+  <strong>Neighbor:</strong>
+  <%= @border.neighbor_id %>
+</p>
+
+<p>
+  <strong>Defense:</strong>
+  <%= @border.defense %>
+</p>
+
+<%= link_to 'Edit', edit_border_path(@border) %> |
+<%= link_to 'Back', borders_path %>

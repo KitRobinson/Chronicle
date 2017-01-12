@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @association.domain_id %>
+</p>
+
+<p>
+  <strong>Associable:</strong>
+  <%= @association.associable_id %>
+</p>
+
+<p>
+  <strong>Associable type:</strong>
+  <%= @association.associable_type %>
+</p>
+
+<p>
+  <strong>Strength:</strong>
+  <%= @association.strength %>
+</p>
+
+<%= link_to 'Edit', edit_association_path(@association) %> |
+<%= link_to 'Back', associations_path %>

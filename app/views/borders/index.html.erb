@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Borders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Province</th>
+      <th>Neighbor</th>
+      <th>Defense</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @borders.each do |border| %>
+      <tr>
+        <td><%= border.province_id %></td>
+        <td><%= border.neighbor_id %></td>
+        <td><%= border.defense %></td>
+        <td><%= link_to 'Show', border %></td>
+        <td><%= link_to 'Edit', edit_border_path(border) %></td>
+        <td><%= link_to 'Destroy', border, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Border', new_border_path %>

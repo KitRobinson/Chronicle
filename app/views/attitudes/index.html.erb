@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Attitudes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Target</th>
+      <th>Desired status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attitudes.each do |attitude| %>
+      <tr>
+        <td><%= attitude.organization_id %></td>
+        <td><%= attitude.target %></td>
+        <td><%= attitude.desired_status %></td>
+        <td><%= link_to 'Show', attitude %></td>
+        <td><%= link_to 'Edit', edit_attitude_path(attitude) %></td>
+        <td><%= link_to 'Destroy', attitude, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attitude', new_attitude_path %>

@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  race_id: 1
+  might: 1
+  will: 1
+  cunning: 1
+  subtlety: 1
+  perception: 1
+  sagacity: 1
+  province_id: 1
+  organization_id: 1
+  scale: 1
+  count: 1
+  personality: MyString
+  mood: MyString
+
+two:
+  name: MyString
+  description: MyString
+  race_id: 1
+  might: 1
+  will: 1
+  cunning: 1
+  subtlety: 1
+  perception: 1
+  sagacity: 1
+  province_id: 1
+  organization_id: 1
+  scale: 1
+  count: 1
+  personality: MyString
+  mood: MyString

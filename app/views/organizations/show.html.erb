@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @organization.description %>
+</p>
+
+<p>
+  <strong>Is church:</strong>
+  <%= @organization.is_church %>
+</p>
+
+<p>
+  <strong>Is kingdom:</strong>
+  <%= @organization.is_kingdom %>
+</p>
+
+<p>
+  <strong>Leader:</strong>
+  <%= @organization.leader_id %>
+</p>
+
+<p>
+  <strong>Kingdom:</strong>
+  <%= @organization.kingdom_id %>
+</p>
+
+<p>
+  <strong>Governance:</strong>
+  <%= @organization.governance %>
+</p>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

@@ -1,0 +1,61 @@
+<%= form_for(@race) do |f| %>
+  <% if @race.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@race.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+      <ul>
+      <% @race.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :longevity %><br>
+    <%= f.number_field :longevity %>
+  </div>
+  <div class="field">
+    <%= f.label :fecundity %><br>
+    <%= f.number_field :fecundity %>
+  </div>
+  <div class="field">
+    <%= f.label :might %><br>
+    <%= f.number_field :might %>
+  </div>
+  <div class="field">
+    <%= f.label :will %><br>
+    <%= f.number_field :will %>
+  </div>
+  <div class="field">
+    <%= f.label :cunning %><br>
+    <%= f.number_field :cunning %>
+  </div>
+  <div class="field">
+    <%= f.label :sutlety %><br>
+    <%= f.number_field :sutlety %>
+  </div>
+  <div class="field">
+    <%= f.label :perception %><br>
+    <%= f.number_field :perception %>
+  </div>
+  <div class="field">
+    <%= f.label :sagacity %><br>
+    <%= f.number_field :sagacity %>
+  </div>
+  <div class="field">
+    <%= f.label :scale %><br>
+    <%= f.number_field :scale %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

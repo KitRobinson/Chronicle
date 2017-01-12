@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Races</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Longevity</th>
+      <th>Fecundity</th>
+      <th>Might</th>
+      <th>Will</th>
+      <th>Cunning</th>
+      <th>Sutlety</th>
+      <th>Perception</th>
+      <th>Sagacity</th>
+      <th>Scale</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @races.each do |race| %>
+      <tr>
+        <td><%= race.name %></td>
+        <td><%= race.description %></td>
+        <td><%= race.longevity %></td>
+        <td><%= race.fecundity %></td>
+        <td><%= race.might %></td>
+        <td><%= race.will %></td>
+        <td><%= race.cunning %></td>
+        <td><%= race.sutlety %></td>
+        <td><%= race.perception %></td>
+        <td><%= race.sagacity %></td>
+        <td><%= race.scale %></td>
+        <td><%= link_to 'Show', race %></td>
+        <td><%= link_to 'Edit', edit_race_path(race) %></td>
+        <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Race', new_race_path %>

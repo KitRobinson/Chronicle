@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @attitude.organization_id %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @attitude.target %>
+</p>
+
+<p>
+  <strong>Desired status:</strong>
+  <%= @attitude.desired_status %>
+</p>
+
+<%= link_to 'Edit', edit_attitude_path(@attitude) %> |
+<%= link_to 'Back', attitudes_path %>

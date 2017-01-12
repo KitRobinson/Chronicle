@@ -1,0 +1,29 @@
+<%= form_for(@attitude) do |f| %>
+  <% if @attitude.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attitude.errors.count, "error") %> prohibited this attitude from being saved:</h2>
+
+      <ul>
+      <% @attitude.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :organization_id %><br>
+    <%= f.number_field :organization_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target %><br>
+    <%= f.number_field :target %>
+  </div>
+  <div class="field">
+    <%= f.label :desired_status %><br>
+    <%= f.number_field :desired_status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

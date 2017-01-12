@@ -1,0 +1,2 @@
+json.extract! congregation, :id, :population_id, :deity_id, :clergy, :laity, :piety_multiplier, :manpower_multiplier, :loyalty, :created_at, :updated_at
+json.url congregation_url(congregation, format: :json)

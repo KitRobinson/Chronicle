@@ -1,0 +1,2 @@
+json.extract! actor, :id, :name, :description, :race_id, :might, :will, :cunning, :subtlety, :perception, :sagacity, :province_id, :organization_id, :scale, :count, :personality, :mood, :created_at, :updated_at
+json.url actor_url(actor, format: :json)

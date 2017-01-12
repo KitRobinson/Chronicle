@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Congregations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Population</th>
+      <th>Deity</th>
+      <th>Clergy</th>
+      <th>Laity</th>
+      <th>Piety multiplier</th>
+      <th>Manpower multiplier</th>
+      <th>Loyalty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @congregations.each do |congregation| %>
+      <tr>
+        <td><%= congregation.population_id %></td>
+        <td><%= congregation.deity_id %></td>
+        <td><%= congregation.clergy %></td>
+        <td><%= congregation.laity %></td>
+        <td><%= congregation.piety_multiplier %></td>
+        <td><%= congregation.manpower_multiplier %></td>
+        <td><%= congregation.loyalty %></td>
+        <td><%= link_to 'Show', congregation %></td>
+        <td><%= link_to 'Edit', edit_congregation_path(congregation) %></td>
+        <td><%= link_to 'Destroy', congregation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Congregation', new_congregation_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Populations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Province</th>
+      <th>Race</th>
+      <th>Piety</th>
+      <th>Count</th>
+      <th>Loyalty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @populations.each do |population| %>
+      <tr>
+        <td><%= population.province_id %></td>
+        <td><%= population.race_id %></td>
+        <td><%= population.piety %></td>
+        <td><%= population.count %></td>
+        <td><%= population.loyalty %></td>
+        <td><%= link_to 'Show', population %></td>
+        <td><%= link_to 'Edit', edit_population_path(population) %></td>
+        <td><%= link_to 'Destroy', population, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Population', new_population_path %>
