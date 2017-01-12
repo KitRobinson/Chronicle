@@ -9,6 +9,9 @@
       <th>Base dev</th>
       <th>Is empyreal</th>
       <th>Kingdom</th>
+      <th>Primary Terrain</th>
+      <th>Secondary Terrain</th>
+      <th>Region</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +23,9 @@
         <td><%= province.base_dev %></td>
         <td><%= province.is_empyreal %></td>
         <td><%= province.kingdom_id %></td>
+        <td><%= province.primary_terrain_id %></td>
+        <td><%= province.secondary_terrain_id %></td>
+        <td><%= province.region_id %></td>
         <td><%= link_to 'Show', province %></td>
         <td><%= link_to 'Edit', edit_province_path(province) %></td>
         <td><%= link_to 'Destroy', province, method: :delete, data: { confirm: 'Are you sure?' } %></td>
