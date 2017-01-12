@@ -20,5 +20,20 @@
   <%= @province.kingdom_id %>
 </p>
 
+<p>
+  <strong>Primary Terrain:</strong>
+  <%= @province.primary_terrain_id %>
+</p>
+
+<p>
+  <strong>Secodary Terrain:</strong>
+  <%= @province.secondary_terrain_id %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @province.region_id %>
+</p>
+
 <%= link_to 'Edit', edit_province_path(@province) %> |
 <%= link_to 'Back', provinces_path %>
