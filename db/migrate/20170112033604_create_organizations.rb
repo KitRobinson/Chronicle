@@ -6,7 +6,7 @@ class CreateOrganizations < ActiveRecord::Migration
       t.integer :is_church
       t.integer :is_kingdom
       t.integer :leader_id
-      t.integer :kingdom_id
+      t.integer :suzerain_id
       t.string :governance
 
       t.timestamps null: false

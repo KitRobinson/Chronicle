@@ -69,6 +69,6 @@ class ProvincesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def province_params
-      params.require(:province).permit(:name, :base_dev, :is_empyreal, :kingdom_id)
+      params.require(:province).permit(:name, :base_dev, :is_empyreal, :suzerain_id)
     end
 end

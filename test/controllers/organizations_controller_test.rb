@@ -18,7 +18,7 @@ class OrganizationsControllerTest < ActionController::TestCase
 
   test "should create organization" do
     assert_difference('Organization.count') do
-      post :create, organization: { description: @organization.description, governance: @organization.governance, is_church: @organization.is_church, is_kingdom: @organization.is_kingdom, kingdom_id: @organization.kingdom_id, leader_id: @organization.leader_id, name: @organization.name }
+      post :create, organization: { description: @organization.description, governance: @organization.governance, is_church: @organization.is_church, is_kingdom: @organization.is_kingdom, suzerain_id: @organization.suzerain_id, leader_id: @organization.leader_id, name: @organization.name }
     end
 
     assert_redirected_to organization_path(assigns(:organization))
@@ -35,7 +35,7 @@ class OrganizationsControllerTest < ActionController::TestCase
   end
 
   test "should update organization" do
-    patch :update, id: @organization, organization: { description: @organization.description, governance: @organization.governance, is_church: @organization.is_church, is_kingdom: @organization.is_kingdom, kingdom_id: @organization.kingdom_id, leader_id: @organization.leader_id, name: @organization.name }
+    patch :update, id: @organization, organization: { description: @organization.description, governance: @organization.governance, is_church: @organization.is_church, is_kingdom: @organization.is_kingdom, suzerain_id: @organization.suzerain_id, leader_id: @organization.leader_id, name: @organization.name }
     assert_redirected_to organization_path(assigns(:organization))
   end
 

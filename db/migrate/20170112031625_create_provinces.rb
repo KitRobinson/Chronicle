@@ -4,7 +4,7 @@ class CreateProvinces < ActiveRecord::Migration
       t.string :name
       t.integer :base_dev
       t.integer :is_empyreal
-      t.integer :kingdom_id
+      t.integer :suzerain_id
 
       t.timestamps null: false
     end
