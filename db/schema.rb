@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
 
   create_table "attitudes", force: :cascade do |t|
     t.integer  "organization_id"
-    t.integer  "target"
+    t.integer  "target_id"
     t.integer  "desired_status"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

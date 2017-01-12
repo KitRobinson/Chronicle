@@ -16,7 +16,7 @@
     <% @attitudes.each do |attitude| %>
       <tr>
         <td><%= attitude.organization_id %></td>
-        <td><%= attitude.target %></td>
+        <td><%= attitude.target_id %></td>
         <td><%= attitude.desired_status %></td>
         <td><%= link_to 'Show', attitude %></td>
         <td><%= link_to 'Edit', edit_attitude_path(attitude) %></td>
