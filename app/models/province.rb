@@ -8,4 +8,5 @@ class Province < ActiveRecord::Base
 	has_many :actors
 	belongs_to :primary_terrain, class_name: "Terrain"
 	belongs_to :secondary_terrain, class_name: "Terrain"
+	belongs_to :region
 end
