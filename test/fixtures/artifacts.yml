@@ -3,11 +3,11 @@
 one:
   name: MyString
   description: MyString
-  owner_id: 1
-  province_id: 1
+  owner: one (Actor)
+  province: one
 
 two:
   name: MyString
   description: MyString
-  owner_id: 1
-  province_id: 1
+  owner: one (Actor)
+  province: one

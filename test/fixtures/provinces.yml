@@ -4,10 +4,16 @@ one:
   name: MyString
   base_dev: 1
   is_empyreal: 1
-  suzerain_id: 1
+  suzerain: one (Organization)
+  primary_terrain: one (Terrain)
+  secondary_terrain: one (Terrain)
+  region: one
 
 two:
   name: MyString
   base_dev: 1
   is_empyreal: 1
-  suzerain_id: 1
+  suzerain: one (Organization)
+  primary_terrain: one (Terrain)
+  secondary_terrain: one (Terrain)
+  region: one

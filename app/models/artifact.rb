@@ -3,5 +3,5 @@ class Artifact < ActiveRecord::Base
 	belongs_to :owner, class_name: "Actor"
 	has_many :associations, as: :associable
 
-	validates :name, presence: true
+	#validates :name, presence: true
 end
