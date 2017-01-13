@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AttitudesControllerTest < ActionController::TestCase
   setup do
-    @attitude = attitudes(:one)
+    @attitude = Attitude.first
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class AttitudesControllerTest < ActionController::TestCase
 
   test "should create attitude" do
     assert_difference('Attitude.count') do
-      post :create, attitude: { desired_status: @attitude.desired_status, organization_id: @attitude.organization_id, target: @attitude.target }
+      post :create, attitude: { desired_status: @attitude.desired_status, organization_id: @attitude.organization_id, target_id: @attitude.target_id }
     end
 
     assert_redirected_to attitude_path(assigns(:attitude))
@@ -35,7 +35,7 @@ class AttitudesControllerTest < ActionController::TestCase
   end
 
   test "should update attitude" do
-    patch :update, id: @attitude, attitude: { desired_status: @attitude.desired_status, organization_id: @attitude.organization_id, target: @attitude.target }
+    patch :update, id: @attitude, attitude: { desired_status: @attitude.desired_status, organization_id: @attitude.organization_id, target_id: @attitude.target_id }
     assert_redirected_to attitude_path(assigns(:attitude))
   end
 

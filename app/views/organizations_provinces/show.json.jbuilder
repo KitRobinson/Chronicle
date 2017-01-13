@@ -1,0 +1,1 @@
+json.partial! "organizations_provinces/organizations_province", organizations_province: @organizations_province

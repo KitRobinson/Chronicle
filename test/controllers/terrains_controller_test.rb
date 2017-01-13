@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TerrainsControllerTest < ActionController::TestCase
   setup do
-    @terrain = terrains(:one)
+    @terrain = Terrain.first
   end
 
   test "should get index" do

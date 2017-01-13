@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DeitiesControllerTest < ActionController::TestCase
   setup do
-    @deity = deities(:one)
+    @deity = Deity.first
   end
 
   test "should get index" do

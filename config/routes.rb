@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :organizations_provinces
   resources :powers
   resources :regions
   resources :recipients

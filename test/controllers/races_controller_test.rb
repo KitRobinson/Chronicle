@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RacesControllerTest < ActionController::TestCase
   setup do
-    @race = races(:one)
+    @race = Race.first
   end
 
   test "should get index" do

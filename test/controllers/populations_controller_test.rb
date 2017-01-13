@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PopulationsControllerTest < ActionController::TestCase
   setup do
-    @population = populations(:one)
+    @population = Population.first
   end
 
   test "should get index" do

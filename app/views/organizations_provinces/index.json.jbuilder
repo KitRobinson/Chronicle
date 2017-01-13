@@ -1,0 +1,1 @@
+json.array! @organizations_provinces, partial: 'organizations_provinces/organizations_province', as: :organizations_province

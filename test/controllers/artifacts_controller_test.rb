@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ArtifactsControllerTest < ActionController::TestCase
   setup do
-    @artifact = artifacts(:one)
+    @artifact = Artifact.first
   end
 
   test "should get index" do

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RelationshipsControllerTest < ActionController::TestCase
   setup do
-    @relationship = relationships(:one)
+    @relationship = Relationship.first
   end
 
   test "should get index" do

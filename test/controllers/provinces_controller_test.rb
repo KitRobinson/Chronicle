@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProvincesControllerTest < ActionController::TestCase
   setup do
-    @province = provinces(:one)
+    @province = Province.first
   end
 
   test "should get index" do

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PowersControllerTest < ActionController::TestCase
   setup do
-    @power = powers(:one)
+    @power = Power.first
   end
 
   test "should get index" do

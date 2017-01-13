@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
   setup do
-    @message = messages(:one)
+    @message = Message.first
   end
 
   test "should get index" do

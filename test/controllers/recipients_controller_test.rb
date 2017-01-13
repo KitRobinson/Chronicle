@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RecipientsControllerTest < ActionController::TestCase
   setup do
-    @recipient = recipients(:one)
+    @recipient = Recipient.first
   end
 
   test "should get index" do
