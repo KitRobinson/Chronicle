@@ -5,4 +5,6 @@ class Actor < ActiveRecord::Base
 	has_many :associations, as: :associable
 	has_many :artifacts, foreign_key: :owner
 	has_many :domains, through: :associations
+
+	validates :name, :race_id, :scale, :count, presence: true
 end
