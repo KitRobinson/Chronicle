@@ -8,7 +8,7 @@ class CreateRaces < ActiveRecord::Migration
       t.integer :might
       t.integer :will
       t.integer :cunning
-      t.integer :sutlety
+      t.integer :subtlety
       t.integer :perception
       t.integer :sagacity
       t.integer :scale

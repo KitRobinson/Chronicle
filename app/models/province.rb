@@ -21,6 +21,7 @@ class Province < ActiveRecord::Base
 	end
 
 	def pop_dev
+		#DEVTODO - create pop_dev function!
 		return 0
 	end
 
@@ -36,6 +37,7 @@ class Province < ActiveRecord::Base
 	end
 
 	def to_s
+		#currently for irb reporting
 		descriptor = ""
 		descriptor += "name: #{name}\n"
 		descriptor += "region: #{region.name}\n"
@@ -46,6 +48,5 @@ class Province < ActiveRecord::Base
 			descriptor += adj.name
 			descriptor += " "
 		end
-		descriptor += "\n"
 	end
 end
