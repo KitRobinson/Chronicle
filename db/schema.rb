@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112045330) do
+ActiveRecord::Schema.define(version: 20170113040627) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -44,16 +44,16 @@ ActiveRecord::Schema.define(version: 20170112045330) do
 
   create_table "associations", force: :cascade do |t|
     t.integer  "domain_id"
-    t.integer  "associable_id"    
-    t.string   "associable_type"  
-    t.integer  "strength"      
+    t.integer  "associable_id"
+    t.string   "associable_type"
+    t.integer  "strength"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "attitudes", force: :cascade do |t|
     t.integer  "organization_id"
-    t.integer  "target_id"
+    t.integer  "target"
     t.integer  "desired_status"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -134,6 +134,14 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "powers", force: :cascade do |t|
+    t.integer  "diety_id"
+    t.string   "name"
+    t.string   "effect"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "provinces", force: :cascade do |t|
     t.string   "name"
     t.integer  "base_dev"
@@ -191,6 +199,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.integer  "difficulty"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "water"
   end
 
   create_table "users", force: :cascade do |t|
