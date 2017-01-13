@@ -18,7 +18,7 @@ class ProvincesControllerTest < ActionController::TestCase
 
   test "should create province" do
     assert_difference('Province.count') do
-      post :create, province: { base_dev: @province.base_dev, is_empyreal: @province.is_empyreal, kingdom_id: @province.kingdom_id, name: @province.name }
+      post :create, province: { base_dev: @province.base_dev, is_empyreal: @province.is_empyreal, suzerain_id: @province.suzerain_id, name: @province.name }
     end
 
     assert_redirected_to province_path(assigns(:province))
@@ -35,7 +35,7 @@ class ProvincesControllerTest < ActionController::TestCase
   end
 
   test "should update province" do
-    patch :update, id: @province, province: { base_dev: @province.base_dev, is_empyreal: @province.is_empyreal, kingdom_id: @province.kingdom_id, name: @province.name }
+    patch :update, id: @province, province: { base_dev: @province.base_dev, is_empyreal: @province.is_empyreal, suzerain_id: @province.suzerain_id, name: @province.name }
     assert_redirected_to province_path(assigns(:province))
   end
 

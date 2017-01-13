@@ -69,6 +69,6 @@ class AttitudesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attitude_params
-      params.require(:attitude).permit(:organization_id, :target, :desired_status)
+      params.require(:attitude).permit(:organization_id, :target_id, :desired_status)
     end
 end

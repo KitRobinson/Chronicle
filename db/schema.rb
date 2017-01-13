@@ -44,16 +44,16 @@ ActiveRecord::Schema.define(version: 20170112045330) do
 
   create_table "associations", force: :cascade do |t|
     t.integer  "domain_id"
-    t.integer  "associable_id"
-    t.string   "associable_type"
-    t.integer  "strength"
+    t.integer  "associable_id"    
+    t.string   "associable_type"  
+    t.integer  "strength"      
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "attitudes", force: :cascade do |t|
     t.integer  "organization_id"
-    t.integer  "target"
+    t.integer  "target_id"
     t.integer  "desired_status"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.integer  "is_church"
     t.integer  "is_kingdom"
     t.integer  "leader_id"
-    t.integer  "kingdom_id"
+    t.integer  "suzerain_id"
     t.string   "governance"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.string   "name"
     t.integer  "base_dev"
     t.integer  "is_empyreal"
-    t.integer  "kingdom_id"
+    t.integer  "suzerain_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "primary_terrain_id"

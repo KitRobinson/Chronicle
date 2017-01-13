@@ -6,7 +6,7 @@ one:
   is_church: 1
   is_kingdom: 1
   leader_id: 1
-  kingdom_id: 1
+  suzerain_id: 1
   governance: MyString
 
 two:
@@ -15,5 +15,5 @@ two:
   is_church: 1
   is_kingdom: 1
   leader_id: 1
-  kingdom_id: 1
+  suzerain_id: 1
   governance: MyString
