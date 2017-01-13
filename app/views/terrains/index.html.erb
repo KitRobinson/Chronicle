@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Development multiplier</th>
       <th>Difficulty</th>
+      <th>Water</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= terrain.name %></td>
         <td><%= terrain.development_multiplier %></td>
         <td><%= terrain.difficulty %></td>
+        <td><%= terrain.water %></>
         <td><%= link_to 'Show', terrain %></td>
         <td><%= link_to 'Edit', edit_terrain_path(terrain) %></td>
         <td><%= link_to 'Destroy', terrain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
