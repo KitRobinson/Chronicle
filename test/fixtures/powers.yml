@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diety_id: 1
+  name: MyString
+  effect: MyString
+
+two:
+  diety_id: 1
+  name: MyString
+  effect: MyString
