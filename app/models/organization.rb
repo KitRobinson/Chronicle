@@ -1,4 +1,7 @@
 class Organization < ActiveRecord::Base
+
+	include Associable
+	
 	has_many :actors
 	belongs_to :leader, class_name: "Actor"
 	has_many :attitudes

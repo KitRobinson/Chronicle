@@ -101,8 +101,11 @@ act_manwe = Actor.create(name:"Manwe", description:"Manwe is god of air and bird
 act_aule = Actor.create(name:"Aule", description:"Aule is the just god of smiths", race: race_alom, might: 6, will: 5, cunning: 2, subtlety: 1, perception:4, sagacity: 3, count: 1, personality:"Player", mood:"Player")
 act_yavanna = Actor.create(name:"Yavanna", description:"Yavanna is the goddess of trees and music", race: race_alom, might: 3, will: 2, subtlety: 5, perception: 4, cunning: 4, sagacity: 3, count: 1, personality:"Player", mood:"Player")
 
+god_manwe = Deity.create(name:"Manwe", description:"Manwe is god of air and birds", actor: act_manwe)
+god_aule = Deity.create(name:"Aule", description:"Aule is the just god of smiths", actor: act_aule)
+god_yavanna = Deity.create(name:"Yavanna", description:"Yavanna is the goddess of trees and music", actor: act_yavanna)
+
 act_eckbert = Actor.create(name:"Eckbert", description:"Eckbert is king of wessex, and owns part of ireland as well", race: race_human, might:0, will: 2, subtlety:2, perception: 2, sagacity: 2, cunning:2, count: 1, personality:"Subtle", mood:"Administer")
-act_eckbert.associate({"Justice" => 10})
 act_macdougal = Actor.create(name:"MacDougal", description:"Leader of the west irish clans", race: race_human, might: 2, subtlety: 0, perception: 1, will: 1, sagacity:0, cunning: 1, count: 1, personality: "Mighty", mood:"Conquer")
 act_globrat = Actor.create(name:"Globrat the Terrible", description:"A giant among his people, Globrat rules the last of the irish goblin hodlouts", race: race_goblin, might: 3, subtlety: 0, perception: 1, will: 1, sagacity:0, cunning: 0, count: 1, personality:"Mighty", mood:"Defend")
 
@@ -111,3 +114,23 @@ act_army_of_ireland = Actor.create(name:"Army of Ireland", description:"An army 
 art_sword_of_celts = Artifact.create(name:"The Sword of Celts", description:"An ancient sword, imbued with power by ancient druids", owner:act_macdougal)
 art_orb_of_secrets = Artifact.create(name:"The Orb of Secrets", description:"The orb of secrets gives simple answers to a question once a year", owner:act_eckbert)
 art_doom_altar = Artifact.create(name:"The Altar of Doom", description: "Sacrifices made upon this altar are exra effective", province_id: 5)
+
+act_eckbert.associate({"Justice" => 2})
+art_sword_of_celts.associate({"Smithing" => 2})
+
+Province.all.each do |prov|
+	if rand(4) == 4
+		gen_race = race_human
+		alt_race = race_goblin
+	else
+		gen_race = race_goblin
+		alt_race = race_human
+	end
+
+	p = Population.create(province: prov, race: gen_race, piety: rand, count: rand(5000)+2000, loyalty=rand(5))
+	gods = [god_manwe, god_yavanna, god_aule]
+	gods.shuffle!
+	(rand(2)+1).times do { 
+		size = rand
+		Congregation.create(population: p, deity:gods.pop, clergy:(size*p.count/100).floor, laity: ((size*10 + rand(9) + 1)*p.count).floor, piety_multiplier: 1, manpower_multiplier:1, loyalty: rand(5)+1)
+	 }	
