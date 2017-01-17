@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CongregationsControllerTest < ActionController::TestCase
   setup do
-    @congregation = congregations(:one)
+    @congregation = Congregation.first
   end
 
   test "should get index" do

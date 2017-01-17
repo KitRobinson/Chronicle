@@ -3,15 +3,15 @@
 one:
   name: MyString
   description: MyString
-  race_id: 1
+  race: one
   might: 1
   will: 1
   cunning: 1
   subtlety: 1
   perception: 1
   sagacity: 1
-  province_id: 1
-  organization_id: 1
+  province: one
+  organization: one
   scale: 1
   count: 1
   personality: MyString
@@ -20,15 +20,15 @@ one:
 two:
   name: MyString
   description: MyString
-  race_id: 1
+  race: one
   might: 1
   will: 1
   cunning: 1
   subtlety: 1
   perception: 1
   sagacity: 1
-  province_id: 1
-  organization_id: 1
+  province: one
+  organization: one
   scale: 1
   count: 1
   personality: MyString

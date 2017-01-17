@@ -5,8 +5,7 @@ one:
   description: MyString
   is_church: 1
   is_kingdom: 1
-  leader_id: 1
-  suzerain_id: 1
+  leader: one (Actor)
   governance: MyString
 
 two:
@@ -14,6 +13,6 @@ two:
   description: MyString
   is_church: 1
   is_kingdom: 1
-  leader_id: 1
-  suzerain_id: 1
+  leader: one (Actor)
+  suzerain: one (Organization)
   governance: MyString

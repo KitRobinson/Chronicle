@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Organizations Provinces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Province</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizations_provinces.each do |organizations_province| %>
+      <tr>
+        <td><%= organizations_province.organization_id %></td>
+        <td><%= organizations_province.province_id %></td>
+        <td><%= link_to 'Show', organizations_province %></td>
+        <td><%= link_to 'Edit', edit_organizations_province_path(organizations_province) %></td>
+        <td><%= link_to 'Destroy', organizations_province, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organizations province', new_organizations_province_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112045330) do
+ActiveRecord::Schema.define(version: 20170117213709) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 20170112045330) do
 
   create_table "associations", force: :cascade do |t|
     t.integer  "domain_id"
-    t.integer  "associable_id"    
-    t.string   "associable_type"  
-    t.integer  "strength"      
+    t.integer  "associable_id"
+    t.string   "associable_type"
+    t.integer  "strength"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -115,6 +115,13 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "organizations_provinces", force: :cascade do |t|
+    t.integer  "organization_id"
+    t.integer  "province_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "populations", force: :cascade do |t|
     t.integer  "province_id"
     t.integer  "race_id"
@@ -132,6 +139,14 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.string   "content"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "powers", force: :cascade do |t|
+    t.integer  "deity_id"
+    t.string   "name"
+    t.string   "effect"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -154,7 +169,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.integer  "might"
     t.integer  "will"
     t.integer  "cunning"
-    t.integer  "sutlety"
+    t.integer  "subtlety"
     t.integer  "perception"
     t.integer  "sagacity"
     t.integer  "scale"
@@ -191,6 +206,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.integer  "difficulty"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "water"
   end
 
   create_table "users", force: :cascade do |t|
@@ -199,6 +215,7 @@ ActiveRecord::Schema.define(version: 20170112045330) do
     t.string   "psswrd"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "access"
   end
 
 end

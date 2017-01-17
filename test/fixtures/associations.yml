@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  domain_id: 1
-  associable_id: 1
-  associable_type: MyString
+  domain: one
+  associable: one (Actor)
+  associable_type: Actor
   strength: 1
 
 two:
-  domain_id: 1
-  associable_id: 1
-  associable_type: MyString
+  domain: one
+  associable: one (Actor)
+  associable_type: Actor
   strength: 1

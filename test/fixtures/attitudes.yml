@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  organization_id: 1
-  target: 1
+  organization: one
+  target: two (Organization)
   desired_status: 1
 
 two:
-  organization_id: 1
-  target: 1
+  organization: two
+  target: one (Organization)
   desired_status: 1

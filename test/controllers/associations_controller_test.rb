@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AssociationsControllerTest < ActionController::TestCase
   setup do
-    @association = associations(:one)
+    @association = Association.first
   end
 
   test "should get index" do

@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  province_id: 1
-  neighbor_id: 1
+  province: one
+  neighbor: two (Province)
   defense: 1
 
-two:
-  province_id: 1
-  neighbor_id: 1
-  defense: 1

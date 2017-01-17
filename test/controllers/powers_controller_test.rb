@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PowersControllerTest < ActionController::TestCase
   setup do
-    @power = powers(:one)
+    @power = Power.first
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class PowersControllerTest < ActionController::TestCase
 
   test "should create power" do
     assert_difference('Power.count') do
-      post :create, power: { diety_id: @power.diety_id, effect: @power.effect, name: @power.name }
+      post :create, power: { deity_id: @power.deity_id, effect: @power.effect, name: @power.name }
     end
 
     assert_redirected_to power_path(assigns(:power))
@@ -35,7 +35,7 @@ class PowersControllerTest < ActionController::TestCase
   end
 
   test "should update power" do
-    patch :update, id: @power, power: { diety_id: @power.diety_id, effect: @power.effect, name: @power.name }
+    patch :update, id: @power, power: { deity_id: @power.deity_id, effect: @power.effect, name: @power.name }
     assert_redirected_to power_path(assigns(:power))
   end
 

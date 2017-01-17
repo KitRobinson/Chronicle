@@ -69,6 +69,6 @@ class RacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def race_params
-      params.require(:race).permit(:name, :description, :longevity, :fecundity, :might, :will, :cunning, :sutlety, :perception, :sagacity, :scale)
+      params.require(:race).permit(:name, :description, :longevity, :fecundity, :might, :will, :cunning, :subtlety, :perception, :sagacity, :scale)
     end
 end

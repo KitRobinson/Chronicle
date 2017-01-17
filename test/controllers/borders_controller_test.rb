@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BordersControllerTest < ActionController::TestCase
   setup do
-    @border = borders(:one)
+    @border = Border.first
   end
 
   test "should get index" do
