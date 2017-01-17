@@ -166,3 +166,19 @@ org_united_goblin_tribes.spread(pro_kildare)
 
 org_church_of_aule.spread(Congregation.where(deity: god_aule).order(clergy: :desc).first.population.province)
 org_church_of_aule.spread(Congregation.where(deity: god_aule).order(clergy: :desc).second.population.province)
+
+user_kit = User.create(username:"Kit", email:"krobinson.dev@gmail.com", psswrd:"password", access:3)
+user_linas = User.create(username:"Linas", email:"linas@gmail.com", psswrd:"password", access:1)
+
+post_hail = Post.create(user:user_kit, title:"Hail!", content:"Welcome to the game!")
+post_wellmet = Post.create(user:user_linas, title: "Well Met!", content: "pleased to be here!", reference: post_hail)
+
+message_hail = Message.create(user:user_kit, title:"Hail!", content:"Welcome to the game!")
+message_wellmet = Message.create(user:user_linas, title: "Well Met!", content: "pleased to be here!", reference: message_hail)
+
+recip_hail = Recipient.create(message:message_hail, user:user_kit)
+recip_wellmet = Recipient.create(message:message_wellmet, user:user_kit)
+
+god_manwe.update(user: user_kit)
+god_aule.update(user:user_kit)
+god_yavanna.update(user:user_linas)
