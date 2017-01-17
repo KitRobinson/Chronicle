@@ -39,4 +39,13 @@ class Organization < ActiveRecord::Base
 
 	end
 
+	def spread(prov)
+		#spread the organization to a province
+		OrganizationsProvince.create(province:prov, organization:self)
+	end
+
+	def spread_region(reg)
+		#spread the organization to an entire region
+		reg.provinces.each {|prov| self.spread(prov)}
+	end
 end

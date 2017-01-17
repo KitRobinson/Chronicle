@@ -5,6 +5,7 @@ class Relationship < ActiveRecord::Base
 
 	def set_neutral
 		self.current_relationship = 3
+		self.save
 	end
 
 	def set_expected
@@ -36,7 +37,7 @@ class Relationship < ActiveRecord::Base
 		puts "attitude a = #{a}"
 		puts "attitude b = #{b}"
 		puts "a new output line!"
-		s = a > b ? a : b
+		s = a < b ? a : b
 	end
 
 end
