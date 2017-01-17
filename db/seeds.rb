@@ -150,3 +150,22 @@ Province.all.each do |prov|
 	end
 
 end
+
+org_united_goblin_tribes = Organization.new(name:"United Goblin Tribes", description:"A loose federation of free goblin tribes", is_church:0, is_kingdom:1, leader:act_globrat, governance:"Tribal Federation")
+org_united_goblin_tribes.save
+puts "Completed org 1"
+org_kingdom_of_wessex = Organization.new(name:"Kingdom of Wessex", description:"A mostly United England", is_church:0, is_kingdom:1, leader: act_eckbert, governance:"Monarchy")
+org_kingdom_of_wessex.save
+puts "Completed org 2"
+org_dukedom_of_ireland = Organization.new(name:"Duchy of Ireland", description:"Free Irish Provinces", is_church:0, is_kingdom:1, leader:act_macdougal, governance:"Monarchy")
+org_dukedom_of_ireland.save
+puts "Completed org 3"
+org_church_of_aule = Organization.new(name:"The Church of Aule", description:"A church dedicated to smiths and justice", is_church:1, is_kingdom:0, governance:"Council of Elders")
+org_church_of_aule.save
+puts "completed org 4"
+org_church_of_yevenna = Organization.new(name:"The Church of Yevenna", description:"A church dedicated to music and trees", is_church:1, is_kingdom:0, governance:"Council of Elders")
+org_church_of_yevenna.save
+puts "completed org 5"
+org_bardic_college = Organization.new(name:"The Fellowship", description:"A guild of talented musicians", is_church:0, is_kingdom:0, suzerain:org_church_of_yevenna, governance:"Council of Elders")
+org_bardic_college.save
+puts "completed org 6"

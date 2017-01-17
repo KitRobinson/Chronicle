@@ -11,4 +11,32 @@ class Organization < ActiveRecord::Base
 	has_and_belongs_to_many :provinces
 	belongs_to :suzerain, class_name: "Organization"
 	has_many :associations, as: :associable
+
+	after_create :introduce
+
+	def introduce
+		#this is meant to be run between .new and .save, so that each organization ALREADY in the database developes a relation to the new org
+		
+		#creates attitudes to and from all organizations
+		#creates relationship from but not to all organziations
+		puts "getting list of orgs"
+		orgs = Organization.all
+		orgs = orgs - [self]
+		if orgs.length == 0
+			puts "no orgs to introduce #{self.name} to"
+		else
+			puts "starting introduce on #{self.name}"
+		end
+		orgs.each do |org|
+			puts "creating relations between #{org.name} and #{self.name}"
+			a = Attitude.where(organization:org, target:self).first_or_initialize
+			a.update(desired_status:rand(6))
+			b = Attitude.where(organization:self, target:org).first_or_initialize
+			b.update(desired_status:rand(6))
+			r = Relationship.where(organization_one:org, organization_two:self).first_or_initialize
+			r.set_expected
+		end
+
+	end
+
 end
