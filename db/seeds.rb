@@ -119,18 +119,34 @@ act_eckbert.associate({"Justice" => 2})
 art_sword_of_celts.associate({"Smithing" => 2})
 
 Province.all.each do |prov|
-	if rand(4) == 4
-		gen_race = race_human
-		alt_race = race_goblin
-	else
-		gen_race = race_goblin
-		alt_race = race_human
+
+	if prov.get_development > 0.5
+		if rand(4) == 3
+			gen_race = race_human
+			alt_race = race_goblin
+		else
+			gen_race = race_goblin
+			alt_race = race_human
+		end
+
+		p = Population.create(province: prov, race: gen_race, piety: rand, count: rand(5000)+2000, loyalty:rand(5))
+		gods = [god_manwe, god_yavanna, god_aule]
+		gods.shuffle!
+		(rand(2)+1).times do  
+			size = rand
+			Congregation.create(population: p, deity:gods.pop, clergy:(size*p.count/100).floor, laity: ((size*10 + rand(9) + 1)*p.count).floor, piety_multiplier: 1, manpower_multiplier:1, loyalty: rand(5)+1)
+		end
+
+		if rand(4) == 3
+			p = Population.create(province: prov, race: alt_race, piety: rand, count: rand(2500)+2000, loyalty:rand(5))
+			gods = [god_manwe, god_yavanna, god_aule]
+			gods.shuffle!
+			(rand(2)+1).times do  
+				size = rand
+				Congregation.create(population: p, deity:gods.pop, clergy:(size*p.count/100).floor, laity: ((size*10 + rand(9) + 1)*p.count/100).floor, piety_multiplier: 1, manpower_multiplier:1, loyalty: rand(5)+1)
+			end
+		end
+
 	end
 
-	p = Population.create(province: prov, race: gen_race, piety: rand, count: rand(5000)+2000, loyalty=rand(5))
-	gods = [god_manwe, god_yavanna, god_aule]
-	gods.shuffle!
-	(rand(2)+1).times do { 
-		size = rand
-		Congregation.create(population: p, deity:gods.pop, clergy:(size*p.count/100).floor, laity: ((size*10 + rand(9) + 1)*p.count).floor, piety_multiplier: 1, manpower_multiplier:1, loyalty: rand(5)+1)
-	 }	
+end
