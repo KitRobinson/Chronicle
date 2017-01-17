@@ -182,3 +182,8 @@ recip_wellmet = Recipient.create(message:message_wellmet, user:user_kit)
 god_manwe.update(user: user_kit)
 god_aule.update(user:user_kit)
 god_yavanna.update(user:user_linas)
+
+p_thebirds = Power.create(name:"The Birds", effect:"Birds attack everybody!", deity: god_manwe)
+p_thebirds.associate({"Birds" => 6})
+p_test_of_iron = Power.create(name:"The Test of Iron", effect:"Priests of Aule can tell truth or falsehood with burning iron", deity: god_aule)
+p_test_of_iron.associate({"Smithing" => 4, "Justice" => 5})

@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(version: 20170117213709) do
   end
 
   create_table "powers", force: :cascade do |t|
-    t.integer  "diety_id"
+    t.integer  "deity_id"
     t.string   "name"
     t.string   "effect"
     t.datetime "created_at", null: false

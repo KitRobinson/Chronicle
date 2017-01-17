@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  diety: one
+  deity: one
   name: MyString
   effect: MyString
 
 two:
-  diety: one
+  deity: one
   name: MyString
   effect: MyString
