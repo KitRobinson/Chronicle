@@ -15,4 +15,5 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require jquery.imagemapster.js
+//= require imageMapResizer.min.js
 //= require_tree .
