@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require materialize-sprockets
 //= require turbolinks
+//= require jquery.imagemapster.js
+//= require imageMapResizer.min.js
 //= require_tree .
+//= require maps.js
