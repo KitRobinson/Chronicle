@@ -8,4 +8,10 @@
 		mapKey: 'prov-key'
 	})
 
+	//on select of area, retrieve its info (json?)
+	//on mouseover, if none selected, retrieve its info
+	//on tab select, reveal info
+
+	//some kind of control bar and masking - multiselect and cannot deselect perhaps?
+
 });`
