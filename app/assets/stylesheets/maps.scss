@@ -1,4 +1,22 @@
 .main-map{
-	max-height:90vh;
+	max-height:100%;
 	max-width:100%;
+}
+
+.side-bar{
+	height:90vh;
+	overflow: scroll;
+}
+
+#map-panel{
+	width:90%;
+	max-width:90%;
+}
+
+#map-tablist{
+	font-size:36px;
+}
+
+#geo-tab #pol-tab #rel-tab #etc-tab{
+	font-size:36px;
 }

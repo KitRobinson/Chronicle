@@ -1,5 +1,3 @@
-jquery.imagemapster.js
-
 /* ImageMapster
    Version: 1.2.10 (2/25/2013)
 

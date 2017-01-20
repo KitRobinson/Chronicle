@@ -17,3 +17,4 @@
 //= require jquery.imagemapster.js
 //= require imageMapResizer.min.js
 //= require_tree .
+//= require maps.js
