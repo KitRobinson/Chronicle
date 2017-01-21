@@ -49,4 +49,31 @@ class Province < ActiveRecord::Base
 			descriptor += " "
 		end
 	end
+
+	def visibility(deity)
+		#return the general province visibility score
+
+		#go through associated things... like terrains and churches, and get a total association score
+		doms = deity.domains
+		puts doms
+		score = 0
+
+		#test each Associable, including self if necessary
+		score += self.primary_terrain.doms_score(doms)
+		puts "primary terrain = #{self.primary_terrain.name}, for #{score}"
+		score += self.secondary_terrain.doms_score(doms)
+		puts "secondary terrain = #{self.secondary_terrain.name}, for #{score}"
+		self.organizations.each {|org| score += org.doms_score(doms)}
+		self.actors.each {|org| score += org.doms_score(doms)}
+		puts "after orgs and actors: #{score}"
+		#then do something with the association score and perception...
+		perception_score = score * deity.actor.perception
+		puts "perception score = score: #{score} * dper: #{deity.actor.perception}"
+		#and then add a flat sagacity bonus
+		visibility = perception_score + deity.actor.sagacity * 50
+		puts "sagacity = #{deity.actor.sagacity} * 50"
+		puts "total = #{visibility}"
+
+	end
+
 end

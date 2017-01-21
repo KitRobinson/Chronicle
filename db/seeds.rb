@@ -105,6 +105,10 @@ god_manwe = Deity.create(name:"Manwe", description:"Manwe is god of air and bird
 god_aule = Deity.create(name:"Aule", description:"Aule is the just god of smiths", actor: act_aule)
 god_yavanna = Deity.create(name:"Yavanna", description:"Yavanna is the goddess of trees and music", actor: act_yavanna)
 
+god_manwe.associate({"Wind" => 40, "Birds" => 40})
+god_aule.associate({"Justice" => 40, "Smithing" => 40})
+god_yavanna.associate({"Trees" => 40, "Music" => 40})
+
 act_eckbert = Actor.create(name:"Eckbert", description:"Eckbert is king of wessex, and owns part of ireland as well", race: race_human, might:0, will: 2, subtlety:2, perception: 2, sagacity: 2, cunning:2, count: 1, personality:"Subtle", mood:"Administer")
 act_macdougal = Actor.create(name:"MacDougal", description:"Leader of the west irish clans", race: race_human, might: 2, subtlety: 0, perception: 1, will: 1, sagacity:0, cunning: 1, count: 1, personality: "Mighty", mood:"Conquer")
 act_globrat = Actor.create(name:"Globrat the Terrible", description:"A giant among his people, Globrat rules the last of the irish goblin hodlouts", race: race_goblin, might: 3, subtlety: 0, perception: 1, will: 1, sagacity:0, cunning: 0, count: 1, personality:"Mighty", mood:"Defend")
