@@ -67,13 +67,53 @@ class Province < ActiveRecord::Base
 		self.actors.each {|org| score += org.doms_score(doms)}
 		puts "after orgs and actors: #{score}"
 		#then do something with the association score and perception...
-		perception_score = score * deity.actor.perception
+		perception_score = score * deity.actor.perception * 20
 		puts "perception score = score: #{score} * dper: #{deity.actor.perception}"
 		#and then add a flat sagacity bonus
-		visibility = perception_score + deity.actor.sagacity * 50
-		puts "sagacity = #{deity.actor.sagacity} * 50"
+		visibility = perception_score + (deity.actor.sagacity * 10)
+		puts "sagacity = #{deity.actor.sagacity} * 10"
 		puts "total = #{visibility}"
 
+		#principles for deciding the sagacity/perception ratio?
+		#  -  perception applies to much less, so should give about double the bonus.
+		#  -  a perfect domain correlation is 10, so if they are equal, sagacity 3 gives 150, and therefor per 3 should give 300.
 	end
+
+	# def report(vis_score)
+	# 	#depending on the visibility, we pass along a lot or a little information.  At the very least, we pass along a visibility report!
+	# 	case vis_score
+	# 		when > 0
+	# 			#add primary terrain
+	# 		when > 10
+	# 			#add province name
+	# 		when > 20
+	# 			#add secondary terrain
+	# 		when > 30
+	# 			#add base dev
+	# 		when > 40
+	# 			#add suzerain
+	# 		when > 50
+	# 			#add populations presence
+	# 		when > 60
+	# 			#add congregations presence
+	# 		when > 70
+	# 			#add organizations presence, population details
+	# 		when > 80
+	# 			#add infrastructure, congregations details
+	# 		when > 90
+	# 			#add actors, congregation details
+	# 		when > 100 
+	# 			#add artifacts, organization details,
+	# 		when > 110
+	# 			#etc as worked out later
+	# 		when > 120
+	# 			#and more... possibly a bonus on neighbor stuff
+	# 		else
+	# 			#just return that the visibility is 0
+	# 	end
+	# 	#datahash will presumably be a json object that we push directly through to the controller?
+	# 	return datahash
+	
+	# end		
 
 end
