@@ -62,20 +62,20 @@ class Province < ActiveRecord::Base
 
 		#test each Associable, including self if necessary
 		score += self.primary_terrain.doms_score(doms)
-		# puts "primary terrain = #{self.primary_terrain.name}, for #{score}"
+		puts "primary terrain = #{self.primary_terrain.name}, for #{score}"
 		score += self.secondary_terrain.doms_score(doms)
-		# puts "secondary terrain = #{self.secondary_terrain.name}, for #{score}"
+		puts "secondary terrain = #{self.secondary_terrain.name}, for #{score}"
 		self.organizations.each {|org| score += org.doms_score(doms)}
 		self.actors.each {|org| score += org.doms_score(doms)}
-		# puts "after orgs and actors: #{score}"
+		puts "after orgs and actors: #{score}"
 		#then do something with the association score and perception...
-		perception_score = score * deity.actor.perception * 20
-		# puts "perception score = score: #{score} * dper: #{deity.actor.perception}"
+		perception_score = score * deity.actor.perception
+		puts "perception score = score: #{score} * dper: #{deity.actor.perception}"
 		#and then add a flat sagacity bonus
 		visibility = perception_score + (deity.actor.sagacity * 10)
-		# puts "sagacity = #{deity.actor.sagacity} * 10"
-		# puts "total = #{visibility}"
-		# return visibility
+		puts "sagacity = #{deity.actor.sagacity} * 10"
+		puts "total = #{visibility}"
+		return visibility
 		#principles for deciding the sagacity/perception ratio?
 		#  -  perception applies to much less, so should give about double the bonus.
 		#  -  a perfect domain correlation is 10, so if they are equal, sagacity 3 gives 150, and therefor per 3 should give 300.
