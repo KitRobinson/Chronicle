@@ -23,26 +23,38 @@ ter_swamp = Terrain.create(name: "Swamp", development_multiplier: 0.5, difficult
 land_terrains = [ter_forest, ter_mountain, ter_plains, ter_city, ter_swamp]
 ocean_terrain = [ter_ocean, ter_ocean, ter_ocean, ter_forest, ter_plains, ter_swamp, ter_city, ter_mountain]
 
-terrain_assocs = Association.create([
-	{domain: dom_trees, associable: ter_forest, associable_type:"Terrain", strength: 9},
-	{domain: dom_trees, associable: ter_swamp, associable_type:"Terrain", strength: 2},
 
-	{domain: dom_birds, associable: ter_forest, associable_type:"Terrain", strength: 3},
-	{domain: dom_birds, associable: ter_mountain, associable_type:"Terrain", strength: 2},
+	#new Associable method should be applicable to terrains
 
-	{domain: dom_wind, associable: ter_plains, associable_type:"Terrain", strength: 3},
-	{domain: dom_wind, associable: ter_mountain, associable_type:"Terrain", strength: 2},
-	{domain: dom_wind, associable: ter_ocean, associable_type:"Terrain", strength: 2},
-	{domain: dom_wind, associable: ter_city, associable_type:"Terrain", strength: 1},
-	{domain: dom_wind, associable: ter_swamp, associable_type:"Terrain", strength: 1},
-	{domain: dom_wind, associable: ter_forest, associable_type:"Terrain", strength: 1},
+# terrain_assocs = Association.create([
+# 	{domain: dom_trees, associable: ter_forest, associable_type:"Terrain", strength: 9},
+# 	{domain: dom_trees, associable: ter_swamp, associable_type:"Terrain", strength: 2},
 
-	{domain: dom_smithing, associable: ter_mountain, associable_type:"Terrain",strength: 2},
-	{domain: dom_smithing, associable: ter_city, associable_type:"Terrain",strength:7},
+# 	{domain: dom_birds, associable: ter_forest, associable_type:"Terrain", strength: 3},
+# 	{domain: dom_birds, associable: ter_mountain, associable_type:"Terrain", strength: 2},
 
-	{domain: dom_justice, associable: ter_city, associable_type:"Terrain",strength:3},
-	{domain: dom_music, associable: ter_city, associable_type:"Terrain",strength:3}
-])
+# 	{domain: dom_wind, associable: ter_plains, associable_type:"Terrain", strength: 3},
+# 	{domain: dom_wind, associable: ter_mountain, associable_type:"Terrain", strength: 2},
+# 	{domain: dom_wind, associable: ter_ocean, associable_type:"Terrain", strength: 2},
+# 	{domain: dom_wind, associable: ter_city, associable_type:"Terrain", strength: 1},
+# 	{domain: dom_wind, associable: ter_swamp, associable_type:"Terrain", strength: 1},
+# 	{domain: dom_wind, associable: ter_forest, associable_type:"Terrain", strength: 1},
+
+# 	{domain: dom_smithing, associable: ter_mountain, associable_type:"Terrain",strength: 2},
+# 	{domain: dom_smithing, associable: ter_city, associable_type:"Terrain",strength:7},
+
+# 	{domain: dom_justice, associable: ter_city, associable_type:"Terrain",strength:3},
+# 	{domain: dom_music, associable: ter_city, associable_type:"Terrain",strength:3}
+# ])
+
+ter_forest.associate({"Trees" => 9, "Birds" => 3, "Wind" => 1})
+ter_mountain.associate({"Birds" => 2, "Wind" => 2, "Smithing" => 2})
+ter_plains.associate({"Wind" => 3})
+ter_city.associate({"Wind" => 1})
+ter_city.associate({"Smithing" => 7})
+ter_city.associate({"Justice" => 3, "Music" => 3})
+ter_ocean.associate({"Wind" => 2})
+ter_swamp.associate({"Trees" => 2, "Wind" => 1})
 
 reg_west_ireland = Region.create(name:"Western Ireland", description:"Western Ireland is suprisingly full of complex terrain")
 reg_east_ireland = Region.create(name:"Eastern Ireland", description:"Eastern Ireland is somewhat random!")

@@ -6,6 +6,4 @@ class Terrain < ActiveRecord::Base
 	has_many :secondary_provinces, class_name: "Province", source: :secondary_terrain_id
 	has_many :associations, as: :associable
 
-	after_intialize { @dom_scores ||= {} }
-
 end
