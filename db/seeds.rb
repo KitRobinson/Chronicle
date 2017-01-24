@@ -150,7 +150,7 @@ Province.all.each do |prov|
 		gods.shuffle!
 		(rand(2)+1).times do  
 			size = rand
-			Congregation.create(population: p, deity:gods.pop, clergy:(size*p.count/100).floor, laity: ((size*10 + rand(9) + 1)*p.count).floor, piety_multiplier: 1, manpower_multiplier:1, loyalty: rand(5)+1)
+			Congregation.create(population: p, deity:gods.pop, clergy:(size*p.count/100).floor, laity: ((size*10 + rand(9) + 1)*p.count/100).floor, piety_multiplier: 1, manpower_multiplier:1, loyalty: rand(5)+1)
 		end
 
 		if rand(4) == 3
