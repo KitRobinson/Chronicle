@@ -81,7 +81,7 @@ class Province < ActiveRecord::Base
 		#  -  a perfect domain correlation is 10, so if they are equal, sagacity 3 gives 150, and therefor per 3 should give 300.
 	end
 
-	def report(deity)
+	def map_report(deity)
 		#depending on the visibility, we pass along a lot or a little information.  At the very least, we pass along a visibility report!
 		vis = visibility(deity)
 		report_data = {}
