@@ -48,4 +48,25 @@ class Organization < ActiveRecord::Base
 		#spread the organization to an entire region
 		reg.provinces.each {|prov| self.spread(prov)}
 	end
+
+	def leader_name
+		leader.name if leader
+	end
+
+	def suzerain_name
+		suzerain.name if suzerain
+	end
+
+	#provide definition for the report method in associable
+	def report_definition
+		report_def = {
+			name: {difficulty: 40, approximator: "none", field_name:"name", max_datum:nil},
+			description: {difficulty: 40, approximator:"none", field_name:"description", max_datum:nil},
+			is_church: {difficulty: 40, approximiator:"none", field_name:"is_church", max_datum:nil},
+			is_kindgom: {difficulty: 40, approximiator:"none", field_name:"is_kindgom", max_datum:nil},
+			leader: {difficulty: 60, approximator:"none", field_name:"leader_name", max_datum:nil},
+			suzerain: {difficulty: 60, approximator:"none", field_name:"suzerain_name", max_datum:nil}
+		}			
+	end
+
 end

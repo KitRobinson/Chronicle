@@ -69,11 +69,17 @@ module Associable
 	def fill_field(difficulty_score, approximator, datum, max_datum)
 		ratio = datum.to_f/max_datum.to_f if max_datum
 		if difficulty_score <= 0
-			return datum.to_s
+			if approximator == "boolean"
+				datum == 1 ? "true" : "false"
+			else
+				return datum.to_s
+			end
 		elsif approximator == "none"
 			return "??????"
 		elsif difficulty_score < 20
-			if approximator == "hi_lo"
+			if approximator == "boolean"
+				datum == 1 ? "maybe" : "perhaps"
+			elsif approximator == "hi_lo"
 				if ratio > 0.5
 					return "High"
 				else
