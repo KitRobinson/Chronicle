@@ -13,7 +13,7 @@
 			})
 			.done(function(data) {
 			console.log(data)
-			$("#geo-tab").append(data)
+			$("#geo-inf").append(data)
 			})
 		}
 	})

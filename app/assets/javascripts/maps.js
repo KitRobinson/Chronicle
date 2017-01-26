@@ -1,18 +1,20 @@
 
-$(document).on('turbolinks:load', function(){
+// this appears to be superceded entirely by the coffeescript file :(
 
-	console.log("loaded")
+// $(document).on('turbolinks:load', function(){
+
+// 	console.log("loaded")
 	
-	m = $('#ireland-map')
-	console.log("selected:")
-	console.log(m)
+// 	m = $('#ireland-map')
+// 	console.log("selected:")
+// 	console.log(m)
 
-	$('#ireland-map').mapster({
-		mapKey: 'prov-key',
-		singleSelect: true,
-		onClick: function(e){
-			alert("you clicked" + e.key)
-		}
-	})
+// 	$('#ireland-map').mapster({
+// 		mapKey: 'prov-key',
+// 		singleSelect: true,
+// 		onClick: function(e){
+// 			alert("you clicked" + e.key)
+// 		}
+// 	})
 
-});
+// });
