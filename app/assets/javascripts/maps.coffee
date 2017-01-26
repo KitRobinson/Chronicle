@@ -5,7 +5,17 @@
 `$(document).on('turbolinks:load', function(){
 
 	$('#ireland-map').mapster({
-		mapKey: 'prov-key'
+		mapKey: 'prov-key',
+		singleSelect: true,
+		onClick: function(e){
+			$.ajax({
+			url:$("area[prov-key = " +e.key +"]")[0].href
+			})
+			.done(function(data) {
+			console.log(data)
+			$("#geo-tab").append(data)
+			})
+		}
 	})
 
 	//on select of area, retrieve its info (json?)

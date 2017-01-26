@@ -8,16 +8,11 @@ $(document).on('turbolinks:load', function(){
 	console.log(m)
 
 	$('#ireland-map').mapster({
-		mapKey: 'prov-key'
+		mapKey: 'prov-key',
+		singleSelect: true,
+		onClick: function(e){
+			alert("you clicked" + e.key)
+		}
 	})
-	
-	$('#iremapping').click(function(){
-		alert("you clicked the map");
-	});
-
-	console.log($('map'))
-/*
-	$('map').imageMapResize();
-*/
 
 });
