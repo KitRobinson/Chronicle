@@ -1,5 +1,5 @@
 class ProvincesController < ApplicationController
-  before_action :set_province, only: [:show, :edit, :update, :destroy]
+  before_action :set_province, only: [:show, :edit, :update, :destroy, :report]
 
   # GET /provinces
   # GET /provinces.json
@@ -19,6 +19,10 @@ class ProvincesController < ApplicationController
 
   # GET /provinces/1/edit
   def edit
+  end
+
+  def report
+    render :_report, :layout => false
   end
 
   # POST /provinces
