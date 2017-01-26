@@ -6,6 +6,7 @@ class Province < ActiveRecord::Base
 	has_and_belongs_to_many :organizations
 	belongs_to :suzerain, class_name: "Organization"
 	has_many :actors
+	has_many :artifacts
 	belongs_to :primary_terrain, class_name: "Terrain"
 	belongs_to :secondary_terrain, class_name: "Terrain"
 	belongs_to :region
@@ -153,5 +154,25 @@ class Province < ActiveRecord::Base
 		return report_data
 	
 	end		
+
+	def full_report(deity)
+		vis = visibility(deity)
+		report_data = {}
+		if vis > 0 
+			report_data[:status] = vis.to_s
+			report_data[:name] = name
+			report_data[:primary_terrain] = primary_terrain.report(deity, vis) if primary_terrain
+			report_data[:secondary_terrain] = secondary_terrain.report(deity, vis) if secondary_terrain
+			report_data[:suzerain] = suzerain.report(deity, vis) if suzerain
+			organizations.each_with_index { |org, i| report_data["org#{i}"] = org.report(deity, vis) }
+			populations.each_with_index { |pop, i| report_data["pop#{i}"] = pop.report(deity, vis) }
+			congregations.each_with_index { |con, i| report_data["cong#{i}"] = con.report(deity, vis) }
+			artifacts.each_with_index { |art, i| report_data["art#{i}"] = art.report(deity, vis) }
+		else
+			report_data[:status] = "Unknown"
+		end
+		
+		return report_data
+	end
 
 end

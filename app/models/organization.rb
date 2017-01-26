@@ -63,7 +63,7 @@ class Organization < ActiveRecord::Base
 			name: {difficulty: 40, approximator: "none", field_name:"name", max_datum:nil},
 			description: {difficulty: 40, approximator:"none", field_name:"description", max_datum:nil},
 			is_church: {difficulty: 40, approximiator:"none", field_name:"is_church", max_datum:nil},
-			is_kindgom: {difficulty: 40, approximiator:"none", field_name:"is_kindgom", max_datum:nil},
+			is_kingdom: {difficulty: 40, approximiator:"none", field_name:"is_kingdom", max_datum:nil},
 			leader: {difficulty: 60, approximator:"none", field_name:"leader_name", max_datum:nil},
 			suzerain: {difficulty: 60, approximator:"none", field_name:"suzerain_name", max_datum:nil}
 		}			
