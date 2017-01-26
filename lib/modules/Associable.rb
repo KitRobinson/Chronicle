@@ -118,4 +118,27 @@ module Associable
 		#but for testing purposes:
 		return "does not compute!"
 	end
+
+	def html_report(report)
+		response = "<ul>"
+		report.each do |key, value|
+			if value.class == Hash 
+				response += "<ul>#{html_report(value)}</ul>"
+			else
+				response += "<li>#{key.to_s}: #{value.to_s}</li>"
+			end
+		end
+		response += "</ul>"
+		return response
+	end
+
+	def process_report(report)
+		if value.class == "hash"
+			v = process_report(value)
+		else
+			v = value
+		end
+
+
+	end
 end

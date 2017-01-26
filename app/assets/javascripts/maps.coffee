@@ -13,6 +13,7 @@
 			})
 			.done(function(data) {
 			console.log(data)
+			$("#geo-inf").empty()
 			$("#geo-inf").append(data)
 			})
 		}

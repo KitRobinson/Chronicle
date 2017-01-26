@@ -171,8 +171,22 @@ class Province < ActiveRecord::Base
 		else
 			report_data[:status] = "Unknown"
 		end
-		
+
 		return report_data
+	end
+
+
+	def html_report(report_hash)
+		response = '<ul class="browser-default">'
+		report_hash.each do |key, value|
+			if value.class.to_s == "Hash" 
+				response += "<li>#{key.to_s}</li><li>#{html_report(value)}</li>"
+			else
+				response += "<li>#{key.to_s}: #{value.to_s}</li>"
+			end
+		end
+		response += "</ul>"
+		return response
 	end
 
 end
