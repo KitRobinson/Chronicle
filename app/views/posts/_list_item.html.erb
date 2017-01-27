@@ -1,0 +1,5 @@
+<td><%= @post.user.username %></td>
+<td><a href=<%= "/posts/#{@post.id}"%>><%= @post.title %></a></td>
+<td><%= @post.response_ct_survey - 1 %></td>
+<td><%= @post.created_at %></td>
+<td><%= @post.response_dt_survey %></td>
