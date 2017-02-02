@@ -24,6 +24,7 @@ land_terrains = [ter_forest, ter_mountain, ter_plains, ter_city, ter_swamp]
 ocean_terrain = [ter_ocean, ter_ocean, ter_ocean, ter_forest, ter_plains, ter_swamp, ter_city, ter_mountain]
 
 
+
 	#new Associable method should be applicable to terrains
 
 # terrain_assocs = Association.create([
@@ -203,3 +204,11 @@ p_thebirds = Power.create(name:"The Birds", effect:"Birds attack everybody!", de
 p_thebirds.associate({"Birds" => 6})
 p_test_of_iron = Power.create(name:"The Test of Iron", effect:"Priests of Aule can tell truth or falsehood with burning iron", deity: god_aule)
 p_test_of_iron.associate({"Smithing" => 4, "Justice" => 5})
+
+chat_one = Chat.create()
+
+participation_one = Participation.create()
+participation_one.user = user_kit
+participation_one.chat = chat_one
+
+participation_two = Participation.create(user: user_linas, chat: chat_one)

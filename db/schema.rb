@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125214132) do
+ActiveRecord::Schema.define(version: 20170202040535) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(version: 20170125214132) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "congregations", force: :cascade do |t|
     t.integer  "population_id"
     t.integer  "deity_id"
@@ -120,6 +125,13 @@ ActiveRecord::Schema.define(version: 20170125214132) do
     t.integer  "province_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "populations", force: :cascade do |t|

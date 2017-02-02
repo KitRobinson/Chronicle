@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :participations
+  resources :chats
   resources :organizations_provinces
   resources :powers
   resources :regions
