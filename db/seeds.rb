@@ -190,8 +190,8 @@ user_linas = User.create(username:"Linas", email:"linas@gmail.com", password:"pa
 post_hail = Post.create(user:user_kit, title:"Hail!", content:"Welcome to the game!")
 post_wellmet = Post.create(user:user_linas, title: "Well Met!", content: "pleased to be here!", reference: post_hail)
 
-message_hail = Message.create(user:user_kit, title:"Hail!", content:"Welcome to the game!")
-message_wellmet = Message.create(user:user_linas, title: "Well Met!", content: "pleased to be here!", reference: message_hail)
+message_hail = Message.create(user:user_kit, title:"Hail!", content:"Welcome to the game!", reference_id: 1)
+message_wellmet = Message.create(user:user_linas, title: "Well Met!", content: "pleased to be here!", reference_id: 1)
 
 recip_hail = Recipient.create(message:message_hail, user:user_kit)
 recip_wellmet = Recipient.create(message:message_wellmet, user:user_kit)
