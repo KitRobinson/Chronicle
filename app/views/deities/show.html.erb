@@ -20,5 +20,14 @@
   <%= @deity.description %>
 </p>
 
+<% if @deity.user == current_user %>
+	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+	<textarea name="profile-editor"></textarea>
+	<script>
+		CKEDITOR.replace( 'profile-editor')
+	</script>
+<% end %>
+
 <%= link_to 'Edit', edit_deity_path(@deity) %> |
 <%= link_to 'Back', deities_path %>
