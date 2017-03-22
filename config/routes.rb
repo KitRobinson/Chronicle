@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'maps' => 'maps#main'
 
   get '/provinces/:id/report' => 'provinces#report'
+  put '/deities/:id/update' => 'deities#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

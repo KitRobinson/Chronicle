@@ -1,33 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @deity.name %>
-</p>
+  <h3 class:'deity-name'><%= @deity.name %></h3>
 
-<p>
-  <strong>Actor:</strong>
-  <%= @deity.actor_id %>
-</p>
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 
-<p>
-  <strong>User:</strong>
-  <%= @deity.user_id %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @deity.description %>
-</p>
+<div class='btn btn-success' id='savebtn' disabled='true'>Save</div>
 
 <% if @deity.user == current_user %>
-	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-
-	<textarea name="profile-editor"></textarea>
-	<script>
-		CKEDITOR.replace( 'profile-editor')
-	</script>
+	<textarea name="profile_editor">
+<% else %>
+	<textarea name="profile_editor" disabled>
 <% end %>
+	<% if @deity.proftext == nil %>
+		Please describe your deity here!
+	<% else %>
+		<%=@deity.proftext%>
+	<% end %>
+</textarea>
+
+<script>
+	var profile_editor = CKEDITOR.replace( 'profile_editor' );
+
+	profile_editor.on( 'change', function() {
+		document.getElementById( 'savebtn' ).removeAttribute('disabled');
+		// console.log(document.getElementById('savebtn'))
+		// alert('changed')
+	})
+
+	$("#savebtn").click(function() {
+		var data = { txt: encodeURIComponent(CKEDITOR.instances.profile_editor.getData()) };
+		$.ajax({
+			url: "/deities/3/update",
+			method: "PUT",
+			data: data
+		})
+		.done(function() {
+			document.getElementById( 'savebtn' ).setAttribute("disabled", "true")
+		})
+	});
+
+</script>
 
 <%= link_to 'Edit', edit_deity_path(@deity) %> |
 <%= link_to 'Back', deities_path %>
