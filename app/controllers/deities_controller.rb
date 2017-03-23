@@ -79,6 +79,6 @@ class DeitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deity_params
-      params.require(:deity).permit(:name, :actor_id, :user_id, :description)
+      params.require(:deity).permit(:name, :actor_id, :user_id, :description, :profilepic)
     end
 end

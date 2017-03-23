@@ -32,6 +32,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+#carreirwave for file transfer
+gem 'carrierwave', '~>1.0
+'
+#minimagic for resizing images
+gem 'mini_magick', '~>4.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

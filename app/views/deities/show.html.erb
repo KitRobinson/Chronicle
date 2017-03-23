@@ -7,6 +7,15 @@
 <div class='btn btn-success' id='savebtn' disabled='true'>Save</div>
 
 <% if @deity.user == current_user %>
+	<%= form_for @deity, html: { multipart: true } do |f| %>
+		<div class="field">
+			<%= f.label :profilepic %><br>
+			<%= f.file_field :profilepic %>
+		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
 	<textarea name="profile_editor">
 <% else %>
 	<textarea name="profile_editor" disabled>
@@ -30,7 +39,7 @@
 	$("#savebtn").click(function() {
 		var data = { txt: encodeURIComponent(CKEDITOR.instances.profile_editor.getData()) };
 		$.ajax({
-			url: "/deities/3/update",
+			url: "/deities/<%= @deity.id %>/update",
 			method: "PUT",
 			data: data
 		})
