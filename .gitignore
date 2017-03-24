@@ -16,6 +16,8 @@
 !/log/.keep
 /tmp
 
+/config/*.yml
+
 # Ignore uploaded imagefiles
 /public/uploads
 
