@@ -17,4 +17,10 @@
 //= require jquery.imagemapster.js
 //= require imageMapResizer.min.js
 //= require_tree .
-//= require maps.js
+
+
+$(document).on('turbolinks:load', function() {
+
+	$(".button-collapse").sideNav();
+	
+})
