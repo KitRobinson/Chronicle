@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# this line is to see if pushing drops heroku uploads
+
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
 
