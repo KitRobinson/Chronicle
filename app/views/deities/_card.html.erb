@@ -4,7 +4,7 @@
 			<% if deity.profilepic.file != nil %>
 				<%= link_to image_tag(deity.profilepic.url), "/deities/#{deity.id}" %>
 			<% else %>
-				<%= link_to image_tag("profile-placeholder.png"), "deities/#{deity.id}" %>
+				<%= link_to image_tag("profile-placeholder.png"), "/deities/#{deity.id}" %>
 			<% end %>
 			<!-- <span class='card-title'><%=deity.name%></span> -->
 		</div>

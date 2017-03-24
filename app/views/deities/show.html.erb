@@ -1,22 +1,30 @@
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <p id="notice"><%= notice %></p>
 
-  <h3 class:'deity-name'><%= @deity.name %></h3>
+<div class='row'>
+	  <h3 class='deity-name'><%= @deity.name %></h3>
+		<div class='deity-pic'><%= image_tag @deity.profilepic, id: 'deity-pic', width:'100%'%>
+	<% if @deity.user == current_user %>
+		<%= form_for @deity, html: { multipart: true } do |f| %>
+			<div class="field">
+				<%= f.label :profilepic %><br>
+				<%= f.file_field :profilepic %>
+			</div>
+			<div class="actions">
+				<%= f.submit %>
+			</div>
+		<% end %>
+		</div>
+	<%end%>
+	</div>
+</div>
 
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 
-<div class='btn btn-success' id='savebtn' disabled='true'>Save</div>
 
 <% if @deity.user == current_user %>
-	<%= form_for @deity, html: { multipart: true } do |f| %>
-		<div class="field">
-			<%= f.label :profilepic %><br>
-			<%= f.file_field :profilepic %>
-		</div>
-		<div class="actions">
-			<%= f.submit %>
-		</div>
-	<% end %>
+	<div class='btn btn-success' id='savebtn' disabled='true'>Save Profile</div>
 	<textarea name="profile_editor">
+	</header>
 <% else %>
 	<textarea name="profile_editor" disabled>
 <% end %>
@@ -27,9 +35,20 @@
 	<% end %>
 </textarea>
 
-<script>
-	var profile_editor = CKEDITOR.replace( 'profile_editor' );
 
+<% if @deity.user == current_user %>
+	<script>
+		var profile_editor = CKEDITOR.replace( 'profile_editor' );
+	</script>
+<% else %>
+	<script>
+		var profile_editor = CKEDITOR.replace( 'profile_editor', {
+			removePlugins: 'toolbar',
+	} );
+	</script>
+<% end %>	
+
+<script>
 	profile_editor.on( 'change', function() {
 		document.getElementById( 'savebtn' ).removeAttribute('disabled');
 		// console.log(document.getElementById('savebtn'))
@@ -47,8 +66,6 @@
 			document.getElementById( 'savebtn' ).setAttribute("disabled", "true")
 		})
 	});
-
 </script>
 
-<%= link_to 'Edit', edit_deity_path(@deity) %> |
 <%= link_to 'Back', deities_path %>
