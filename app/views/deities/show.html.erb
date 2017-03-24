@@ -37,35 +37,47 @@
 
 
 <% if @deity.user == current_user %>
+
 	<script>
-		var profile_editor = CKEDITOR.replace( 'profile_editor' );
+		$(document).on('turbolinks:load', function(){
+
+			var profile_editor = CKEDITOR.replace( 'profile_editor' );
+
+			profile_editor.on( 'change', function() {
+				document.getElementById( 'savebtn' ).removeAttribute('disabled');
+				// console.log(document.getElementById('savebtn'))
+				//alert('changed')
+			})
+
+			$("#savebtn").click(function() {
+				var data = { txt: encodeURIComponent(CKEDITOR.instances.profile_editor.getData()) };
+				$.ajax({
+					url: "/deities/<%= @deity.id %>/update",
+					method: "PUT",
+					data: data
+				})
+				.done(function() {
+					document.getElementById( 'savebtn' ).setAttribute("disabled", "true")
+				})
+			});
+		})
 	</script>
+	
 <% else %>
+
 	<script>
+	$(document).on('turbolinks:load', function(){
 		var profile_editor = CKEDITOR.replace( 'profile_editor', {
 			removePlugins: 'toolbar',
-	} );
+		});
+	})
 	</script>
+
 <% end %>	
 
 <script>
-	profile_editor.on( 'change', function() {
-		document.getElementById( 'savebtn' ).removeAttribute('disabled');
-		// console.log(document.getElementById('savebtn'))
-		// alert('changed')
+	$(document).on('turbolinks:load', function(){
 	})
-
-	$("#savebtn").click(function() {
-		var data = { txt: encodeURIComponent(CKEDITOR.instances.profile_editor.getData()) };
-		$.ajax({
-			url: "/deities/<%= @deity.id %>/update",
-			method: "PUT",
-			data: data
-		})
-		.done(function() {
-			document.getElementById( 'savebtn' ).setAttribute("disabled", "true")
-		})
-	});
 </script>
 
 <%= link_to 'Back', deities_path %>
