@@ -8,6 +8,7 @@ class Deity < ActiveRecord::Base
 	has_many :associations, as: :associable
 	has_many :domains, through: :associations
 	belongs_to :user
+	mount_uploader :profilepic, ProfilePicUploader
 
 	def might
 		self.actor.might if actor

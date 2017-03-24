@@ -40,13 +40,23 @@ class DeitiesController < ApplicationController
   # PATCH/PUT /deities/1
   # PATCH/PUT /deities/1.json
   def update
-    respond_to do |format|
-      if @deity.update(deity_params)
-        format.html { redirect_to @deity, notice: 'Deity was successfully updated.' }
-        format.json { render :show, status: :ok, location: @deity }
+    if request.xhr?
+      puts params
+      if
+        @deity.update(proftext: URI.unescape(params[:txt]))
+        render :edit
       else
-        format.html { render :edit }
-        format.json { render json: @deity.errors, status: :unprocessable_entity }
+      end
+
+    else
+      respond_to do |format|
+        if @deity.update(deity_params)
+          format.html { redirect_to @deity, notice: 'Deity was successfully updated.' }
+          format.json { render :show, status: :ok, location: @deity }
+        else
+          format.html { render :edit }
+          format.json { render json: @deity.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -69,6 +79,6 @@ class DeitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deity_params
-      params.require(:deity).permit(:name, :actor_id, :user_id, :description)
+      params.require(:deity).permit(:name, :actor_id, :user_id, :description, :profilepic)
     end
 end

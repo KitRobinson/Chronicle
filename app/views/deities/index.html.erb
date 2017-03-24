@@ -1,33 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Deities</h1>
+<h1>Deities</h1>
 
-<table>
+<!-- <table class="table table-hover">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
-      <th>Actor</th>
-      <th>User</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th>Message</th>
     </tr>
   </thead>
 
   <tbody>
     <% @deities.each do |deity| %>
       <tr>
+        <td>
+          <% if deity.profilepic.file == nil %>
+          no pic
+          <% else %>
+          <%= image_tag deity.profilepic.url %>
+          <% end %>
+        </td>
         <td><%= deity.name %></td>
-        <td><%= deity.actor_id %></td>
-        <td><%= deity.user_id %></td>
         <td><%= deity.description %></td>
-        <td><%= link_to 'Show', deity %></td>
-        <td><%= link_to 'Edit', edit_deity_path(deity) %></td>
-        <td><%= link_to 'Destroy', deity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>message here</td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
+<div class="row">
+  <% @deities.each do |deity| %>
+    <%= render partial: "card", locals: {deity: deity} %>
+  <% end %>
+</div>
 
-<%= link_to 'New Deity', new_deity_path %>
+

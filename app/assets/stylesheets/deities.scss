@@ -1,3 +1,44 @@
 // Place all the styles related to the Deities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card-title {
+	text-align: center;
+	padding: 10px;
+}
+
+h3{
+	text-align: center;
+}
+
+#deity-info{
+	float:left;
+	width: 55%;
+	vertical-align: top;
+	border: 1px solid red;
+	text-align: center;
+}
+
+.deity-pic{
+	margin: auto;
+	width: 50%;	
+}
+
+//
+//header{
+//	border: 1px solid green;
+//}
+//
+//.edit_deity{
+//	border: 1px solid orange;
+//	float:left;
+//}
+//
+//#savebtn{
+//	float:left;
+//}
+//
+//#profile-editor{
+//	float:bottom;
+//	border: 1px solid purple;
+//}

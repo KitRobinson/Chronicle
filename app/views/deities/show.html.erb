@@ -1,24 +1,83 @@
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @deity.name %>
-</p>
+<div class='row'>
+	  <h3 class='deity-name'><%= @deity.name %></h3>
+		<div class='deity-pic'><%= image_tag @deity.profilepic, id: 'deity-pic', width:'100%'%>
+	<% if @deity.user == current_user %>
+		<%= form_for @deity, html: { multipart: true } do |f| %>
+			<div class="field">
+				<%= f.label :profilepic %><br>
+				<%= f.file_field :profilepic %>
+			</div>
+			<div class="actions">
+				<%= f.submit %>
+			</div>
+		<% end %>
+		</div>
+	<%end%>
+	</div>
+</div>
 
-<p>
-  <strong>Actor:</strong>
-  <%= @deity.actor_id %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @deity.user_id %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @deity.description %>
-</p>
+<% if @deity.user == current_user %>
+	<div class='btn btn-success' id='savebtn' disabled='true'>Save Profile</div>
+	<textarea name="profile_editor">
+	</header>
+<% else %>
+	<textarea name="profile_editor" disabled>
+<% end %>
+	<% if @deity.proftext == nil %>
+		Please describe your deity here!
+	<% else %>
+		<%=@deity.proftext%>
+	<% end %>
+</textarea>
 
-<%= link_to 'Edit', edit_deity_path(@deity) %> |
+
+<% if @deity.user == current_user %>
+
+	<script>
+		$(document).on('turbolinks:load', function(){
+
+			var profile_editor = CKEDITOR.replace( 'profile_editor' );
+
+			profile_editor.on( 'change', function() {
+				document.getElementById( 'savebtn' ).removeAttribute('disabled');
+				// console.log(document.getElementById('savebtn'))
+				//alert('changed')
+			})
+
+			$("#savebtn").click(function() {
+				var data = { txt: encodeURIComponent(CKEDITOR.instances.profile_editor.getData()) };
+				$.ajax({
+					url: "/deities/<%= @deity.id %>/update",
+					method: "PUT",
+					data: data
+				})
+				.done(function() {
+					document.getElementById( 'savebtn' ).setAttribute("disabled", "true")
+				})
+			});
+		})
+	</script>
+	
+<% else %>
+
+	<script>
+	$(document).on('turbolinks:load', function(){
+		var profile_editor = CKEDITOR.replace( 'profile_editor', {
+			removePlugins: 'toolbar',
+		});
+	})
+	</script>
+
+<% end %>	
+
+<script>
+	$(document).on('turbolinks:load', function(){
+	})
+</script>
+
 <%= link_to 'Back', deities_path %>

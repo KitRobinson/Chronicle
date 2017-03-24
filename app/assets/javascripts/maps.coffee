@@ -4,6 +4,7 @@
 
 `$(document).on('turbolinks:load', function(){
 
+
 	$('#ireland-map').mapster({
 		mapKey: 'prov-key',
 		singleSelect: true,
