@@ -1,6 +1,7 @@
 class DeitiesController < ApplicationController
   before_action :set_deity, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorize
   # GET /deities
   # GET /deities.json
   def index

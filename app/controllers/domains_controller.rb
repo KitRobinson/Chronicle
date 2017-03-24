@@ -1,6 +1,7 @@
 class DomainsController < ApplicationController
   before_action :set_domain, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /domains
   # GET /domains.json
   def index

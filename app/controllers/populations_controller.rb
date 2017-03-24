@@ -1,6 +1,7 @@
 class PopulationsController < ApplicationController
   before_action :set_population, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /populations
   # GET /populations.json
   def index

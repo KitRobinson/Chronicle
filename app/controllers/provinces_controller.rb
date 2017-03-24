@@ -1,6 +1,7 @@
 class ProvincesController < ApplicationController
   before_action :set_province, only: [:show, :edit, :update, :destroy, :report]
 
+  before_filter :authorizeAdmin
   # GET /provinces
   # GET /provinces.json
   def index
