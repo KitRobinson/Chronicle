@@ -1,5 +1,6 @@
 class Actor < ActiveRecord::Base
 
+	require 'associable.rb'
 	include Associable
 
 	belongs_to :race
