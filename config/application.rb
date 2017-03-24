@@ -24,6 +24,6 @@ module Palomar
     config.active_record.raise_in_transactional_callbacks = true
 
     #loads the modules in the lib/modules
-    config.autoload_paths += %W(#{config.root}/lib/modules)
+    config.autoload_paths << Rails.root.join('lib/modules')
   end
 end
