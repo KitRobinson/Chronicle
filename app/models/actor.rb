@@ -1,7 +1,7 @@
 class Actor < ActiveRecord::Base
 
-	require '/lib/modules/associable.rb'
-	include Associable
+
+	include '/lib/modules/associable.rb'
 
 	belongs_to :race
 	belongs_to :province
