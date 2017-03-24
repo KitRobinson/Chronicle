@@ -1,6 +1,7 @@
 class PowersController < ApplicationController
   before_action :set_power, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /powers
   # GET /powers.json
   def index

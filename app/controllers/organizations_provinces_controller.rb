@@ -1,6 +1,7 @@
 class OrganizationsProvincesController < ApplicationController
   before_action :set_organizations_province, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /organizations_provinces
   # GET /organizations_provinces.json
   def index

@@ -1,6 +1,7 @@
 class RacesController < ApplicationController
   before_action :set_race, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /races
   # GET /races.json
   def index

@@ -1,6 +1,7 @@
 class RecipientsController < ApplicationController
   before_action :set_recipient, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /recipients
   # GET /recipients.json
   def index

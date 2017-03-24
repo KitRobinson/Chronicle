@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     	redirect_to '/login' unless current_user
   	end
 
+    def authorizeAdmin
+      redirect_to '/login' unless current_user && current_user.access >=3
+    end
+
 end

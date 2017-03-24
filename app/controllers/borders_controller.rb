@@ -1,6 +1,7 @@
 class BordersController < ApplicationController
   before_action :set_border, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /borders
   # GET /borders.json
   def index

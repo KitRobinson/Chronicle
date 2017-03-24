@@ -1,6 +1,7 @@
 class AssociationsController < ApplicationController
   before_action :set_association, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /associations
   # GET /associations.json
   def index

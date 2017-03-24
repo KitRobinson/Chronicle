@@ -1,6 +1,7 @@
 class ArtifactsController < ApplicationController
   before_action :set_artifact, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /artifacts
   # GET /artifacts.json
   def index

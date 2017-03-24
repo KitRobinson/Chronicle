@@ -1,6 +1,7 @@
 class TerrainsController < ApplicationController
   before_action :set_terrain, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /terrains
   # GET /terrains.json
   def index

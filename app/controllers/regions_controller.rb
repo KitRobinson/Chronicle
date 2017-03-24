@@ -1,6 +1,7 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /regions
   # GET /regions.json
   def index

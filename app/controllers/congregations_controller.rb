@@ -1,6 +1,8 @@
 class CongregationsController < ApplicationController
   before_action :set_congregation, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
+  
   # GET /congregations
   # GET /congregations.json
   def index

@@ -1,6 +1,7 @@
 class AttitudesController < ApplicationController
   before_action :set_attitude, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorizeAdmin
   # GET /attitudes
   # GET /attitudes.json
   def index
