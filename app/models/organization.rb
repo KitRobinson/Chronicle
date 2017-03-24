@@ -23,12 +23,12 @@ class Organization < ActiveRecord::Base
 		orgs = Organization.all
 		orgs = orgs - [self]
 		if orgs.length == 0
-			puts "no orgs to introduce #{self.name} to"
+		#	puts "no orgs to introduce #{self.name} to"
 		else
-			puts "starting introduce on #{self.name}"
+		#	puts "starting introduce on #{self.name}"
 		end
 		orgs.each do |org|
-			puts "creating relations between #{org.name} and #{self.name}"
+		#	puts "creating relations between #{org.name} and #{self.name}"
 			a = Attitude.where(organization:org, target:self).first_or_initialize
 			a.update(desired_status:rand(6))
 			b = Attitude.where(organization:self, target:org).first_or_initialize
