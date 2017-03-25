@@ -43,7 +43,7 @@ gem 'bcrypt', '~> 3.1.7'
 #carreirwave for file transfer
 gem 'carrierwave', '~>1.0'
 #and carreirwave direct to send them to S3
-gem 'carreirwave_direct'
+gem 'carrierwave_direct'
 #minimagic for resizing images
 gem 'mini_magick', '~>4.3'
 
