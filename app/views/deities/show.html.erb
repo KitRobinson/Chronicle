@@ -5,7 +5,7 @@
 	  <h3 class='deity-name'><%= @deity.name %></h3>
 		<div class='deity-pic'><%= image_tag @deity.profilepic, id: 'deity-pic', width:'100%'%>
 	<% if @deity.user == current_user %>
-		<%= form_for @deity, html: { multipart: true } do |f| %>
+		<%= form_for @deity, html: { multipart: true, class: "directUpload", data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
 			<div class="field">
 				<%= f.label :profilepic %><br>
 				<%= f.file_field :profilepic %>
