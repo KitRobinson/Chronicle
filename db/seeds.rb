@@ -11,49 +11,92 @@
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
 
-u = User.where(username: '???').first_or_create(username: '???', email: 'arureo@gmail.com', password: 'Aiden', access: 1)
-d = Deity.where(name: '???').first_or_create(name: '???', user: u)
+# u = User.where(username: '???').first_or_create(username: '???', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: '???').first_or_create(name: '???', user: u)
 
-u = User.where(username: 'Dartha').first_or_create(username: 'Dartha', email: 'absrubydev@gmail.com', password: 'Lampshade1', access: 1)
-d = Deity.where(name: 'Dartha').first_or_create(name: 'Dartha', user: u)
+# u = User.where(username: 'Dartha').first_or_create(username: 'Dartha', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Dartha').first_or_create(name: 'Dartha', user: u)
 
-u = User.where(username: 'Ehlisfaire').first_or_create(username: 'Ehlisfaire', email: 'bittiersylph@gmail.con', password: 'LoveYouBabe', access: 1)
-d = Deity.where(name: 'Ehlisfaire').first_or_create(name: 'Ehlisfaire', user: u)
+# u = User.where(username: 'Ehlisfaire').first_or_create(username: 'Ehlisfaire', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Ehlisfaire').first_or_create(name: 'Ehlisfaire', user: u)
 
-u = User.where(username: 'Gawp').first_or_create(username: 'Gawp', email: 'dahiaka@dahiaka.com', password: 'WISDOMOFTHEPOG', access: 1)
-d = Deity.where(name: 'Gawp').first_or_create(name: 'Gawp', user: u)
+# u = User.where(username: 'Gawp').first_or_create(username: 'Gawp', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Gawp').first_or_create(name: 'Gawp', user: u)
 
-u = User.where(username: 'Harkates').first_or_create(username: 'Harkates', email: 'wpatrickwade@gmail.com', password: 'SkogarEncryptsThings', access: 2)
-d = Deity.where(name: 'Harkates').first_or_create(name: 'Harkates', user: u)
+# u = User.where(username: 'Harkates').first_or_create(username: 'Harkates', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Harkates').first_or_create(name: 'Harkates', user: u)
 
-u = User.where(username: 'Krolos').first_or_create(username: 'Krolos', email: 'karldbradley@gmail.com', password: 'WineIsFine', access: 1)
-d = Deity.where(name: 'Krolos').first_or_create(name: 'Krolos', user: u)
+# u = User.where(username: 'Krolos').first_or_create(username: 'Krolos', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Krolos').first_or_create(name: 'Krolos', user: u)
 
-u = User.where(username: 'Larswoha').first_or_create(username: 'Larswoha', email: 'millerandrew.ny@gmail.com', password: 'RatOgre', access: 1)
-d = Deity.where(name: 'Larswoha').first_or_create(name: 'Larswoha', user: u)
+# u = User.where(username: 'Larswoha').first_or_create(username: 'Larswoha', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Larswoha').first_or_create(name: 'Larswoha', user: u)
 
-u = User.where(username: 'Luogh').first_or_create(username: 'Luogh', email: 'xaoschild@gmail.com', password: 'Spear', access: 1)
-d = Deity.where(name: 'Luogh').first_or_create(name: 'Luogh', user: u)
+# u = User.where(username: 'Luogh').first_or_create(username: 'Luogh', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Luogh').first_or_create(name: 'Luogh', user: u)
 
-u = User.where(username: 'Ohm').first_or_create(username: 'Ohm', email: 'maltodextrin@msn.com', password: "Lampshade1", access: 3)
+# u = User.where(username: 'Ohm').first_or_create(username: 'Ohm', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
 
-u = User.where(username: 'Ordwyn').first_or_create(username: 'Ordwyn', email: 'misternadolny@gmail.com', password: 'BossMan', access: 1)
-d = Deity.where(name: 'Ordwyn').first_or_create(name: 'Ordwyn', user: u)
+# u = User.where(username: 'Ordwyn').first_or_create(username: 'Ordwyn', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Ordwyn').first_or_create(name: 'Ordwyn', user: u)
 
-u = User.where(username: 'Oscaro').first_or_create(username: 'Oscaro', email: 'tspencest@gmail.com', password: 'Census2010', access: 1)
-d = Deity.where(name: 'Oscaro').first_or_create(name: 'Oscaro', user: u)
+# u = User.where(username: 'Oscaro').first_or_create(username: 'Oscaro', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Oscaro').first_or_create(name: 'Oscaro', user: u)
 
-u = User.where(username: 'Skaal').first_or_create(username: 'Skaal', email: 'anonymous@notanemail.com', password: 'WISDOMOFTHEPOG', access: 1)
-d = Deity.where(name: 'Skaal').first_or_create(name: 'Skaal', user: u)
+# u = User.where(username: 'Skaal').first_or_create(username: 'Skaal', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Skaal').first_or_create(name: 'Skaal', user: u)
 
-u = User.where(username: 'Ululantibus').first_or_create(username: 'Ululantibus', email: 'jeff.wachall@gmail.com', password: 'LarsPerianderSolon', access: 1)
-d = Deity.where(name: 'Ululantibus').first_or_create(name: 'Ululantibus', user: u)
+# u = User.where(username: 'Ululantibus').first_or_create(username: 'Ululantibus', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Ululantibus').first_or_create(name: 'Ululantibus', user: u)
 
-u = User.where(username: 'Vaniya').first_or_create(username: 'Vaniya', email: 'chickmcgovern@gmail.com', password: 'Lampshade1', access: 1)
-d = Deity.where(name: 'Vaniya').first_or_create(name: 'Vaniya', user: u)
+# u = User.where(username: 'Vaniya').first_or_create(username: 'Vaniya', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Vaniya').first_or_create(name: 'Vaniya', user: u)
 
-u = User.where(username: 'Zephyrus').first_or_create(username: 'Zephyrus', email: 'mmaggio@uchicago.edu', password: 'Vivian', access: 1)
-d = Deity.where(name: 'Zephyrus').first_or_create(name: 'Zephyrus', user: u)
+# u = User.where(username: 'Zephyrus').first_or_create(username: 'Zephyrus', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
+# d = Deity.where(name: 'Zephyrus').first_or_create(name: 'Zephyrus', user: u)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #-------------------------------------------
 # 		   SEEDS FROM TESTING
