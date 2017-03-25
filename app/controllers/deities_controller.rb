@@ -1,6 +1,7 @@
 class DeitiesController < ApplicationController
   before_action :set_deity, only: [:show, :edit, :update, :destroy]
-  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+
+  before_action :set_s3_direct_post, only: [:show, :new, :edit, :create, :update]
 
   before_filter :authorize
   # GET /deities
@@ -82,6 +83,14 @@ class DeitiesController < ApplicationController
 
     def set_s3_direct_post
       @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+      puts "post"
+      p @s3_direct_post
+      puts "fields:"
+      p @s3_direct_post.fields
+      puts "url"
+      p @s3_direct_post.url
+      puts "parsing"
+      p URI.parse(@s3_direct_post.url).host
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def deity_params
