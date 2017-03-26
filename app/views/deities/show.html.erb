@@ -3,7 +3,7 @@
 
 <div class='row'>
 	  <h3 class='deity-name'><%= @deity.name %></h3>
-		<div class='deity-pic'><%= image_tag @deity.profilepic, id: 'deity-pic', width:'100%'%>
+		<div class='deity-pic'><%= image_tag @deity.profilepic, id: 'deity-pic', width:'100%', height:'200px'%>
 	<% if @deity.user == current_user %>
 		<%= form_for @deity, html: { multipart: true } do |f| %>
 			<div class="field">
