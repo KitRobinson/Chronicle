@@ -41,7 +41,7 @@
 	<script>
 		$(document).on('turbolinks:load', function(){
 
-			var profile_editor = CKEDITOR.replace( 'profile_editor', {height = 600} );
+			var profile_editor = CKEDITOR.replace( 'profile_editor', {height: '600px'} );
 
 			profile_editor.on( 'change', function() {
 				document.getElementById( 'savebtn' ).removeAttribute('disabled');
@@ -69,7 +69,7 @@
 	$(document).on('turbolinks:load', function(){
 		var profile_editor = CKEDITOR.replace( 'profile_editor', {
 			removePlugins: 'toolbar',
-			height = 600
+			height : '600px'
 		});
 	})
 	</script>
