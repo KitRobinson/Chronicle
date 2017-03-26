@@ -8,6 +8,31 @@
 
 # this line is to see if pushing drops heroku uploads
 
+
+#---------------------------------------------
+# 		   SEEDS FOR DOMAINS
+
+Domain.where(name: 'Echoes').first_or_create(name: 'Echoes')
+Domain.where(name: 'Cold').first_or_create(name: 'Cold')
+Domain.where(name: 'North Wind').first_or_create(name: 'North Wind')
+Domain.where(name: 'Stars').first_or_create(name: 'Stars')
+Domain.where(name: 'Magic').first_or_create(name: 'Magic')
+Domain.where(name: 'Volcanoes').first_or_create(name: 'Volcanoes')
+Domain.where(name: 'Dirt').first_or_create(name: 'Dirt')
+Domain.where(name: 'Horizons').first_or_create(name: 'Horizons')
+Domain.where(name: 'Darkness').first_or_create(name: 'Darkness')
+Domain.where(name: 'Continuity').first_or_create(name: 'Continuity')
+Domain.where(name: 'Wind').first_or_create(name: 'Wind')
+Domain.where(name: 'Storms').first_or_create(name: 'Storms')
+Domain.where(name: 'Contradictions').first_or_create(name: 'Contradictions')
+Domain.where(name: 'Duality').first_or_create(name: 'Duality')
+
+
+
+
+
+
+
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
 
