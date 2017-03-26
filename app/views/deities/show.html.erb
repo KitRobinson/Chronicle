@@ -3,7 +3,7 @@
 
 	  <h3 class='deity-name'><%= @deity.name %></h3>
 		<div class='deity-pic'>
-			<%= image_tag @deity.profilepic %>
+			<%= image_tag @deity.profilepic, height: '400p', margin: 'auto' %>
 		</div>
 	<% if @deity.user == current_user %>
 		<%= form_for @deity, html: { multipart: true } do |f| %>
