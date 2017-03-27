@@ -40,7 +40,10 @@
 	<script>
 		$(document).on('turbolinks:load', function(){
 
-			var profile_editor = CKEDITOR.replace( 'profile_editor', {height: '600px'} );
+			var profile_editor = CKEDITOR.replace( 'profile_editor', {
+				height: '600px', 
+				allowedContent: 'img[alt,!src]{width,height,float}'
+			});
 
 			profile_editor.on( 'change', function() {
 				document.getElementById( 'savebtn' ).removeAttribute('disabled');
@@ -68,7 +71,8 @@
 	$(document).on('turbolinks:load', function(){
 		var profile_editor = CKEDITOR.replace( 'profile_editor', {
 			removePlugins: 'toolbar',
-			height : '600px'
+			height : '600px',
+			allowedContent: 'img[alt,!src]{width,height,float}'
 		});
 	})
 	</script>
