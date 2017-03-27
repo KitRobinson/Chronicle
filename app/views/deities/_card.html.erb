@@ -2,7 +2,7 @@
 	<div class='card'>
 		<div class="card-image">
 			<% if deity.profilepic.file != nil %>
-				<%= link_to image_tag(deity.profilepic.url, height: "250", object-fit: "contain"), "/deities/#{deity.id}" %>
+				<%= link_to image_tag(deity.profilepic.url, height: "250", styles: "object-fit: contain;"), "/deities/#{deity.id}" %>
 			<% else %>
 				<%= link_to image_tag("profile-placeholder.png", height: "250"), "/deities/#{deity.id}"  %>
 			<% end %>
