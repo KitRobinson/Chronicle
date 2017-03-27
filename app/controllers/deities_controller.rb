@@ -6,7 +6,7 @@ class DeitiesController < ApplicationController
   # GET /deities
   # GET /deities.json
   def index
-    @deities = Deity.all
+    @deities = Deity.all.order('name asc')
   end
 
   # GET /deities/1
