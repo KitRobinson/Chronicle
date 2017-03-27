@@ -2,7 +2,7 @@
 	<div class='card'>
 		<div class="card-image">
 			<% if deity.profilepic.file != nil %>
-				<%= link_to image_tag(deity.profilepic.url), "/deities/#{deity.id}", class: "in-card-pic"  %>
+				<%= link_to (image_tag(deity.profilepic.url, class: "in-card-pic"), "/deities/#{deity.id}" %>
 			<% else %>
 				<%= link_to image_tag("profile-placeholder.png"), "/deities/#{deity.id}", class: "in-card-pic" %>
 			<% end %>
