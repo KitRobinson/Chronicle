@@ -30,3 +30,14 @@ h3{
 	max-height: 200px;
 	max-width: 100%;
 }
+
+.in-card-pic{
+	border: 1px solid green;
+	object-fit: contain;
+	height: 250px;
+}
+
+.card .card-image img{
+	object-fit: contain;
+	height: 250px;
+}
