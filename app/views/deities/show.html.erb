@@ -30,7 +30,7 @@
 	<% if @deity.proftext == nil %>
 		Please describe your deity here!
 	<% else %>
-		<%=@deity.proftext%>
+		<%=raw@deity.proftext%>
 	<% end %>
 </textarea>
 
@@ -75,9 +75,5 @@
 
 <% end %>	
 
-<script>
-	$(document).on('turbolinks:load', function(){
-	})
-</script>
 
 <%= link_to 'Back', deities_path %>
