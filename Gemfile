@@ -6,7 +6,7 @@ ruby '2.2.4'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 #convert to postgresql for heroku deploy
 gem 'pg'
 
