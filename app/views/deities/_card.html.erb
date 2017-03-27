@@ -2,9 +2,9 @@
 	<div class='card'>
 		<div class="card-image">
 			<% if deity.profilepic.file != nil %>
-				<%= link_to image_tag(deity.profilepic.url), "/deities/#{deity.id}" %>
+				<%= link_to image_tag(deity.profilepic.url), "/deities/#{deity.id}", class: "in-card-pic"  %>
 			<% else %>
-				<%= link_to image_tag("profile-placeholder.png"), "/deities/#{deity.id}" %>
+				<%= link_to image_tag("profile-placeholder.png"), "/deities/#{deity.id}", class: "in-card-pic" %>
 			<% end %>
 			<!-- <span class='card-title'><%=deity.name%></span> -->
 		</div>
