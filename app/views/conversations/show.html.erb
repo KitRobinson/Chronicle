@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% @conversation.messages.each do |message| %>
+	<%= render partial: "message", locals: {message: message} %> 
+<% end %>
+
 <%= link_to 'Edit', edit_conversation_path(@conversation) %> |
 <%= link_to 'Back', conversations_path %>

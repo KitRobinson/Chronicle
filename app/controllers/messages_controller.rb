@@ -70,6 +70,6 @@
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def message_params
-        params.require(:message).permit(:user_id, :title, :content, :reference_id)
+        params.require(:message).permit(:user_id, :title, :content, :conversation_id)
       end
   end
