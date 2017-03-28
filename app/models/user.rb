@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
 	has_secure_password
 	has_many :userConversations
 	has_many :conversations, through: :userConversations
+
+	def profilepic
+		pic = Deity.where(user: self).first.profilepic
+		pic ? pic : "profile-placeholder.png"
+	end
 end
