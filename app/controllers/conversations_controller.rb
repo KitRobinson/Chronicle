@@ -26,7 +26,30 @@ class ConversationsController < ApplicationController
   # POST /conversations
   # POST /conversations.json
   def create
+    puts "conversation params"
+    puts "------------------------------"
+    puts conversation_params
+
+    puts "params"
+    puts "------------------------------"
+    puts params
+
+    puts "deities"
+    puts "-------------------------------"
+    puts params["conversation"]["deity"]
+    selected = []
+    params["conversation"]["deity"].each do |name, is_selected|
+      selected << name if is_selected == "1"
+    end
+    puts selected
+    selected_users = []
+    selected.each do |this_name|
+      selected_users << User.where(username: this_name).first
+    end
+    puts selected_users
+
     @conversation = Conversation.new(conversation_params)
+    @conversation.users = selected_users
 
     respond_to do |format|
       if @conversation.save
@@ -72,5 +95,6 @@ class ConversationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def conversation_params
       params.fetch(:conversation, {})
+      params.permit(:conversation, {})      
     end
 end

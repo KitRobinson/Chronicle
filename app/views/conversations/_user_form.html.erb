@@ -1,0 +1,25 @@
+<%= form_for(@conversation) do |f| %>
+  <% if @conversation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conversation.errors.count, "error") %> prohibited this conversation from being saved:</h2>
+
+      <ul>
+      <% @conversation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% Deity.all.each do |deity| %>
+    <%= f.fields_for :deity do |f_dty| %>
+      <%= f_dty.check_box deity.name, class: "deities-check", checked: false %>
+      <%= f_dty.label deity.name %>
+    <% end %>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
