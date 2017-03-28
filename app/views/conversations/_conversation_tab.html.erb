@@ -1,0 +1,5 @@
+<a class="card conversation-bar col s12 m6" href="/conversations/<%=conversation.id%>" >
+	<% conversation.users.each do |user| %>
+		<%= render partial: "user_tag", locals: {user: user} %>
+	<% end %>
+</a>
