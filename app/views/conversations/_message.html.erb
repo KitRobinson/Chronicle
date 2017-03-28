@@ -1,11 +1,13 @@
-<div class="card card-horizontal">
+<div class="card horizontal">
 
 	<div class="card-picture">
-		<%= image_tag(message.user.profilepic) %>
+		<%= image_tag(message.user.profilepic, height: "75", style: "object-fit: contain;") %>
 	</div>
 	
-	<div class="card-content">
-		<%= message.content %>
+	<div class="card-stacked">
+		<div class="card-content">
+			<%= message.content %>
+		</div>
 	</div>
 
 <div>
