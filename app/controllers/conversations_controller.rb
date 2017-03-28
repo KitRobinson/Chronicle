@@ -1,6 +1,8 @@
 class ConversationsController < ApplicationController
   before_action :set_conversation, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorize
+  before_filter :authorizeAdmin, only: [:edit, :update, :destroy]
   # GET /conversations
   # GET /conversations.json
   def index
