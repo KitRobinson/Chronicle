@@ -1,4 +1,4 @@
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
 <p id="notice"><%= notice %></p>
 
 	  <h3 class='deity-name'><%= @deity.name %></h3>
@@ -30,7 +30,7 @@
 	<% if @deity.proftext == nil %>
 		Please describe your deity here!
 	<% else %>
-		<%=@deity.proftext%>
+		<%=raw@deity.proftext%>
 	<% end %>
 </textarea>
 
@@ -40,7 +40,10 @@
 	<script>
 		$(document).on('turbolinks:load', function(){
 
-			var profile_editor = CKEDITOR.replace( 'profile_editor', {height: '600px'} );
+			var profile_editor = CKEDITOR.replace( 'profile_editor', {
+				height: '600px', 
+				allowedContent: 'img[alt,!src]{width,height,float}'
+			});
 
 			profile_editor.on( 'change', function() {
 				document.getElementById( 'savebtn' ).removeAttribute('disabled');
@@ -68,16 +71,13 @@
 	$(document).on('turbolinks:load', function(){
 		var profile_editor = CKEDITOR.replace( 'profile_editor', {
 			removePlugins: 'toolbar',
-			height : '600px'
+			height : '600px',
+			allowedContent: 'img[alt,!src]{width,height,float}'
 		});
 	})
 	</script>
 
 <% end %>	
 
-<script>
-	$(document).on('turbolinks:load', function(){
-	})
-</script>
 
 <%= link_to 'Back', deities_path %>
