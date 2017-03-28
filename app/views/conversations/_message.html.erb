@@ -5,9 +5,17 @@
 	</div>
 	
 	<div class="card-stacked">
+		<div clase="card-content">
+			<span class="sender-name"> From:
+				<%= message.user.username %>
+			</span>
+			<span> At: 
+				<%= message.created_at %>
+			</span>
+		</div>
 		<div class="card-content">
 			<%= message.content %>
 		</div>
 	</div>
 
-<div>
+</div>
