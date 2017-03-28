@@ -26,30 +26,24 @@ class ConversationsController < ApplicationController
   # POST /conversations
   # POST /conversations.json
   def create
-    puts "conversation params"
-    puts "------------------------------"
-    puts conversation_params
-
-    puts "params"
-    puts "------------------------------"
-    puts params
-
-    puts "deities"
-    puts "-------------------------------"
-    puts params["conversation"]["deity"]
+    
+    # get the selected users from the tickbox params
     selected = []
-    params["conversation"]["deity"].each do |name, is_selected|
+    selected_users = []
+    params["conversation"]["user"].each do |name, is_selected|
       selected << name if is_selected == "1"
     end
-    puts selected
-    selected_users = []
     selected.each do |this_name|
       selected_users << User.where(username: this_name).first
     end
-    puts selected_users
 
+    #create the conversation and add the users, and also the originator of the conversation
     @conversation = Conversation.new(conversation_params)
     @conversation.users = selected_users
+    @conversation.users << current_user
+
+    #check to prevent duplicate conversations!
+      #still needs to be done
 
     respond_to do |format|
       if @conversation.save

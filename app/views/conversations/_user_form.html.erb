@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
-  <% Deity.all.each do |deity| %>
-    <%= f.fields_for :deity do |f_dty| %>
-      <%= f_dty.check_box deity.name, class: "deities-check", checked: false %>
-      <%= f_dty.label deity.name %>
+  <% User.all.each do |user| %>
+    <% if user != current_user %>
+      <%= f.fields_for :user do |f_usr| %>
+        <%= f_usr.check_box user.username, class: "users-check", checked: false %>
+        <%= f_usr.label user.username %>
+      <% end %>
     <% end %>
   <% end %>
   
