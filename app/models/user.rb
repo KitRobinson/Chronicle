@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 	has_many :userConversations
 	has_many :conversations, through: :userConversations
 
+	#give access to the current user method sent by the application controller set_current_user class
+	cattr_accessor :current_user
+
 	def profilepic
 		if Deity.where(user: self) != []
 			pic = Deity.where(user: self).first.profilepic

@@ -4,4 +4,10 @@
 			<%= render partial: "user_tag", locals: {user: user} %>
 		<% end %>
 	<% end %>
+	<% m = conversation.check_status %>
+	<% if m > 0 %>
+		<span class="new badge">
+			<%= m %>
+		</span>
+	<% end %>
 </a>
