@@ -1,0 +1,18 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<%= render partial: "new_message_form", locals: {message: Message.new, conversation: @conversation} %>
+
+<% @conversation.messages.reverse.each do |message| %>
+	<%= render partial: "message", locals: {message: message} %> 
+<% end %>
+
+<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
+<%= link_to 'Back', conversations_path %>
+</div>
+
+<script>
+	$(document).on('turbolinks:load', function(){
+		autosize($('textarea'));
+	})
+</script>

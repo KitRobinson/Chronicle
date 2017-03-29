@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   	protect_from_forgery with: :exception
 
+  #this and the set_current_user method provide a way to scope the current user method into other models
+  before_filter :set_current_user
+
 	def current_user
     	@current_user ||= User.find(session[:user_id]) if session[:user_id]
   	end
@@ -14,6 +17,11 @@ class ApplicationController < ActionController::Base
 
     def authorizeAdmin
       redirect_to '/login' unless current_user && current_user.access >=3
+    end
+
+    def set_current_user
+      User.current_user = current_user
+      Conversation.current_user = current_user
     end
 
 end

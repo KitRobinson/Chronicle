@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_conversations
+  resources :conversations
   resources :organizations_provinces
   resources :powers
   resources :regions

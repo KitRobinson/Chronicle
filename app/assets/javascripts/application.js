@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require jquery.imagemapster.js
 //= require imageMapResizer.min.js
+//= require autosize.js
 //= require_tree .
 
 

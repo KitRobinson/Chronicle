@@ -1,0 +1,21 @@
+<div class="card horizontal">
+
+	<div class="card-picture">
+		<%= image_tag(message.user.profilepic, height: "90", width: "90", style: "object-fit: contain;") %>
+	</div>
+	
+	<div class="card-stacked">
+		<div clase="card-content">
+			<span class="sender-name"> From:
+				<%= message.user.username %>
+			</span>
+			<span> At: 
+				<%= message.created_at %>
+			</span>
+		</div>
+		<div class="card-content">
+			<textarea disabled class="boring"><%= message.content %></textarea>
+		</div>
+	</div>
+
+</div>
