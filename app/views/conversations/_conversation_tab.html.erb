@@ -1,0 +1,13 @@
+<a class="card conversation-bar col s12 m6" href="/conversations/<%=conversation.id%>" >
+	<% conversation.users.each do |user| %>
+		<%if user != current_user %>
+			<%= render partial: "user_tag", locals: {user: user} %>
+		<% end %>
+	<% end %>
+	<% m = conversation.check_status %>
+	<% if m > 0 %>
+		<span class="new badge">
+			<%= m %>
+		</span>
+	<% end %>
+</a>

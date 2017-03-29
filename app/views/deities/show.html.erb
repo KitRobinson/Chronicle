@@ -1,9 +1,10 @@
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
 <p id="notice"><%= notice %></p>
 
-<div class='row'>
 	  <h3 class='deity-name'><%= @deity.name %></h3>
-		<div class='deity-pic'><%= image_tag @deity.profilepic, id: 'deity-pic', width:'100%'%>
+		<div class='deity-pic'>
+			<%= image_tag @deity.profilepic, height: '400p', margin: 'auto' %>
+		</div>
 	<% if @deity.user == current_user %>
 		<%= form_for @deity, html: { multipart: true } do |f| %>
 			<div class="field">
@@ -14,10 +15,8 @@
 				<%= f.submit %>
 			</div>
 		<% end %>
-		</div>
 	<%end%>
-	</div>
-</div>
+
 
 
 
@@ -31,7 +30,7 @@
 	<% if @deity.proftext == nil %>
 		Please describe your deity here!
 	<% else %>
-		<%=@deity.proftext%>
+		<%=raw@deity.proftext%>
 	<% end %>
 </textarea>
 
@@ -41,7 +40,10 @@
 	<script>
 		$(document).on('turbolinks:load', function(){
 
-			var profile_editor = CKEDITOR.replace( 'profile_editor' );
+			var profile_editor = CKEDITOR.replace( 'profile_editor', {
+				height: '600px', 
+				allowedContent: 'img[alt,!src]{width,height,float}'
+			});
 
 			profile_editor.on( 'change', function() {
 				document.getElementById( 'savebtn' ).removeAttribute('disabled');
@@ -69,15 +71,13 @@
 	$(document).on('turbolinks:load', function(){
 		var profile_editor = CKEDITOR.replace( 'profile_editor', {
 			removePlugins: 'toolbar',
+			height : '600px',
+			allowedContent: 'img[alt,!src]{width,height,float}'
 		});
 	})
 	</script>
 
 <% end %>	
 
-<script>
-	$(document).on('turbolinks:load', function(){
-	})
-</script>
 
 <%= link_to 'Back', deities_path %>

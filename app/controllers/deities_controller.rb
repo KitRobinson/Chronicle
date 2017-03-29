@@ -6,7 +6,7 @@ class DeitiesController < ApplicationController
   # GET /deities
   # GET /deities.json
   def index
-    @deities = Deity.all
+    @deities = Deity.all.order('name asc')
   end
 
   # GET /deities/1
@@ -81,6 +81,6 @@ class DeitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deity_params
-      params.require(:deity).permit(:name, :actor_id, :user_id, :description, :profilepic)
+      params.require(:deity).permit(:name, :actor_id, :user_id, :description, :profilepic, :proftext)
     end
 end

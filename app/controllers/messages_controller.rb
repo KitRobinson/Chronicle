@@ -2,6 +2,8 @@
     before_action :set_message, only: [:show, :edit, :update, :destroy]
 
     before_filter :authorizeAdmin
+    #, only: [:edit, :update, :destroy, :index, :new, :show]
+    before_filter :authorize
     # GET /messages
     # GET /messages.json
     def index
@@ -29,7 +31,7 @@
 
       respond_to do |format|
         if @message.save
-          format.html { redirect_to @message, notice: 'Message was successfully created.' }
+          format.html { redirect_to @message.conversation, notice: 'Message was successfully created.' }
           format.json { render :show, status: :created, location: @message }
         else
           format.html { render :new }
@@ -70,6 +72,6 @@
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def message_params
-        params.require(:message).permit(:user_id, :title, :content, :reference_id)
+        params.require(:message).permit(:user_id, :title, :content, :conversation_id)
       end
   end
