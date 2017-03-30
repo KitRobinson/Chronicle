@@ -27,6 +27,6 @@ module Palomar
     config.autoload_paths << Rails.root.join('lib/modules')
     config.serve_static_assets = true
     config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
-    config.assets.compile = true
+    #config.assets.compile = true
   end
 end
