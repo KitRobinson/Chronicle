@@ -11,8 +11,9 @@
 		mapKey: 'prov-key',
 		singleSelect: true,
 		onClick: function(e){
+
 			$.ajax({
-			url:$("area[prov-key = " +e.key +"]")[0].href
+			url: $('area[prov-key=' + e.key + ']')[0].href
 			})
 			.done(function(data) {
 			console.log(data)
