@@ -23,6 +23,7 @@ Domain.where(name: 'Wind').first_or_create(name: 'Wind')
 Domain.where(name: 'Storms').first_or_create(name: 'Storms')
 Domain.where(name: 'Contradictions').first_or_create(name: 'Contradictions')
 Domain.where(name: 'Duality').first_or_create(name: 'Duality')
+Domain.where(name: 'Fire').first_or_create(name: 'Fire')
 Domain.where(name: 'OhmSight').first_or_create(name: 'OhmSight')
 
 #---------------------------------------------
@@ -97,6 +98,13 @@ end
 Actor.where(race: r).each do |a|
 	a.update(might: 3, will: 3, subtlety: 3, sagacity: 3, perception: 3, cunning: 3)
 end
+
+# --------------------------------------------
+# 		   SEEDS FOR LEVEL 0 Terrain
+
+#some of these will be permanent, but of course some will not.
+
+#Province.find(1).update(primary_terrain: x, secondary_terrain: x) 
 
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
