@@ -40,11 +40,12 @@ end
 # 		   SEEDS FOR TERRAINS
 
 # ter_forest = Terrain.create(name: "Forest", development_multiplier: 1, difficulty: 3, water: 1)
-Terrain.where(name: "Ocean").first_or_create(name: "Ocean", development_multiplier: 0.8, difficulty: 1, water: 3)
+Terrain.where(name: "Ocean").first_or_create(name: "Ocean", development_multiplier: 0.8, difficulty: 1, water: 4)
 Terrain.where(name: "River").first_or_create(name: "River", development_multiplier: 1.2, difficulty: 1, water: 1)
 
 #this is to be used where Coast is a major terrain - we will define a 'coastal' virtual attribute on the province model for just picking water proximity
 Terrain.where(name: "Coast").first_or_create(name: "Coast", development_multiplier: 1.0, difficulty: 1, water: 2)
+Terrain.where(name: "Freshwater Sea").first_or_create(name: "Freshwater Sea", development_multiplier: 1.2, difficulty: 1, water: 4)
 Terrain.where(name: "Lake").first_or_create(name: "Lake", development_multiplier: 0.8, difficulty: 1, water: 1)
 Terrain.where(name: "Glacier").first_or_create(name: "Glacier", development_multiplier: 0.3, difficulty: 3, water: 0)
 Terrain.where(name: "Dirt").first_or_create(name: "Dirt", development_multiplier: 1, difficulty: 1, water: 0)
@@ -54,8 +55,8 @@ Terrain.where(name: "Mud").first_or_create(name: "Mud", development_multiplier: 
 Terrain.where(name: "Hills").first_or_create(name: "Hills", development_multiplier: 0.9, difficulty: 2, water: 0)
 Terrain.where(name: "Mountains").first_or_create(name: "Mountains", development_multiplier: 0.6, difficulty: 3, water: 0)
 Terrain.where(name: "Protean").first_or_create(name: "Protean", development_multiplier: 1.0, difficulty: 1, water: 1)
-Terrain.where(name: "slliH").first_or_create(name: "sliiH", development_multiplier: 0.9, difficulty: 2, water: 0)
-Terrain.where(name: "sniatnuoM").first_or_create(name: "sniatnuoM", development_multiplier: 0.6, difficulty: 3, water: 0)
+Terrain.where(name: "slliH").first_or_create(name: "sliiH", development_multiplier: 1.1, difficulty: 2, water: 0)
+Terrain.where(name: "sniatnuoM").first_or_create(name: "sniatnuoM", development_multiplier: 1.1, difficulty: 3, water: 0)
 
 #---------------------------------------
 #          SEEDS FOR RACES
