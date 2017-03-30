@@ -57,6 +57,7 @@ Terrain.where(name: "Mountains").first_or_create(name: "Mountains", development_
 Terrain.where(name: "Protean").first_or_create(name: "Protean", development_multiplier: 1.0, difficulty: 1, water: 1)
 Terrain.where(name: "slliH").first_or_create(name: "sliiH", development_multiplier: 1.1, difficulty: 2, water: 0)
 Terrain.where(name: "sniatnuoM").first_or_create(name: "sniatnuoM", development_multiplier: 1.1, difficulty: 3, water: 0)
+Terrain.where(name: "Plateau").first_or_create(name: "Plateau", development_multiplier: 1.0, difficulty: 2, water: 0)
 
 #---------------------------------------
 #          SEEDS FOR RACES
