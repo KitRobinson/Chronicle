@@ -4,13 +4,16 @@
 
 `$(document).on('turbolinks:load', function(){
 
+	// confirmed - this js IS active 3/29
+	// alert("Yes I exist")
 
-	$('#ireland-map').mapster({
+	$('#big-map').mapster({
 		mapKey: 'prov-key',
 		singleSelect: true,
 		onClick: function(e){
+
 			$.ajax({
-			url:$("area[prov-key = " +e.key +"]")[0].href
+			url: $('area[prov-key=' + e.key + ']')[0].href
 			})
 			.done(function(data) {
 			console.log(data)
