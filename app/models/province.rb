@@ -116,4 +116,21 @@ class Province < ActiveRecord::Base
 		return response
 	end
 
+	def coastal?
+		if self.primary_terrain.name == "Coast" || self.secondary_terrain.name == "Coast"
+			return true
+		else
+			get_adjacents.each do |neighbor|
+				if neighbor.water_level > 3
+					return true
+				end
+			end
+		end
+		return false
+	end
+
+	def water_level
+		self.primary_terrain.water + self.secondary_terrain.water
+	end
+
 end
