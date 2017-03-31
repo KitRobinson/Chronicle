@@ -215,7 +215,7 @@ Province.find(104).update(primary_terrain: Terrain.where(name: "Ocean").first, s
 Province.find(105).update(primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first )
 Province.find(106).update(primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first )
 Province.find(63).update(primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first )
-Province.find(46).update(name:"Urd", primary_terrain: Terrain.where(name: "Rocky").first, secondary_terrain: Terrain.where(name: "Plateau").first )
+Province.find(46).update(name:"Urd", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Plateau").first )
 Province.find(15).update(name:"Hide", primary_terrain: Terrain.where(name: "Protean").first, secondary_terrain: Terrain.where(name: "Protean").first )
 Province.find(16).update(name:"Hide", primary_terrain: Terrain.where(name: "Protean").first, secondary_terrain: Terrain.where(name: "Protean").first )
 Province.find(22).update(primary_terrain: Terrain.where(name: "Dirt").first, secondary_terrain: Terrain.where(name: "River").first )
@@ -238,8 +238,8 @@ Province.find(77).update(primary_terrain: Terrain.where(name: "Dirt").first, sec
 Province.find(65).update(primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Rocky").first )
 Province.find(88).update(primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Rocky").first )
 Province.find(30).update(name:"Backvale", primary_terrain: Terrain.where(name: "slliH").first, secondary_terrain: Terrain.where(name: "sniatnuoM").first )
-Province.find(18).update(name:"Windward Res Akhani", primary_terrain: Terrain.where(name: "Wind Carved Mesa").first, secondary_terrain: Terrain.where(name: "Mountains").first )
-Province.find(19).update(name:"Leeward Res Akhani", primary_terrain: Terrain.where(name: "Wind Carved Mesa").first, secondary_terrain: Terrain.where(name: "Mountains").first )
+Province.find(18).update(name:"Windward Resal Akhani", primary_terrain: Terrain.where(name: "Wind Carved Mesa").first, secondary_terrain: Terrain.where(name: "Mountains").first )
+Province.find(19).update(name:"Leeward Resal Akhani", primary_terrain: Terrain.where(name: "Wind Carved Mesa").first, secondary_terrain: Terrain.where(name: "Mountains").first )
 
 
 # --------------------------------------------

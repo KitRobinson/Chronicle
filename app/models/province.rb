@@ -102,7 +102,7 @@ class Province < ActiveRecord::Base
 		return report_data
 	end
 
-
+	# while it is amusing to recursively produce this report based on the nested hashes... its also ugly as sin
 	def html_report(report_hash)
 		response = '<ul class="browser-default">'
 		report_hash.each do |key, value|
@@ -115,6 +115,37 @@ class Province < ActiveRecord::Base
 		response += "</ul>"
 		return response
 	end
+
+	def pretty_html_report(data_hash, section_title, field_name="")
+		# this provides the most basic tree beginning
+		response = '<ul class="collapsible" data-collapsible="expandable">'
+		response += '<li>'
+		response +="<div class='collapsible-header'>#{section_title} #{field_name}</div>"
+		data_hash.each do |item, value|
+			if value.class.to_s == "Hash"
+				#if its a hash, recurse...
+				#first we set up the body
+				response += "<div class='collapsible-body'>"
+				#then we fill it recursively
+				if value["name"]
+					value_name = ": #{value['name']}"
+				else
+					value_name = ""
+				end
+				response += pretty_html_report(value, item.to_s, value_name)
+				#we will close the newly created elements after the iterator
+			else
+				#if its data, add a complete body element
+				response += "<div class='collapsible-body'><span>#{item.to_s}: #{value.to_s}</span></div>"
+			end
+		end
+		response += "</li></ul></div>"
+		#when we have finished the FINAL iteration in THIS recursion, we close again
+	end
+
+	def fill_pretty_html_report
+	end
+
 
 	def coastal?
 		if self.primary_terrain.name == "Coast" || self.secondary_terrain.name == "Coast"
