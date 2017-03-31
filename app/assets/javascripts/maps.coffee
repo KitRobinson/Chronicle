@@ -28,6 +28,18 @@
 		}
 	})
 
+	//these methods resise the map and image mage
+	$('#make-small').bind('click',function() {
+        $('#big-map').mapster('resize', 800, 0, 1000);
+    });
+    $('#make-big').bind('click',function() {
+        $('#big-map').mapster('resize', 4000, 0, 1000);
+    });
+	$('#make-medium').bind('click',function() {
+        $('#big-map').mapster('resize', 1600, 0, 1000);
+    });
+
+
 	//on select of area, retrieve its info (json?)
 	//on mouseover, if none selected, retrieve its info
 	//on tab select, reveal info
