@@ -26,11 +26,20 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  
+
+  #does this route do anything? 
   get 'maps' => 'maps#main'
 
-  get '/provinces/:id/report' => 'provinces#report'
+  #and is this one redundant due to resources?
   put '/deities/:id/update' => 'deities#update'
+
+  #for ajax response requests
+  get '/posts/:id/respond' => 'posts#respond'
+  #for ajax topic creation
+  get '/posts/:id/newtopic' => 'posts#new_topic'
+  #for ajax map report requests
+  get '/provinces/:id/report' => 'provinces#report'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

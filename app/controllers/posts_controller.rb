@@ -22,6 +22,23 @@ class PostsController < ApplicationController
   def edit
   end
 
+  # GET /posts/1/respond
+  def respond
+    @post = Post.new
+    @old_post = Post.find(params[:id])
+    @post.reference_id = @old_post.id
+    @post.user_id = current_user.id
+    @post.title = "re: #{@old_post.title}"
+    render :_response, :layout => false
+  end
+
+  # Get /posts/new_topic
+  def new_topic
+    @post = Post.new
+    @post.user_id = current_user.id
+    render :_new_topic, :layout => false
+  end
+
   # POST /posts
   # POST /posts.json
   def create

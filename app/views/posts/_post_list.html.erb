@@ -1,8 +1,8 @@
-<table class="responsive-table highlight">
+<table class="highlight">
   <thead>
     <tr>
       <th>User</th>
-      <th>Title</th>
+      <th>Subject</th>
       <th>Content</th>
       <th>Responses</th>
       <th>Most Recent</th>
@@ -11,17 +11,16 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
-      <% puts "\n\n\n ---- ref = #{@ref}" %>
-      <% puts "---- post = #{post} \n\n\n" %>
+    <% @posts.sort.reverse.each do |post| %>
       <% if post.reference_id == @ref %>
         <% @lpost = post %>
-        <tr>
-        <%= render "list_item", :layout => false, locals: {post: @lpost} %>
-        </tr>
-        <%end%>
+          <tr class="row-link" dest=<%= "/posts/#{post.id}" %> >
+            <%= render "list_item", :layout => false, locals: {post: @lpost} %>
+          </tr>
+        </a>
+      <%end%>
     <% end %>
   </tbody>
 </table>
 
-<!-- 99723628 -->
+

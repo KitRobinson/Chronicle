@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="container original-post post z-depth-5">
+  <% if @post.reference_id == nil %>
+  <a href="/posts"><strong>Back to Topics</strong></a><br>
+  <% else %>
+  <a href=<%="/posts/#{@post.reference_id}"%>>Back to:<strong><%=@post.reference.title%></strong></a><br>
+  <% end %>
   <strong>User:</strong>
-  <a href="/deities/" <%= @post.user.deities[0].id %>><%=@post.user.deities[0].name%></a>
-</p>
+  <span class="chip user-tag">
+    <%= image_tag(@post.user.profilepic) %>
+    <%= @post.user.username %>
+  </span></br>
 
-<p>
+
   <strong>Title:</strong>
+<textarea disabled class="boring">
   <%= @post.title %>
-</p>
+</textarea>
 
-<p>
   <strong>Content:</strong>
+<textarea disabled class="boring">
   <%= @post.content %>
-</p>
+</textarea>
+</div>
+<div class="container center post response-container"><a class="waves-effect waves-light btn-large responder"><i class="material-icons left">mode_edit</i>Respond</a></div>
+
 
 <p>
 	<strong>Responses:</strong>
@@ -22,5 +33,24 @@
 	<% @ref = @post.id %>
 	<%= render "post_list", :layout => false, locals: {posts: @posts, ref: @ref} %>
 
+<script>
+  $(document).on('turbolinks:load', function(){
+    autosize($('textarea'));
+
+    $(".responder").click(function(){
+      $.ajax({
+        url: '/posts/' + <%=@post.id %> + '/respond'
+      })
+      .done(function(data) {
+        console.log(data)
+        $('.response-container').append(data)
+        autosize($('textarea'));
+        $(".responder").hide()
+        $(".original-post").removeClass("z-depth-5")
+        $(".response-container").addClass("z-depth-5")
+      })
+    })
+  })
+</script>
 
 <%= link_to 'Back', posts_path %>

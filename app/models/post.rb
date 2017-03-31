@@ -3,6 +3,9 @@ class Post < ActiveRecord::Base
 	belongs_to :reference, class_name: "Post"
 	has_many :responses, class_name: "Post", foreign_key: :reference_id
 
+
+	include Comparable
+
 	def response_ct_survey
 		rcount = 1
 		responses.each { |resp| rcount += resp.response_ct_survey} 
@@ -16,6 +19,10 @@ class Post < ActiveRecord::Base
 			lresp = lresp > n ? lresp : n
 		end
 		return lresp
+	end
+
+	def <=>(other)
+		response_dt_survey <=> other.response_dt_survey
 	end
 
 end

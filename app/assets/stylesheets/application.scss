@@ -15,5 +15,14 @@
  *= require_tree .
  */
 
+.boring{
+	border: none;
+}
+
+h2{
+	text-align: center;
+}
+
 @import "materialize"
+
 
