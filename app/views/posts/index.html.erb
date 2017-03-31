@@ -1,9 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<h2>Topics</h2>
+
+<div class="container center post response-container"><a class="waves-effect waves-light btn-large responder"><i class="material-icons left">mode_edit</i>New Topic</a></div>
 
 <%= render "post_list", :layout => false, locals: {posts: @posts, ref: nil} %>
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<script>
+  $(document).on('turbolinks:load', function(){
+  
+    $(".responder").click(function(){
+      $.ajax({
+        url: '/posts/0/newtopic'
+      })
+      .done(function(data) {
+        console.log(data)
+        $('.response-container').append(data)
+        autosize($('textarea'));
+        $(".responder").hide()
+        $(".response-container").addClass("z-depth-5")
+      })
+    })
+  })
+</script>
+
+

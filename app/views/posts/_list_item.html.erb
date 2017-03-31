@@ -1,16 +1,13 @@
 <td><%= @lpost.user.username %></td>
-<td><a href=<%= "/posts/#{@lpost.id}"%>><%= @lpost.title %></a></td>
+<td><%= @lpost.title %></td>
 <% if @lpost.content.length > 100
 	digest = @lpost.content[0..99] + "..."
 else
 	digest = @lpost.content
 end %>
-<td><a href=<%= "/posts/#{@lpost.id}"%>><%= digest %></a></td>
+<td><%= digest %></td>
 <td><%= @lpost.response_ct_survey - 1 %></td>
-<td><%= @lpost.created_at %></td>
 <td><%= @lpost.response_dt_survey %></td>
-<% puts "\n\n\n\n post is..." %>
-<% puts @post if @post %>
-<% puts "\n\n\n\n lpost is..." %>
-<% puts @lpost if @lpost %>
+<td><%= @lpost.created_at %></td>
+
 
