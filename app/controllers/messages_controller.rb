@@ -1,8 +1,7 @@
   class MessagesController < ApplicationController
     before_action :set_message, only: [:show, :edit, :update, :destroy]
 
-    before_filter :authorizeAdmin
-    #, only: [:edit, :update, :destroy, :index, :new, :show]
+    before_filter :authorizeAdmin, only: [:edit, :update, :destroy, :index, :new, :show]
     before_filter :authorize
     # GET /messages
     # GET /messages.json
