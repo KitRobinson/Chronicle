@@ -4,7 +4,7 @@
 
 `$(document).on('turbolinks:load', function(){
 
-	// confirmed - this js IS active 3/29
+	// confirmed - this js IS active, though it may require local recompiling if not being read on remote server.
 	// alert("Yes I exist")
 
 	$('#big-map').mapster({
@@ -19,6 +19,11 @@
 			console.log(data)
 			$("#geo-inf").empty()
 			$("#geo-inf").append(data)
+
+			//activate the collapsible areas once they are put on the screen?
+			$('.collapsible').collapsible({
+				expandable : true
+				});
 			})
 		}
 	})
