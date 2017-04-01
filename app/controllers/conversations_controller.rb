@@ -96,7 +96,7 @@ class ConversationsController < ApplicationController
     def set_visit
       conv_id = params[:id]
       j = UserConversation.where(conversation_id: conv_id, user: current_user).first
-      j.update(last_visit: DateTime.now)
+      j.update(last_visit: DateTime.now) if j
     end
 
 end
