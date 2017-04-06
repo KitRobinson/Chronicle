@@ -24,7 +24,9 @@
  -->
 <row>
   <% current_user.conversations.each do |conversation| %>
-    <%= render partial: "conversation_tab", locals: {conversation: conversation} %>
+    <% if !conversation.is_empty? %>
+      <%= render partial: "conversation_tab", locals: {conversation: conversation} %>
+    <% end %>
   <% end %>
 </row>
 
@@ -33,7 +35,9 @@
 <% if current_user.access == 3 %>
   <div class="container">
     <% Conversation.all.each do |conversation| %>
-      <%= render partial: "conversation_tab", locals: {conversation: conversation} %>
+      <% if !conversation.is_empty? %>
+        <%= render partial: "conversation_tab", locals: {conversation: conversation} %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

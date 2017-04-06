@@ -49,4 +49,21 @@ class Conversation < ActiveRecord::Base
 		others_messages_since(t)
 	end
 
+	def is_empty?
+
+		if self.messages == []
+			puts "---------------------------"
+			puts "is empty!"
+			puts "---------------------------"
+			return true
+		else
+			puts "---------------------------"
+			puts "is not empty"
+			puts "--------------------------"
+			puts "and messages is "
+			puts self.messages
+			return false
+		end
+	end
+
 end
