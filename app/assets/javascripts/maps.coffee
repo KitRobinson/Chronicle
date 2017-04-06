@@ -30,7 +30,7 @@
 
 	//these methods resise the map and image mage
 	$('#make-small').bind('click',function() {
-        $('#big-map').mapster('resize', 800, 0, 1000);
+        $('#big-map').mapster('resize', 600, 0, 1000);
     });
     $('#make-big').bind('click',function() {
         $('#big-map').mapster('resize', 4000, 0, 1000);

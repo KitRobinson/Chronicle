@@ -3,6 +3,7 @@ class ConversationsController < ApplicationController
 
   before_filter :authorize
   before_filter :authorizeAdmin, only: [:edit, :update, :destroy]
+  before_filter(:only => [:show]) { |c| c.authorizeProper(Conversation.find(params[:id]).users) }
   before_filter :set_visit, only: [:show]
   # GET /conversations
   # GET /conversations.json
@@ -96,7 +97,7 @@ class ConversationsController < ApplicationController
     def set_visit
       conv_id = params[:id]
       j = UserConversation.where(conversation_id: conv_id, user: current_user).first
-      j.update(last_visit: DateTime.now)
+      j.update(last_visit: DateTime.now) if j
     end
 
 end

@@ -3,7 +3,8 @@
 
 <%= render partial: "new_message_form", locals: {message: Message.new, conversation: @conversation} %>
 
-<% @conversation.messages.reverse.each do |message| %>
+<% @msgs = @conversation.messages.sort_by { |message| message.created_at } %>
+<% @msgs.reverse.each do |message| %>
 	<%= render partial: "message", locals: {message: message} %> 
 <% end %>
 
