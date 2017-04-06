@@ -3,6 +3,7 @@ class ConversationsController < ApplicationController
 
   before_filter :authorize
   before_filter :authorizeAdmin, only: [:edit, :update, :destroy]
+  before_filter(:only => [:show]) { |c| c.authorizeProper(Conversation.find(params[:id]).users) }
   before_filter :set_visit, only: [:show]
   # GET /conversations
   # GET /conversations.json
