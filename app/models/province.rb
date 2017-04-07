@@ -86,9 +86,11 @@ class Province < ActiveRecord::Base
 		vis = visibility(deity)
 		report_data = {}
 		if vis > 0 
-			report_data[:status] = vis.to_s
+			report_data[:visibility] = vis.to_s
 			report_data[:name] = name
-			report_data[:primary_terrain] = primary_terrain.report(deity, vis) if primary_terrain
+			report_data[:volcanism] = volcanism
+			report_data[:leyline_strength] = leyline_strength
+			report_data["Primary Terrain"] = primary_terrain.report(deity, vis) if primary_terrain
 			report_data[:secondary_terrain] = secondary_terrain.report(deity, vis) if secondary_terrain
 			report_data[:suzerain] = suzerain.report(deity, vis) if suzerain
 			organizations.each_with_index { |org, i| report_data["org#{i}"] = org.report(deity, vis) }
@@ -96,7 +98,7 @@ class Province < ActiveRecord::Base
 			congregations.each_with_index { |con, i| report_data["cong#{i}"] = con.report(deity, vis) }
 			artifacts.each_with_index { |art, i| report_data["art#{i}"] = art.report(deity, vis) }
 		else
-			report_data[:status] = "Unknown"
+			report_data[:visisiblity] = "Unknown"
 		end
 
 		return report_data
