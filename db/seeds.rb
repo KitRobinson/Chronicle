@@ -25,6 +25,14 @@ Domain.where(name: 'Contradictions').first_or_create(name: 'Contradictions')
 Domain.where(name: 'Duality').first_or_create(name: 'Duality')
 Domain.where(name: 'Fire').first_or_create(name: 'Fire')
 Domain.where(name: 'OhmSight').first_or_create(name: 'OhmSight')
+# phase 2 domains
+Domain.where(name: 'Life').first_or_create(name: 'Life')
+Domain.where(name: 'Arctic Beasts').first_or_create(name: 'Arctic Beasts')
+Domain.where(name: 'Magical Beasts').first_or_create(name: 'Magical Beasts')
+Domain.where(name: 'Nature').first_or_create(name: 'Nature')
+Domain.where(name: 'Love').first_or_create(name: 'Love')
+# more phase 2 domains required!
+
 
 #---------------------------------------------
 #          SEEDS FOR PROVINCES
@@ -77,6 +85,7 @@ Race.where(name: "Alohm").first_or_create(name:"Alohm", description:"The Alohm a
 Race.where(name: "Human").first_or_create(name:"Human", description:"Humans are dull and normal", longevity:3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
 Race.where(name: "Goblin").first_or_create(name:"Goblin", description:"Goblins are weak, sneaky, and fecund", longevity:2, fecundity: 4, might: 2, will: 2, cunning: 4, subtlety: 4, perception: 3, sagacity: 2, scale: 1)
 Race.where(name: "Elf").first_or_create(name:"Elf", description:"Elves spend their long lives in harmony with nature", longevity: 5, fecundity: 2, might: 3, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
+Race.where(name: "Snow-Elf").first_or_create(name:"Snow-Elf", description:"Snow Elves are like elves, but snowy", longevity: 6, fecundity: 0, might: 4, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
 Race.where(name: "Wyveryn").first_or_create(name:"Wyveryn", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
 Race.where(name: "Monster").first_or_create(name:"Monster", description:"A catch all term for great beasts", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 3)
 Race.where(name: "Titan").first_or_create(name:"Titan", description: "A catch all term for VERY great beings", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 5)
