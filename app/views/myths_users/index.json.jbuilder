@@ -1,0 +1,1 @@
+json.array! @myths_users, partial: 'myths_users/myths_user', as: :myths_user

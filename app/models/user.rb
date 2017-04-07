@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
 	has_secure_password
 	has_many :userConversations
 	has_many :conversations, through: :userConversations
-
+	has_many :mythsUsers
+	has_many :myths, through: :mythsUsers
+	
 	#give access to the current user method sent by the application controller set_current_user class
 	cattr_accessor :current_user
 
