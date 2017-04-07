@@ -1,6 +1,9 @@
 class MythsUsersController < ApplicationController
   before_action :set_myths_user, only: [:show, :edit, :update, :destroy]
 
+  #nobody else should require this, as these routes are controlled through the myths controller
+  before_filter :authorizeAdmin
+
   # GET /myths_users
   # GET /myths_users.json
   def index

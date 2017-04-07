@@ -1,6 +1,9 @@
 class MythsController < ApplicationController
   before_action :set_myth, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorize
+  before_filter :authorize_author, only: [:update, :destroy]
+
   # GET /myths
   # GET /myths.json
   def index
@@ -26,8 +29,10 @@ class MythsController < ApplicationController
   def create
     @myth = Myth.new(myth_params)
 
+
     respond_to do |format|
       if @myth.save
+        @myth.mythsUsers << MythsUser.create(user: current_user, access_level: 2)
         format.html { redirect_to @myth, notice: 'Myth was successfully created.' }
         format.json { render :show, status: :created, location: @myth }
       else
@@ -70,5 +75,24 @@ class MythsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def myth_params
       params.require(:myth).permit(:myth_pic, :title, :content)
+    end
+
+    # only the author is permitted certain actions
+    def user_access
+
+      usr = MythsUser.where(user: current_user, myth: self).first
+      if usr
+        usr.access
+      else
+        0
+      end
+    end
+
+    def authorize_author
+      redirect_to '/login' unless user_access > 1 || current_user.access == 3
+    end
+
+    def authorize_collaborator
+      redirect_to '/login' unless user_access > 0 || current_user.access == 3
     end
 end
