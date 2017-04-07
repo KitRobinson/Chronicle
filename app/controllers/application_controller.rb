@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
   def set_current_user
     User.current_user = current_user
     Conversation.current_user = current_user
+    Myth.current_user = current_user
   end
 
   def authorizeProper(allowed_users)

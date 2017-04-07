@@ -2,7 +2,8 @@ class MythsController < ApplicationController
   before_action :set_myth, only: [:show, :edit, :update, :destroy]
 
   before_filter :authorize
-  before_filter :authorize_author, only: [:update, :destroy]
+  before_filter :authorize_collaborator, only: [:update]
+  before_filter :authorize_author, only: [:destroy]
 
   # GET /myths
   # GET /myths.json
@@ -45,13 +46,19 @@ class MythsController < ApplicationController
   # PATCH/PUT /myths/1
   # PATCH/PUT /myths/1.json
   def update
-    respond_to do |format|
-      if @myth.update(myth_params)
-        format.html { redirect_to @myth, notice: 'Myth was successfully updated.' }
-        format.json { render :show, status: :ok, location: @myth }
-      else
-        format.html { render :edit }
-        format.json { render json: @myth.errors, status: :unprocessable_entity }
+    if request.xhr?
+      if @myth.update(content: URI.unescape(params[:txt]))
+        render :show
+      end
+    else
+      respond_to do |format|
+        if @myth.update(myth_params)
+          format.html { redirect_to @myth, notice: 'Myth was successfully updated.' }
+          format.json { render :show, status: :ok, location: @myth }
+        else
+          format.html { render :edit }
+          format.json { render json: @myth.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -66,6 +73,16 @@ class MythsController < ApplicationController
     end
   end
 
+  def user_access
+  puts "checking user access via controller"
+    usr = MythsUser.where(user: current_user, myth_id: params[:id]).first
+      if usr
+        usr.access_level
+      else
+        0
+      end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_myth
@@ -78,20 +95,12 @@ class MythsController < ApplicationController
     end
 
     # only the author is permitted certain actions
-    def user_access
-      usr = MythsUser.where(user: current_user, myth: self).first
-      if usr
-        usr.access
-      else
-        0
-      end
-    end
 
     def authorize_author
-      redirect_to '/login' unless user_access > 1 || current_user.access == 3
+      redirect_to '/login' unless self.user_access > 1 || current_user.access == 3
     end
 
     def authorize_collaborator
-      redirect_to '/login' unless user_access > 0 || current_user.access == 3
+      redirect_to '/login' unless self.user_access > 0 || current_user.access == 3
     end
 end

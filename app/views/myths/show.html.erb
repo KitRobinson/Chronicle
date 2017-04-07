@@ -1,19 +1,56 @@
+<script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Myth pic:</strong>
-  <%= image_tag @myth.myth_pic, height: '400p', margin: 'auto' %>
-</p>
+<div class="row">
+	
+	<div class="col s4 myth-info">
+  		<%= image_tag @myth.myth_pic, width: '100%', margin: 'auto' %>
+	</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @myth.title %>
-</p>
+	<div class="col s8 myth-content">
+		<h3 class="center">		  
+		  <%= @myth.title %>
+		</h3>
+		<% if @myth.user_access > 0 || current_user.access == 3 %>
+		<div class='btn btn-success' id='savebtn' disabled='true'>Save Myth</div>
+			<textarea name="myth_editor" id="myth_editor">
+			  <%= @myth.content %>
+			</textarea>
+		<% else %>
+			<textarea name="myth_editor" disabled>
+			  <%= raw@myth.content %>
+			</textarea>
+		<% end %>
+	</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @myth.content %>
-</p>
+</row>
 
-<%= link_to 'Edit', edit_myth_path(@myth) %> |
-<%= link_to 'Back', myths_path %>
+<% if @myth.user_access > 0 || current_user.access == 3 %>
+	
+	<script>
+		$(document).on('turbolinks:load', function(){
+
+			autosize($('textarea'));
+
+			$("#myth_editor").on( 'change', function() {
+				document.getElementById( 'savebtn' ).removeAttribute('disabled');
+				// console.log(document.getElementById('savebtn'))
+				//alert('changed')
+			})
+
+			$("#savebtn").click(function() {
+				var data = { txt: $("#myth_editor").val() };
+				$.ajax({
+					url: "/myths/<%= @myth.id %>",
+					method: "PUT",
+					data: data
+				})
+				.done(function() {
+					document.getElementById( 'savebtn' ).setAttribute("disabled", "true")
+				})
+			});
+		})
+	</script>
+
+<% end %>
