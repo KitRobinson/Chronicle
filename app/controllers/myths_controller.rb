@@ -79,7 +79,6 @@ class MythsController < ApplicationController
 
     # only the author is permitted certain actions
     def user_access
-
       usr = MythsUser.where(user: current_user, myth: self).first
       if usr
         usr.access
