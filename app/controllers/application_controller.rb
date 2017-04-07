@@ -19,9 +19,11 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user && current_user.access >=3
   end
 
+  #pass current user method to be usable in other controllers
   def set_current_user
     User.current_user = current_user
     Conversation.current_user = current_user
+    Myth.current_user = current_user
   end
 
   def authorizeProper(allowed_users)

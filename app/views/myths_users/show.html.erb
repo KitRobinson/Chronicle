@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @myths_user.user_id %>
+</p>
+
+<p>
+  <strong>Myth:</strong>
+  <%= @myths_user.myth_id %>
+</p>
+
+<p>
+  <strong>Access level:</strong>
+  <%= @myths_user.access_level %>
+</p>
+
+<%= link_to 'Edit', edit_myths_user_path(@myths_user) %> |
+<%= link_to 'Back', myths_users_path %>

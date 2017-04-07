@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Myths</h1>
+<%= link_to 'New Myth', new_myth_path %>
+
+<div class="row">
+  <% @myths.each do |myth| %>
+    <%= render partial: "myth_card", locals: {myth: myth} %>
+  <% end %>
+</div>
+

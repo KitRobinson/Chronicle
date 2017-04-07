@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :myths_users
+  resources :myths
   resources :user_conversations
   resources :conversations
   resources :organizations_provinces

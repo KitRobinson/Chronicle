@@ -86,17 +86,23 @@ class Province < ActiveRecord::Base
 		vis = visibility(deity)
 		report_data = {}
 		if vis > 0 
-			report_data[:status] = vis.to_s
+			report_data[:visibility] = vis.to_s
 			report_data[:name] = name
-			report_data[:primary_terrain] = primary_terrain.report(deity, vis) if primary_terrain
-			report_data[:secondary_terrain] = secondary_terrain.report(deity, vis) if secondary_terrain
+
+			# - we may want to set a visibility constraint on the knowledge of volcanism
+			report_data[:volcanism] = volcanism
+			# - we may want to set a visibility constraint on the knowledge of leyline_strength
+			report_data[:leyline_strength] = leyline_strength
+
+			report_data["Primary Terrain"] = primary_terrain.report(deity, vis) if primary_terrain
+			report_data["Secondary Terrain"] = secondary_terrain.report(deity, vis) if secondary_terrain
 			report_data[:suzerain] = suzerain.report(deity, vis) if suzerain
 			organizations.each_with_index { |org, i| report_data["org#{i}"] = org.report(deity, vis) }
 			populations.each_with_index { |pop, i| report_data["pop#{i}"] = pop.report(deity, vis) }
 			congregations.each_with_index { |con, i| report_data["cong#{i}"] = con.report(deity, vis) }
 			artifacts.each_with_index { |art, i| report_data["art#{i}"] = art.report(deity, vis) }
 		else
-			report_data[:status] = "Unknown"
+			report_data[:visisiblity] = "Unknown"
 		end
 
 		return report_data
@@ -162,6 +168,13 @@ class Province < ActiveRecord::Base
 
 	def water_level
 		self.primary_terrain.water + self.secondary_terrain.water
+	end
+
+	def is_ocean?
+		if water_level > 3
+			return true
+		end
+		false
 	end
 
 end

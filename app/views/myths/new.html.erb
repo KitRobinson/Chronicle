@@ -1,0 +1,12 @@
+<h1>New Myth</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', myths_path %>
+
+
+<script>
+	$(document).on('turbolinks:load', function(){
+		autosize($('textarea'));
+	})
+</script>
