@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407041221) do
+ActiveRecord::Schema.define(version: 20170407052028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,7 +169,7 @@ ActiveRecord::Schema.define(version: 20170407041221) do
     t.integer  "primary_terrain_id"
     t.integer  "secondary_terrain_id"
     t.integer  "region_id"
-    t.integer  "vocanism"
+    t.integer  "volcanism"
     t.integer  "leyline_strength"
   end
 
