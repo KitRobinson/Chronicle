@@ -31,8 +31,6 @@
 	<script>
 		$(document).on('turbolinks:load', function(){
 
-			autosize($('textarea'));
-
 			$("#myth_editor").on( 'change', function() {
 				document.getElementById( 'savebtn' ).removeAttribute('disabled');
 				// console.log(document.getElementById('savebtn'))
@@ -54,3 +52,11 @@
 	</script>
 
 <% end %>
+
+<script>
+
+	$(document).on('turbolinks:load', function(){
+		autosize($('textarea'));
+	}
+
+</script>
