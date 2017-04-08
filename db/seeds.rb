@@ -133,7 +133,8 @@ for i in 1..125
 	Province.find(i).update(name: temp_name)
 end
 
-Province.find(1).update(name:"The Pirate Isles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:0, leyline_strength: 1)
+
+Province.find(1).update(name:"The Pirate Isles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:0, leyline_strength:1)
 Province.find(2).update(primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:3, leyline_strength:1)
 Province.find(3).update(primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:5, leyline_strength:2)
 Province.find(4).update(primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:5, leyline_strength:0)
@@ -173,7 +174,7 @@ Province.find(37).update(primary_terrain: Terrain.where(name: "Mountains").first
 Province.find(38).update(primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
 Province.find(39).update(primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
 Province.find(40).update(primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
-Province.find(41).update(name:"Thenindriel",primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
+Province.find(41).update(name:"Thenindriel", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
 Province.find(42).update(primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2)
 Province.find(43).update(primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
 Province.find(44).update(name:"Mere of Lagash", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:0)
@@ -245,7 +246,7 @@ Province.find(109).update(primary_terrain: Terrain.where(name: "Glacier").first,
 Province.find(110).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2)
 Province.find(111).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:1)
 Province.find(112).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2)
-Province.find(113).update(name: "Elkholdt", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(113).update(name:"Elkholdt", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
 Province.find(114).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
 Province.find(115).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
 Province.find(116).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
@@ -256,9 +257,8 @@ Province.find(120).update(primary_terrain: Terrain.where(name: "Glacier").first,
 Province.find(121).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
 Province.find(122).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
 Province.find(123).update(primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:0)
-Province.find(124).update(name:"South Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:0)
-Province.find(125).update(name:"North Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:2, leyline_strength:2)
-
+Province.find(124).update(name:"South Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:2)
+Province.find(125).update(name:"North Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:
 
 
 # --------------------------------------------
