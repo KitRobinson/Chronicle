@@ -31,7 +31,7 @@
       respond_to do |format|
         if @message.save
           @message.conversation.users.each do |usr|
-            UpdateMailer.test_email(usr).deliver unless usr == current_user
+            UpdateMailer.message_email(usr, @message).deliver unless usr == current_user
           end
           format.html { redirect_to @message.conversation, notice: 'Message was successfully created.' }
           format.json { render :show, status: :created, location: @message }
