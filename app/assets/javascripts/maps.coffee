@@ -7,14 +7,26 @@
 	// confirmed - this js IS active, though it may require local recompiling if not being read on remote server.
 	// alert("Yes I exist")
 
+	var coloration = {};
+	coloration[1] = '00ff00';
+	coloration[2] = '0000ff';
+	var score = 2;
+
 	$('#big-map').mapster({
 		areas: [
 			{
 				key: 'Province36',
-				fillColor: '00ff00',
+				fillColor: coloration[1],
 				staticState: true,
 				stroke: true
 			},
+			{
+				key: 'Province39',
+				fillColor: coloration[score],
+				staticState: true,
+				stroke: true
+			},
+
 		],
 		mapKey: 'prov-key',
 		singleSelect: true,
