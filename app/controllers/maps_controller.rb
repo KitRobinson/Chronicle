@@ -7,6 +7,25 @@ class MapsController < ApplicationController
 		render 'maps/map.html.erb'
 	end
 
+	def coloration(datum, max_datum)
+		colors = [
+			'FF0000', 
+			'FF3300',
+			'ff6600',
+			'ff9900',
+			'FFCC00', 
+			'FFFF00',
+			'ccff00',
+	 		'99ff00',
+	 		'66ff00',
+			'33ff00',
+			'00FF00'
+		]
+		range = ((datum.to_f/max_datum.to_f)*11.0).floor
+		return colors[range -1]
+
+	end
+
 	def shade
 		puts "shade method is called \n\n\n\n"
 		puts "---------------"
@@ -14,12 +33,12 @@ class MapsController < ApplicationController
 		areaArray = [
 			{
 				key: "Province17",
-				fillColor: "0000ff",
+				fillColor: coloration(1,11),
 				staticState: true
 			},
 			{
 				key: "Province22",
-				fillColor: "00ff00",
+				fillColor: coloration(11,11),
 				staticState: true
 			}
 		]
