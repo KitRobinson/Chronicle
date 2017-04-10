@@ -8,26 +8,29 @@
 	// alert("Yes I exist")
 
 	var coloration = {};
+	coloration[0] = 'ff0000';
 	coloration[1] = '00ff00';
 	coloration[2] = '0000ff';
 	var score = 2;
 
-	$('#big-map').mapster({
-		areas: [
-			{
-				key: 'Province36',
-				fillColor: coloration[1],
-				staticState: true,
-				stroke: true
-			},
-			{
-				key: 'Province39',
-				fillColor: coloration[score],
-				staticState: true,
-				stroke: true
-			},
+	function randomizer(province){
+		return 1;
+	}
 
-		],
+	$('#big-map').mapster({
+		areas: (function(){
+			var provArray = [];
+			for(var i=1;1<126;i++)
+			{
+				provArray.push({
+					key: ("Province" + i),
+					fillColor: coloration[i % 2],
+					staticState: true,
+					stroke: true
+				});
+			}
+			return provArray;
+		})(),
 		mapKey: 'prov-key',
 		singleSelect: true,
 		onClick: function(e){
