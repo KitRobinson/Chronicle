@@ -63,32 +63,32 @@
 	// then unbind and rebind mapster using that as the areas.
 
 	$('#shader-volc').bind('click',function() {
-        //heres the real code
-        //$.ajax({
-        //	url: "/maps/shade",
-        //	data: "volcano",
-        //	})
-		//.done(function(data) {
-		//	areaArray = data;
-		//	$('#big-map').mapster('unbind');
-		//	drawMap(areaArray);
-		//})
+        
+        $.ajax({
+        	url: "/maps/shade",
+        	data: "volcanism",
+        	})
+		.done(function(data) {
+			areaArray = data;
+			$('#big-map').mapster('unbind');
+			drawMap(areaArray);
+		})
 	
 		//heres a sample
-		areaArray = [
-			{
-				key: "Province17",
-				fillColor: coloration[1],
-				staticState: true
-			},
-			{
-				key: "Province19",
-				fillColor: coloration[2],
-				staticState: true
-			}
-		]
-		$('#big-map').mapster('unbind');
-		drawMap(areaArray);
+		//areaArray = [
+		//	{
+		//		key: "Province17",
+		//		fillColor: coloration[1],
+		//		staticState: true
+		//	},
+		//	{
+		//		key: "Province19",
+		//		fillColor: coloration[2],
+		//		staticState: true
+		//	}
+		//]
+		//$('#big-map').mapster('unbind');
+		//drawMap(areaArray);
     });
 
 
