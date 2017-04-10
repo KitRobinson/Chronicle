@@ -11,16 +11,11 @@
 	coloration[0] = 'ff0000';
 	coloration[1] = '00ff00';
 	coloration[2] = '0000ff';
-	var score = 2;
-
-	function randomizer(province){
-		return 1;
-	}
 
 	$('#big-map').mapster({
 		areas: (function(){
 			var provArray = [];
-			for(var i=1;1<126;i++)
+			for(var i=1;i<40;i++)
 			{
 				provArray.push({
 					key: ("Province" + i),
