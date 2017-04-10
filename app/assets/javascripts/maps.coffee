@@ -8,6 +8,14 @@
 	// alert("Yes I exist")
 
 	$('#big-map').mapster({
+		areas: [
+			{
+				key: 'Province36',
+				fillColor: '00ff00',
+				staticState: true,
+				stroke: true
+			},
+		],
 		mapKey: 'prov-key',
 		singleSelect: true,
 		onClick: function(e){
@@ -40,8 +48,6 @@
     });
 
 
-	//on select of area, retrieve its info (json?)
-	//on mouseover, if none selected, retrieve its info
 	//on tab select, reveal info
 
 	//some kind of control bar and masking - multiselect and cannot deselect perhaps?
