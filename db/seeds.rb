@@ -162,7 +162,7 @@ Province.find(26).update(primary_terrain: Terrain.where(name: "Marsh").first, se
 Province.find(27).update(primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2)
 Province.find(28).update(primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:2)
 Province.find(29).update(primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:1)
-Province.find(30).update(name:"Backvale", primary_terrain: Terrain.where(name: "slliH").first, secondary_terrain: Terrain.where(name: "sniatnouM").first, volcanism:0, leyline_strength:2)
+Province.find(30).update(name:"Backvale", primary_terrain: Terrain.where(name: "slliH").first, secondary_terrain: Terrain.where(name: "sniatnuoM").first, volcanism:0, leyline_strength:2)
 Province.find(31).update(primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
 Province.find(32).update(primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:1)
 Province.find(33).update(primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)

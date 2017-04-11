@@ -7,7 +7,7 @@ class MapsController < ApplicationController
 		render 'maps/map.html.erb'
 	end
 
-	def coloration(datum, max_datum)
+	def coloration(datum, max_datum, pattern="standard")
 		colors = [
 			'FF0000', 
 			'FF3300',
@@ -22,6 +22,9 @@ class MapsController < ApplicationController
 			'00FF00'
 		]
 		range = ((datum.to_f/max_datum.to_f)*11.0).floor
+		if pattern == "inverse"
+			return colors[11 - (range-1)]
+		end
 		return colors[range -1]
 
 	end
@@ -30,14 +33,25 @@ class MapsController < ApplicationController
 		puts "shade method is called \n\n\n\n"
 		puts "---------------"
 		puts params
-		max_datum = Province.maximum(params[:criteria])
+		if params[:source] == "property"
+			max_datum = Province.maximum(params[:criteria])
+		elsif params[:source] == "virtual"
+			max_datum = 0
+			Province.all.each do |p|
+				if p.send(params[:criteria]) && p.send(params[:criteria]) > max_datum
+					max_datum = p.send(params[:criteria])
+				end
+			end
+		end
 		areaArray = []
 			Province.all.each do |p|
-				if p[params[:criteria]] && p[params[:criteria]] != 0
+				if p.send(params[:criteria]) && p.send(params[:criteria]) != 0
 					areaArray.push({
 						key: "Province#{p.id}",
-						fillColor: coloration(p[params[:criteria]], max_datum),
-						staticState: true
+						fillColor: coloration(p.send(params[:criteria]), max_datum, params[:pattern]),
+						staticState: true,
+						stroke: true,
+						strokeColor: '000000'
 						})
 				end
 			end

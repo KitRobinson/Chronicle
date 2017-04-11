@@ -8,7 +8,7 @@
 
 	//declare method for binding map with contents of area array
 	function drawMap(areaData){
-		$('#big-map').mapster({
+		$('#small-map').mapster({
 			areas: areaData,
 			mapKey: 'prov-key',
 			singleSelect: true,
@@ -48,15 +48,15 @@
 	//these methods resise the map and image mage
 	$('#make-small').bind('click',function() {
 		event.preventDefault()
-        $('#big-map').mapster('resize', 600, 0, 1000);
+        $('#small-map').mapster('resize', 600, 0, 1000);
     });
     $('#make-big').bind('click',function() {
     	event.preventDefault()
-        $('#big-map').mapster('resize', 4000, 0, 1000);
+        $('#small-map').mapster('resize', 4000, 0, 1000);
     });
 	$('#make-medium').bind('click',function() {
 		event.preventDefault()
-        $('#big-map').mapster('resize', 1600, 0, 1000);
+        $('#small-map').mapster('resize', 1600, 0, 1000);
     });
 
 	//these methods run the various requester buttons
@@ -69,11 +69,11 @@
         event.preventDefault()
         $.ajax({
         	url: "/maps/shade",
-        	data: {criteria: "volcanism"},
+        	data: {criteria: "volcanism", source: "property", pattern:"standard"},
         	})
 		.done(function(data) {
 			areaArray = data;
-			$('#big-map').mapster('unbind');
+			$('#small-map').mapster('unbind');
 			drawMap(areaArray);
 		})
     });
@@ -82,15 +82,40 @@
         event.preventDefault()
         $.ajax({
         	url: "/maps/shade",
-        	data: {criteria: "leyline_strength"},
+        	data: {criteria: "leyline_strength", source: "property", pattern: "standard"},
         	})
 		.done(function(data) {
 			areaArray = data;
-			$('#big-map').mapster('unbind');
+			$('#small-map').mapster('unbind');
 			drawMap(areaArray);
 		})
     });
 
+	$('#shader-difficulty').bind('click',function() {
+        event.preventDefault()
+        $.ajax({
+        	url: "/maps/shade",
+        	data: {criteria: "ter_difficulty", source: "virtual", pattern: "inverse"},
+        	})
+		.done(function(data) {
+			areaArray = data;
+			$('#small-map').mapster('unbind');
+			drawMap(areaArray);
+		})
+    });
+
+	$('#shader-dev-multiplier').bind('click',function() {
+        event.preventDefault()
+        $.ajax({
+        	url: "/maps/shade",
+        	data: {criteria: "dev_multiplier", source: "virtual", pattern: "standard"},
+        	})
+		.done(function(data) {
+			areaArray = data;
+			$('#small-map').mapster('unbind');
+			drawMap(areaArray);
+		})
+    });
 
 	//on tab select, reveal info
 
