@@ -47,12 +47,15 @@
 
 	//these methods resise the map and image mage
 	$('#make-small').bind('click',function() {
+		event.preventDefault()
         $('#big-map').mapster('resize', 600, 0, 1000);
     });
     $('#make-big').bind('click',function() {
+    	event.preventDefault()
         $('#big-map').mapster('resize', 4000, 0, 1000);
     });
 	$('#make-medium').bind('click',function() {
+		event.preventDefault()
         $('#big-map').mapster('resize', 1600, 0, 1000);
     });
 
@@ -63,7 +66,7 @@
 	// then unbind and rebind mapster using that as the areas.
 
 	$('#shader-volc').bind('click',function() {
-        
+        event.preventDefault()
         $.ajax({
         	url: "/maps/shade",
         	data: {criteria: "volcanism"},
@@ -73,22 +76,19 @@
 			$('#big-map').mapster('unbind');
 			drawMap(areaArray);
 		})
-	
-		//heres a sample
-		//areaArray = [
-		//	{
-		//		key: "Province17",
-		//		fillColor: coloration[1],
-		//		staticState: true
-		//	},
-		//	{
-		//		key: "Province19",
-		//		fillColor: coloration[2],
-		//		staticState: true
-		//	}
-		//]
-		//$('#big-map').mapster('unbind');
-		//drawMap(areaArray);
+    });
+
+	$('#shader-leyline').bind('click',function() {
+        event.preventDefault()
+        $.ajax({
+        	url: "/maps/shade",
+        	data: {criteria: "leyline_strength"},
+        	})
+		.done(function(data) {
+			areaArray = data;
+			$('#big-map').mapster('unbind');
+			drawMap(areaArray);
+		})
     });
 
 
