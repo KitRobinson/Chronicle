@@ -30,19 +30,17 @@ class MapsController < ApplicationController
 		puts "shade method is called \n\n\n\n"
 		puts "---------------"
 		puts params
-		areaArray = [
-			{
-				key: "Province17",
-				fillColor: coloration(1,11),
-				staticState: true
-			},
-			{
-				key: "Province22",
-				fillColor: coloration(11,11),
-				staticState: true
-			}
-		]
-
+		max_datum = Province.maximum(params[:criteria])
+		areaArray = []
+			Province.all.each do |p|
+				if p[params[:criteria]] && p[params[:criteria]] != 0
+					areaArray.push({
+						key: "Province#{p.id}",
+						fillColor: coloration(p[params[:criteria]], max_datum),
+						staticState: true
+						})
+				end
+			end
 		render json: areaArray
 	end
 

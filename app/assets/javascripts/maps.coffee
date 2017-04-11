@@ -66,7 +66,7 @@
         
         $.ajax({
         	url: "/maps/shade",
-        	data: "volcanism",
+        	data: {criteria: "volcanism"},
         	})
 		.done(function(data) {
 			areaArray = data;
