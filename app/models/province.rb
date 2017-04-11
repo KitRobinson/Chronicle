@@ -177,4 +177,26 @@ class Province < ActiveRecord::Base
 		false
 	end
 
+	def ter_difficulty
+		d = 0 
+		if self.primary_terrain 
+			d += primary_terrain.difficulty
+		end
+		if self.secondary_terrain
+			d += secondary_terrain.difficulty
+		end
+		return d
+	end
+
+	def dev_multiplier
+		d = 0 
+		if self.primary_terrain 
+			d += primary_terrain.development_multiplier
+		end
+		if self.secondary_terrain
+			d += secondary_terrain.development_multiplier
+		end
+		return d
+	end
+
 end

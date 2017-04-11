@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   #does this route do anything? 
-  get 'maps' => 'maps#main'
+  get '/maps' => 'maps#main'
+  get '/maps/shade' => 'maps#shade'
 
   #and is this one redundant due to resources?
   put '/deities/:id/update' => 'deities#update'

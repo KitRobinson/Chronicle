@@ -1,16 +1,38 @@
 
-<%=render "big_mapping"%>
+<%=render "small_mapping"%>
 
-<a id="make-big" class="zoom-l btn-floating btn-large waves-effect waves-light red">L</a>
+<!-- <a id="make-big" class="zoom-l btn-floating btn-large waves-effect waves-light red">L</a>
 
 <a id="make-medium" class="zoom-m btn-floating btn-large waves-effect waves-light red">M</a>
 
 <a id="make-small" class="zoom-s btn-floating btn-large waves-effect waves-light red">S</a>
 
+<a id="shader-volc" class="shader-volc btn-floating btn-large waves-effect waves-light red">V</a>
+ -->
+<a class='dropdown-button btn' href='#' data-activates='dropdown1' data-beloworigin="true">Map Controls</a>
+
+<ul id='dropdown1' class='dropdown-content nested'>
+    <li><a class='dropdown-button d' href='#' data-activates='dropdown-zooms' data-hover="hover" data-alignment="left">Zoom</a></li>
+    <li><a class='dropdown-button d' href="#" data-activates='dropdown-shades' data-hover="hover" data-alignment='left'>Shade</a></li>
+</ul>
+
+<ul id='dropdown-zooms' class='dropdown-content'>
+    <li><a id="make-large" href="#!">Large</a></li>
+    <li><a id="make-medium" href="#!">Medium</a></li>
+    <li><a id="make-small" href="#!">Small</a></li>
+</ul>
+
+<ul id='dropdown-shades' class='dropdown-content'>
+    <li><a id="shader-volc" href="#!">Volcanism</a></li>
+    <li><a id="shader-leyline" href="#!">Leyline Strength</a></li>
+    <li><a id="shader-difficulty" href="#!">Terrain Difficulty</a></li>
+    <li><a id="shader-dev-multiplier" href="#!">Development Multiplier</a></li>
+</ul>
+
 <div id="map-panel" class="container">
 	<div class="row">
 		<div class="col s9 side-bar">
-			<img src="https://chronicles-of-alohmar.s3.amazonaws.com/uploads/GreenAndAddedVolc.png" id="big-map" alt="big-map", usemap='#big-mapping' >
+			<img src="https://chronicles-of-alohmar.s3.amazonaws.com/uploads/minimap.png" id="small-map" alt="small-map", usemap='#small-mapping' >
 		</div>
 		<div class="col s3 side-bar">
 			<ul id="map-tablist" class="tabs">
