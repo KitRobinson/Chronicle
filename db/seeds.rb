@@ -439,8 +439,8 @@ Population.where(province_id:39,race: Race.where(name: "Elf").first).first_or_cr
 Population.where(province_id:45,race: Race.where(name: "Elf").first).first_or_create(province_id:45, race: Race.where(name:"Elf").first, count:39000)
 Population.where(province_id:30,race: Race.where(name: "Human").first).first_or_create(province_id:30, race: Race.where(name:"Human").first, count: 220000)
 Population.where(province_id:22,race: Race.where(name: "Human").first).first_or_create(province_id:22, race: Race.where(name:"Human").first, count: 120000)
-Population.where(province_id:79,race: Race.where(name: "Human").first).first_or_create(province_id:22, race: Race.where(name:"Human").first, count: 120000)
-Population.where(province_id:22,race: Race.where(name: "Elf").first).first_or_create(province_id:22, race: Race.where(name:"Human").first, count: 43000)
+Population.where(province_id:79,race: Race.where(name: "Human").first).first_or_create(province_id:79, race: Race.where(name:"Human").first, count: 120000)
+Population.where(province_id:79,race: Race.where(name: "Elf").first).first_or_create(province_id:79, race: Race.where(name:"Human").first, count: 43000)
 
 
 # --------------------------------------------
