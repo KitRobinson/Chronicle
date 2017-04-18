@@ -239,7 +239,7 @@ Province.find(51).update(name:"Province #{p_pid}", primary_terrain: Terrain.wher
 p_pid += 1
 Province.find(52).update(name:"New Akatian States", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:3, leyline_strength:2)
 p_pid += 1
-Province.find(53).update(name:"Old Province #{p_pid} States", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:2)
+Province.find(53).update(name:"Old Akatian States", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:2)
 p_pid += 1
 Province.find(54).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:2, leyline_strength:1)
 p_pid += 1
@@ -407,8 +407,8 @@ Population.where(province_id:62,race: Race.where(name: "Human").first).first_or_
 Population.where(province_id:59,race: Race.where(name: "Elf").first).first_or_create(province_id:59, race: Race.where(name:"Elf").first, count:30000)
 Population.where(province_id:57,race: Race.where(name: "Human").first).first_or_create(province_id:57, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:54,race: Race.where(name: "Human").first).first_or_create(province_id:54, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:350000)
-Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:290000)
+Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:290000)
+Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:250000)
 Population.where(province_id:51,race: Race.where(name: "Human").first).first_or_create(province_id:51, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:47,race: Race.where(name: "Human").first).first_or_create(province_id:47, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:46,race: Race.where(name: "Undead").first).first_or_create(province_id:46, race: Race.where(name:"Undead").first, count:180000)

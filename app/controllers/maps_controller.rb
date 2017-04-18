@@ -21,11 +21,11 @@ class MapsController < ApplicationController
 			'33ff00',
 			'00FF00'
 		]
-		range = ((datum.to_f/max_datum.to_f)*11.0).floor
+		range = ((datum.to_f/max_datum.to_f)*10.0).floor
 		if pattern == "inverse"
 			return colors[11 - (range-1)]
 		end
-		return colors[range -1]
+		return colors[range]
 
 	end
 
@@ -55,6 +55,7 @@ class MapsController < ApplicationController
 						})
 				end
 			end
+		puts max_datum
 		render json: areaArray
 	end
 
