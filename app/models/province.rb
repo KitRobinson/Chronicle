@@ -98,7 +98,7 @@ class Province < ActiveRecord::Base
 			report_data["Secondary Terrain"] = secondary_terrain.report(deity, vis) if secondary_terrain
 			report_data[:suzerain] = suzerain.report(deity, vis) if suzerain
 			organizations.each_with_index { |org, i| report_data["org#{i}"] = org.report(deity, vis) }
-			populations.each_with_index { |pop, i| report_data["pop#{i}"] = pop.report(deity, vis) }
+			populations.each_with_index { |pop, i| report_data["#{pop.race.name} population"] = pop.report(deity, vis) }
 			congregations.each_with_index { |con, i| report_data["cong#{i}"] = con.report(deity, vis) }
 			artifacts.each_with_index { |art, i| report_data["art#{i}"] = art.report(deity, vis) }
 		else
@@ -197,6 +197,15 @@ class Province < ActiveRecord::Base
 			d += secondary_terrain.development_multiplier
 		end
 		return d
+	end
+
+	def total_pop
+		p = 0
+		self.populations.each do |pop|
+			puts "adding pop #{pop.id}"
+			p += pop.count
+		end
+		return p
 	end
 
 end
