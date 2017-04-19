@@ -208,4 +208,8 @@ class Province < ActiveRecord::Base
 		return p
 	end
 
+	def assign_to(org)
+		suzerain = org
+	end
+	
 end

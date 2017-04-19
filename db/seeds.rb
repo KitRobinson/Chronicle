@@ -445,7 +445,28 @@ Population.where(province_id:74,race: Race.where(name: "Elf").first).first_or_cr
 Population.where(province_id:63,race: Race.where(name: "Human").first).first_or_create(province_id:63, race: Race.where(name:"Human").first, count: 43000)
 
 
+#---------------------------------------------
+# 			Seedsa for kingdoms
+# org_united_goblin_tribes = Organization.create(name:"United Goblin Tribes", description:"A loose federation of free goblin tribes", is_church:0, is_kingdom:1, leader:act_globrat, governance:"Tribal Federation")
 
+goblin_nation = Organization.where(name: "The Goblin Nation").first_or_create(name: "The Goblin Nation", description:"A matriarchal society of globlins from the Worldbreak mountains", is_kingdom:1, governance:"Tribal Matriarchy")
+Province.find(32).assign_to(goblin_nation)
+Province.find(33).assign_to(goblin_nation)
+Province.find(34).assign_to(goblin_nation)
+Province.find(36).assign_to(goblin_nation)
+Province.find(13).assign_to(goblin_nation)
+ashanti = Organization.where(name: "Ashanti").first_or_create(name:"Ashanti", description:"This enterprising kingdom is used to living on the harsh coastal desert and steep plateaus of the Resal Akhani", is_kingdom:1, governance:"Kingdom")
+Province.find(18).assign_to(ashanti)
+Province.find(19).assign_to(ashanti)
+urd = Organization.where(name: "Urd").first_or_create(name:"Urd", description:"Urd and the four kingdoms... the theocracy of the undead.", is_kingdom:1, governance:"Gerontocracy")
+Province.find(46).assign_to(urd)
+Province.find(34).assign_to(urd)
+Province.find(44).assign_to(urd)
+akatian_cities = Organzation.where(name:"Akatian Free Cities", description:"A loose confedration of tree trading cities", is_kingdom:1, governance:"Squabbling Plutocracy")
+Province.find(52).assign_to(akatian_cities)
+Province.find(53).assign_to(akatian_cities)
+backvale = Organization.where(name:"Loah-Khor", description:"A paradoxical realm, where up is down, and different is the usual", is_kingdom:1, governance:"Unanimous Committee")
+Province.find(30).assign_to(backvale)
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
 
