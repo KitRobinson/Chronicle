@@ -209,7 +209,7 @@ class Province < ActiveRecord::Base
 	end
 
 	def assign_to(org)
-		suzerain = org
+		self.suzerain = org
 		self.save
 	end
 
