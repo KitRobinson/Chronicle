@@ -213,4 +213,12 @@ class Province < ActiveRecord::Base
 		self.save
 	end
 
+	def suzerain_num
+		if self.suzerain
+			self.suzerain.id
+		else
+			nil
+		end
+	end
+
 end
