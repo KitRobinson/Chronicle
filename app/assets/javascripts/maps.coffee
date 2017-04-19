@@ -130,6 +130,18 @@
 		})
     });
 
+	$('#shader-suzerain-num').bind('click',function() {
+        event.preventDefault()
+        $.ajax({
+        	url: "/maps/shade",
+        	data: {criteria: "suzerain_num", source: "virtual", pattern: "varied"},
+        	})
+		.done(function(data) {
+			areaArray = data;
+			$('#small-map').mapster('unbind');
+			drawMap(areaArray);
+		})
+    });
 	//on tab select, reveal info
 
 	//some kind of control bar and masking - multiselect and cannot deselect perhaps?

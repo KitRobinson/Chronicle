@@ -44,6 +44,12 @@ class Organization < ActiveRecord::Base
 		OrganizationsProvince.create(province:prov, organization:self)
 	end
 
+	def conquer(prov)
+		OrganizationsProvince.create(province:prov, organization:self)
+		prov.update(suzerain: self)
+		puts "#{self.name} has conquered #{prov.name}"
+	end
+
 	def spread_region(reg)
 		#spread the organization to an entire region
 		reg.provinces.each {|prov| self.spread(prov)}
