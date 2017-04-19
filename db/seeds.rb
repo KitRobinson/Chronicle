@@ -462,7 +462,7 @@ urd = Organization.where(name: "Urd").first_or_create(name:"Urd", description:"U
 Province.find(46).assign_to(urd)
 Province.find(34).assign_to(urd)
 Province.find(44).assign_to(urd)
-akatian_cities = Organzation.where(name:"Akatian Free Cities", description:"A loose confedration of tree trading cities", is_kingdom:1, governance:"Squabbling Plutocracy")
+akatian_cities = Organization.where(name:"Akatian Free Cities", description:"A loose confedration of tree trading cities", is_kingdom:1, governance:"Squabbling Plutocracy")
 Province.find(52).assign_to(akatian_cities)
 Province.find(53).assign_to(akatian_cities)
 backvale = Organization.where(name:"Loah-Khor", description:"A paradoxical realm, where up is down, and different is the usual", is_kingdom:1, governance:"Unanimous Committee")
