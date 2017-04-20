@@ -13,14 +13,16 @@
 		  <%= @myth.title %>
 		</h3>
 		<% if @myth.user_access > 0 || current_user.access == 3 %>
-		<div class='btn btn-success' id='savebtn' disabled='true'>Save Myth</div>
+			<div class='btn btn-success' id='savebtn' disabled='true'>Save Myth</div>
+			<div class='btn btn-success' id='editbtn'>Edit Myth</div>
 			<textarea name="myth_editor" id="myth_editor">
 			  <%= @myth.content %>
 			</textarea>
+			<div id="myth-view">
+				<%=raw@myth.content %>
+			</div>
 		<% else %>
-			<textarea name="myth_editor" disabled>
 			  <%= raw@myth.content %>
-			</textarea>
 		<% end %>
 	</div>
 
@@ -31,10 +33,18 @@
 	<script>
 		$(document).on('turbolinks:load', function(){
 
+			$("#myth_editor").hide()
+
 			$("#myth_editor").on( 'change', function() {
 				document.getElementById( 'savebtn' ).removeAttribute('disabled');
 				// console.log(document.getElementById('savebtn'))
 				//alert('changed')
+			})
+
+			$('#editbtn').click(function(){
+				$('#myth_editor').show()
+				$('#myth-view').hide()
+
 			})
 
 			$("#savebtn").click(function() {
