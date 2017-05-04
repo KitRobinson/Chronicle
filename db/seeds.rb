@@ -9,6 +9,10 @@
 #---------------------------------------------
 # 		   SEEDS FOR DOMAINS
 
+#phase 0 domains
+Domain.where(name: 'OhmSight').first_or_create(name: 'OhmSight')
+
+#phase 1 domains
 Domain.where(name: 'Echoes').first_or_create(name: 'Echoes')
 Domain.where(name: 'Cold').first_or_create(name: 'Cold')
 Domain.where(name: 'North Wind').first_or_create(name: 'North Wind')
@@ -24,14 +28,47 @@ Domain.where(name: 'Storms').first_or_create(name: 'Storms')
 Domain.where(name: 'Contradictions').first_or_create(name: 'Contradictions')
 Domain.where(name: 'Duality').first_or_create(name: 'Duality')
 Domain.where(name: 'Fire').first_or_create(name: 'Fire')
-Domain.where(name: 'OhmSight').first_or_create(name: 'OhmSight')
+
 # phase 2 domains
+Domain.where(name: 'Renewal').first_or_create(name:'Renewal')
+Domain.where(name: 'Family').first_or_create(name: 'Family')
+Domain.where(name: 'Determination').first_or_create(name: 'Determination')
+Domain.where(name: 'Bindings').first_or_create(name: 'Bindings')
+Domain.where(name: 'Fungus').first_or_create(name: 'Fungus')
+Domain.where(name: 'Nature').first_or_create(name: 'Nature')
+Domain.where(name: 'Naïveté').first_or_create(name: 'Naïveté')
+Domain.where(name: 'Mythical Beasts').first_or_create(name: 'Mythical Beasts')
+Domain.where(name: 'Dragons').first_or_create(name: 'Dragons')
+Domain.where(name: 'Love').first_or_create(name: 'Love')
+Domain.where(name: 'Heritage').first_or_create(name: 'Heritage')
+Domain.where(name: 'Brilliance').first_or_create(name: 'Brilliance')
+Domain.where(name: 'Memory').first_or_create(name: 'Memory')
+Domain.where(name: 'Avians').first_or_create(name: 'Avians')
 Domain.where(name: 'Life').first_or_create(name: 'Life')
 Domain.where(name: 'Arctic Beasts').first_or_create(name: 'Arctic Beasts')
-Domain.where(name: 'Magical Beasts').first_or_create(name: 'Magical Beasts')
-Domain.where(name: 'Nature').first_or_create(name: 'Nature')
-Domain.where(name: 'Love').first_or_create(name: 'Love')
-# more phase 2 domains required!
+Domain.where(name: 'Undead').first_or_create(name: 'Undead')
+Domain.where(name: 'Protection of the Dead').first_or_create(name: 'Protection of the Dead')
+Domain.where(name: 'Fertility').first_or_create(name: 'Fertility')
+#phase 3 domains:
+
+#Domain.where(name: 'Curiosity').first_or_create(name: "Curiosity")
+
+Domain.where(name: 'Language').first_or_create(name: "Language")
+Domain.where(name: 'War').first_or_create(name: "War")
+Domain.where(name: 'Trade').first_or_create(name: "Trade")
+Domain.where(name: 'Engineering').first_or_create(name: "Engineering")
+Domain.where(name: 'Adventure').first_or_create(name: "Adventure")
+Domain.where(name: 'Poverty').first_or_create(name: "Poverty")
+Domain.where(name: 'Prosperity').first_or_create(name: "Prosperity")
+Domain.where(name: 'Moderation').first_or_create(name: "Moderation")
+Domain.where(name: 'Wine').first_or_create(name: "Wine")
+Domain.where(name: 'Poetry').first_or_create(name: "Poetry")
+Domain.where(name: 'Building').first_or_create(name: "Building")
+Domain.where(name: 'Jealousy').first_or_create(name: "Jealousy")
+Domain.where(name: 'Nationalism').first_or_create(name: "Nationalism")
+Domain.where(name: 'Wit').first_or_create(name: "Wit")
+
+
 
 
 #---------------------------------------------
@@ -608,7 +645,7 @@ Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Grundzel").first_or_create(race: Race.where(name: "Alohm").first, name: "Grundzel", might:3,will:3,cunning:3,subtlety:3,sagacity:3,perception:3)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
-puts "added actor #{a.name}"
+
 
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
