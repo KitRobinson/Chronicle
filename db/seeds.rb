@@ -19,15 +19,16 @@ Domain.where(name: 'North Wind').first_or_create(name: 'North Wind')
 Domain.where(name: 'Stars').first_or_create(name: 'Stars')
 Domain.where(name: 'Magic').first_or_create(name: 'Magic')
 Domain.where(name: 'Volcanoes').first_or_create(name: 'Volcanoes')
-Domain.where(name: 'Dirt').first_or_create(name: 'Dirt')
+Domain.where(name: 'Land').first_or_create(name: 'Land')
 Domain.where(name: 'Horizons').first_or_create(name: 'Horizons')
 Domain.where(name: 'Darkness').first_or_create(name: 'Darkness')
 Domain.where(name: 'Continuity').first_or_create(name: 'Continuity')
 Domain.where(name: 'Wind').first_or_create(name: 'Wind')
 Domain.where(name: 'Storms').first_or_create(name: 'Storms')
-Domain.where(name: 'Contradictions').first_or_create(name: 'Contradictions')
-Domain.where(name: 'Duality').first_or_create(name: 'Duality')
+Domain.where(name: 'Paradoxes').first_or_create(name: 'Paradoxes')
 Domain.where(name: 'Fire').first_or_create(name: 'Fire')
+Domain.where(name: 'Shadows').first_or_create(name: "Shadows")
+Domain.where(name: 'Caves').first_or_create(name: 'Caves')
 
 # phase 2 domains
 Domain.where(name: 'Renewal').first_or_create(name:'Renewal')
@@ -67,8 +68,8 @@ Domain.where(name: 'Building').first_or_create(name: "Building")
 Domain.where(name: 'Jealousy').first_or_create(name: "Jealousy")
 Domain.where(name: 'Nationalism').first_or_create(name: "Nationalism")
 Domain.where(name: 'Wit').first_or_create(name: "Wit")
-
-
+Domain.where(name: 'Agriculture').first_or_create(name: "Agriculture")
+Domain.where(name: 'Plunder').first_or_create(name: 'Plunder')
 
 
 #---------------------------------------------
@@ -143,6 +144,8 @@ Deity.all.each do |d|
 	d.associate({"OhmSight" => 100})
 	puts "associated #{d.name}"
 end
+
+
 
 # default all provinces to Protean
 t = Terrain.where(name: "Protean").first
@@ -695,6 +698,93 @@ Deity.where(name: a.name).first.update(actor: a)
 # u = User.where(username: 'Zephyrus').first_or_create(username: 'Zephyrus', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
 # d = Deity.where(name: 'Zephyrus').first_or_create(name: 'Zephyrus', user: u)
 
+# -----------------------------
+#           Deity associations
+d = Deity.where(name: "Lasrwoha").first
+d.associate({"Paradoxes" => 30})
+d.associate({"Language" => 25})
+d.associate({"Memory" => 25})
+d.associate({"Brilliance" => 20})
+d.associate({"Naïveté" => 20})
+
+d = Deity.where(name: "Ululantibus").first
+d.associate({"Echoes" => 10})
+d.associate({"Heritage" => 50})
+d.associate({"Undead" => 20})
+
+d = Deity.where(name: "Ehlisfaire").first
+d.associate({"Love" => 40})
+d.associate({"War" => 50})
+d.associate({"Stars" => 20})
+
+d = Deity.where(name: "Vatharius'Vex").first
+d.associate({"Magic" => 50})
+d.associate({"Dragons" => 20})
+d.associate({"Volcanoes" => 25})
+
+d = Deity.where(name: "Zephyrus").first
+d.associate({"Wind" => 30})
+d.associate({"Storms" => 35})
+d.associate({"Trade" => 30})
+d.associate({"Engineering" => 25})
+
+d = Deity.where(name: "Aleseus").first
+d.associate({"Nature" => 50})
+d.associate({"Adventure" => 25})
+d.associate({"Wit" => 10})
+d.associate({"Mythical Beasts" => 25})
+
+d = Deity.where(name: "Gawp").first
+d.associate({"Land" => 20})
+d.associate({"Fungus" => 10})
+d.associate({"Poverty" => 10})
+
+d = Deity.where(name: "Harkates").first
+d.associate({"Horizons" => 20})
+d.associate({"Bindings" => 40})
+d.associate({"Trade" => 30})
+
+d = Deity.where(name: "Ordwyn").first
+d.associate({"Determination" => 25})
+d.associate({"Prosperity" => 40})
+d.associate({"Moderation" => 30})
+d.associate({"Engineering" => 25})
+
+d = Deity.where(name: "Krolos").first
+d.associate({"Darkness" => 40})
+d.associate({"Wine" => 30})
+d.associate({"Poetry" => 25})
+d.associate({"Avians" => 20})
+
+d = Deity.where(name: "Luogh").first
+d.associate({"Continuity" => 30})
+d.associate({"Family" => 35})
+d.associate({"Building" => 30})
+
+d = Deity.where(name: "Oscaro").first
+d.associate({"Darkness" => 40})
+d.associate({"Renewal" => 40})
+d.associate({"Shadows" => 10})
+
+d = Deity.where(name: "Vaniya").first
+d.associate({"Life" => 50})
+d.associate({"Agriculture" => 40})
+
+d = Deity.where(name: "Dartha").first
+d.associate({"Cold" => 50})
+d.associate({"North Wind" => 10})
+d.associate({"Arctic Beasts" => 20})
+d.associate({"Protection of the Dead" => 20})
+
+d = Deity.where(name: "Grundzel").first
+d.associate({"Fire" => 50})
+d.associate({"Plunder" => 25})
+d.associate({"Caves" => 30})
+
+d = Deity.where(name: "Grita").first
+d.associate({"Jealousy" => 25})
+d.associate({"Fertility" => 35})
+d.associate({"Nationalism" => 30})
 
 
 #-------------------------------------------
