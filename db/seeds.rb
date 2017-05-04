@@ -128,262 +128,344 @@ end
 
 # --------------------------------------------
 # 		   SEEDS FOR LEVEL 0 Terrain
+#---------------------------------------------
+# 			Seedsa for kingdoms
+# org_united_goblin_tribes = Organization.create(name:"United Goblin Tribes", description:"A loose federation of free goblin tribes", is_church:0, is_kingdom:1, leader:act_globrat, governance:"Tribal Federation")
+
+goblin_nation = Organization.where(name: "The Goblin Nation").first_or_create(name: "The Goblin Nation", description:"A matriarchal society of globlins from the Worldbreak mountains", is_kingdom:1, is_church:0, governance:"Tribal Matriarchy")
+# Province.find(32).update(suzerain: goblin_nation)
+# Province.find(33).update(suzerain: goblin_nation)
+# Province.find(37).update(suzerain: goblin_nation)
+# Province.find(13).update(suzerain: goblin_nation)
+ashanti = Organization.where(name: "Ashanti").first_or_create(name:"Ashanti", description:"This enterprising kingdom is used to living on the harsh coastal desert and steep plateaus of the Resal Akhani", is_kingdom:1, is_church:0, governance:"Kingdom")
+# Province.find(18).update(suzerain: ashanti)
+# Province.find(19).update(suzerain: ashanti)
+urd = Organization.where(name: "Urd").first_or_create(name:"Urd", description:"Urd and the four kingdoms... the theocracy of the undead.", is_kingdom:1, is_church:0, governance:"Gerontocracy")
+# Province.find(46).update(suzerain: urd)
+# Province.find(34).update(suzerain: urd)
+# Province.find(44).update(suzerain: urd)
+akatian_cities = Organization.where(name:"Akatian Free Cities").first_or_create(name:"Akatian Free Cities", description:"A loose confedration of tree trading cities", is_kingdom:1, is_church:0, governance:"Squabbling Plutocracy")
+# Province.find(52).update(suzerain: akatian_cities)
+# Province.find(53).update(suzerain: akatian_cities)
+backvale = Organization.where(name:"Loah-Khor").first_or_create(name:"Loah-Khor", description:"A paradoxical realm, where up is down, and different is the usual", is_kingdom:1, is_church:0, governance:"Unanimous Committee")
+# Province.find(30).update(suzerain: backvale)
+# Province.where(name:"Luts").first.update(suzerain: backvale)
+thenindriel = Organization.where(name:"Thenindriel").first_or_create(name:"Thenindriel",description:"An ancient and forested kingdom of the elves", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(39).update(suzerain: thenindriel)
+# Province.find(41).update(suzerain: thenindriel)
+# Province.find(45).update(suzerain: thenindriel)
+wakkalob_tribe= Organization.where(name:"Wakkalob Tribe").first_or_create(name:"Wakkalob Tribe", description:"A disheveled conglomeration of runty gits", is_kingdom:1, is_church:0, governance:"Little to none")
+# Province.find(12).update(suzerain: wakkalob_tribe)
+# Province.find(36).update(suzerain: wakkalob_tribe)
+yat = Organization.where(name:"Yat").first_or_create(name:"Yat", description:"The Yat are a hardy and spiritual people who believe that the natural order must be followed to avoid bad luck.", is_kingdom:1, is_church:0, governance:"Tribal Federation")
+# Province.find(38).update(suzerain: yat)
+ice_tribe = Organization.where(name:"Ice Tribe").first_or_create(name:"Ice Tribe", description: "Savage men who follow the old ways, riding the great Ice Worms to hunt the mammoth, and raid the soft sourthern people", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(113).update(suzerain: ice_tribe)
+# Province.find(114).update(suzerain: ice_tribe)
+chilldale = Organization.where(name:"Chilldale").first_or_create(name:"Chilldale", description: "Simple farming folk, who only wish to be left in peace", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(71).update(suzerain: chilldale)
+roost = Organization.where(name:"Wyveryn Roosts").first_or_create(name:"Wyveryn Roosts", description: "Major stops on the migratory routes of the Wyveryn - though perhaps not technically a kingdom, the borders of the roosts are taken seriously by landbound nations", is_kingdom:1, is_church:0, governance:"Transitory")
+# Province.find(7).update(suzerain: roost)
+# Province.find(11).update(suzerain: roost)
+# Province.find(35).update(suzerain: roost)
+blacktooth = Organization.where(name:"Blacktooth Tribe").first_or_create(name:"Blacktooth Tribe", description: "A primarily anarcho-arsonist community of sneaky backstabbing gits", is_kingdom:1, is_church: 0, governance:"Tribal Matriarchy")
+# Province.find(65).update(suzerain: blacktooth)
+# Province.find(10).update(suzerain: blacktooth)
+sendel = Organization.where(name:"Sendel Empire").first_or_create(name:"Sendel Empire",description: "A young empire, with perhpaps the most organized labor force and army in the world, prone to major land improvement projects", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(62).update(suzerain: sendel)
+# Province.find(81).update(suzerain: sendel)
+qatsaph = Organization.where(name:"Kingdom of Qatsaph").first_or_create(name:"Kingdom of Qatsaph", description: "The poet-king of Qatsaph is traditionally a scholar and follower of Lasrwoha - in Qatsaph learning and innocence are both held in high regard.", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(21).update(suzerain: qatsaph)
+# Province.find(23).update(suzerain: qatsaph)
+# Province.find(24).update(suzerain: qatsaph)
+damoclus = Organization.where(name:"Kingdom of Damoclus").first_or_create(name:"Kingdom of Damoclus", description: "The sailors of damoclus ply their sheltered coast, and the farmers and smallfolk live in peace.  Damoclus is known for its fine wine, fair weather, and lovely pearls", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(20).update(suzerain: damoclus)
+# Province.find(40).update(suzerain: damoclus)
+# Province.find(42).update(suzerain: damoclus)
+esteresse = Organization.where(name:"Kindom of Esteresse").first_or_create(name:"Kingdom of Esteresse", description: "The blood of the first men flows in this kingdom, whose anscestors came through the Thenindiel pass before the fall of Urd.  They are known for their long lived kings, and their relations with the Tancers", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(69).update(suzerain: esteresse)
+# Province.find(73).update(suzerain: esteresse)
+# Province.find(74).update(suzerain: esteresse)
+redsails = Organization.where(name:"Redsail Raiders").first_or_create(name:"Redsail Raiders", description: "Though they lack the strength to threaten the Akatian cities, the Redsail Raiders nonetheless take a bite out of trade on the open sea, and ferociously defend their homesteads against reprisals", is_kingdom:1, is_church:0, governance:"Pirate Council")
+# Province.find(51).update(suzerain: redsails)
+# Province.find(54).update(suzerain: redsails)
+ithelwood = Organization.where(name:"Ithelwood").first_or_create(name:"Ithelwood", description:"The Elves of Ithelwood concern themselves with enchantment above all other pursuits", is_kingdom:1, is_church:0, governance:"Magocracy")
+# Province.find(59).update(suzerain: ithelwood)
+ashilion = Organization.where(name:"Ashilion").first_or_create(name:"Ashilion", description:"The kingdom of Ashilion keeps carefully the borders of the Greenwood, but encourages all races, even Goblins, to live in peace within the rest of their territory", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(80).update(suzerain: ashilion)
+# Province.find(83).update(suzerain: ashilion)
+quarp = Organization.where(name:"Quarp").first_or_create(name:"Quarp", description: "The people of Quarp are impoverished and ignorant - they pole rickety boats through the marshes, and plumb the fungus caves of the Living Crypts for base subsistence, and the Humans and Goblins here are constantly infighting and betraying one another", is_kingdom:1, is_church:0, governance: "Effectively None")
+# Province.find(26).update(suzerain: quarp)
+# Province.find(28).update(suzerain: quarp)
+boqer = Organization.where(name:"Duchy of Boqer").first_or_create(name:"Duchy of Boqer", description: "A client state of neigboring Qatsaph, the Duch of Boqer exports peat, and serves as trade port to Qatsaph and Loah-Khor", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(25).update(suzerain: boqer)
+skytribe = Organization.where(name:"Open Sky Tribe").first_or_create(name:"Open Sky Tribe", description:"These goblins reject cave dwelling (they were kicked out) and are slowly starving to death while trying to invent agriculture", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(64).update(suzerain: skytribe)
+tyvax = Organization.where(name:"Tyvax").first_or_create(name:"Tyvax", description: "A small kingdom, know for it's justs laws, and excellent wines", is_kingdom: 1, is_church: 0, governance: "monarchy")
+# Province.find(63).update(suzerain: tyvax)
+fireon = Organization.where(name:"Fireon").first_or_create(name:"Fireon", description: "Culturally descended from the Kingdom of Damoclus, the people of Fireon have a harsher climate to contend with, and mainly consist of shepherds and herdsmen", is_kingdom:1, is_church:0, governance:"Monarchy")
+# Province.find(43).update(suzerain: fireon)
+# Province.find(47).update(suzerain: fireon)
+dix = Organization.where(name:"Republic of Dix").first_or_create(name:"Republic of Dix", description: "A Matriarchal Republic, known for herb lore, superior healers, and a lax attitude toward family values", is_kingdom: 1, is_church: 0, governance:"Republic")
+# Province.find(57).update(suzerain: dix)
 
 #reset all names to basic
 for i in 1..125
 	temp_name = "province #{i}"
 	Province.find(i).update(name: temp_name)
 end
+
+#set province data
 p_pid = 1
-Province.find(1).update(name:"The Pirate Isles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:2, leyline_strength:1)
+Province.find(1).update(name:"The Pirate Isles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:2, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(2).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1)
+Province.find(2).update(name:"Lippinaumau", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(3).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:3, leyline_strength:1)
+Province.find(3).update(name:"Sandy Shores", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:3, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(4).update(name:"Isle of Ashe", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:5, leyline_strength:2)
+Province.find(4).update(name:"Isle of Ashe", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:5, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(5).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:5, leyline_strength:0)
+Province.find(5).update(name:"M other's Womb", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:5, leyline_strength:0, suzerain:nil)
 p_pid += 1
-Province.find(6).update(name:"Greater and Lesser Turtles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:2, leyline_strength:1)
+Province.find(6).update(name:"Greater and Lesser Turtles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:2, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(7).update(name:"Vyn'drym", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:1, leyline_strength:3)
+Province.find(7).update(name:"Vyn'drym", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:1, leyline_strength:3, suzerain:roost)
 p_pid += 1
-Province.find(8).update(name:"Montuo", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:3, leyline_strength:3)
+Province.find(8).update(name:"Montuo", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:3, leyline_strength:3, suzerain:nil)
 p_pid += 1
-Province.find(9).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:3, leyline_strength:2)
+Province.find(9).update(name:"The Glowing Isles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:3, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(10).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:1, leyline_strength:2)
+Province.find(10).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:1, leyline_strength:2, suzerain:blacktooth)
 p_pid += 1
-Province.find(11).update(name:"Kywa'vek", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:3)
+Province.find(11).update(name:"Kywa'vek", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:3, suzerain:roost)
 p_pid += 1
-Province.find(12).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountain Pass").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
+Province.find(12).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountain Pass").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2, suzerain:wakkalob_tribe)
 p_pid += 1
-Province.find(13).update(name:"Threndel's Pass", primary_terrain: Terrain.where(name: "Mountain Pass").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
+Province.find(13).update(name:"Threndel's Pass", primary_terrain: Terrain.where(name: "Mountain Pass").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2, suzerain:goblin_nation)
 p_pid += 1
-Province.find(14).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:3)
+Province.find(14).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:3, suzerain:nil)
 p_pid += 1
-Province.find(15).update(name:"Hide", primary_terrain: Terrain.where(name: "Protean").first, secondary_terrain: Terrain.where(name: "Protean").first, volcanism:0, leyline_strength:1)
+Province.find(15).update(name:"Hide", primary_terrain: Terrain.where(name: "Protean").first, secondary_terrain: Terrain.where(name: "Protean").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(16).update(name:"Hide", primary_terrain: Terrain.where(name: "Protean").first, secondary_terrain: Terrain.where(name: "Protean").first, volcanism:0, leyline_strength:1)
+Province.find(16).update(name:"Hide", primary_terrain: Terrain.where(name: "Protean").first, secondary_terrain: Terrain.where(name: "Protean").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(17).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:0, leyline_strength:2)
+Province.find(17).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(18).update(name:"Windward Res Akhani", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Wind Carved Mesa").first, volcanism:1, leyline_strength:2)
+Province.find(18).update(name:"Windward Res Akhani", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Wind Carved Mesa").first, volcanism:1, leyline_strength:2, suzerain:ashanti)
 p_pid += 1
-Province.find(19).update(name:"Leeward Res Akhani", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Wind Carved Mesa").first, volcanism:0, leyline_strength:1)
+Province.find(19).update(name:"Leeward Res Akhani", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Wind Carved Mesa").first, volcanism:0, leyline_strength:1, suzerain:ashanti)
 p_pid += 1
-Province.find(20).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:1)
+Province.find(20).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
 p_pid += 1
-Province.find(21).update(name:"Qatsaph", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:0)
+Province.find(21).update(name:"Qatsaph", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:0, suzerain:qatsaph)
 p_pid += 1
-Province.find(22).update(name:"Luts", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1)
+Province.find(22).update(name:"Luts", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:backvale)
 p_pid += 1
-Province.find(23).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
+Province.find(23).update(name:"Lake-of-the-Sky", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2, suzerain:qatsaph)
 p_pid += 1
-Province.find(24).update(name:"Berakhah", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:0, leyline_strength:1)
+Province.find(24).update(name:"Berakhah", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:0, leyline_strength:1, suzerain:qatsaph)
 p_pid += 1
-Province.find(25).update(name:"Boqer", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:1, leyline_strength:1)
+Province.find(25).update(name:"Boqer", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:1, leyline_strength:1, suzerain:boqer)
 p_pid += 1
-Province.find(26).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:1, leyline_strength:2)
+Province.find(26).update(name:"Quarp Marsh", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:1, leyline_strength:2, suzerain:quarp)
 p_pid += 1
-Province.find(27).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2)
+Province.find(27).update(name:"Otho Valley", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(28).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:2)
+Province.find(28).update(name:"The Living Catacombs", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:2, suzerain:quarp)
 p_pid += 1
-Province.find(29).update(name:"Ahhareet", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:1)
+Province.find(29).update(name:"Ahhareet", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(30).update(name:"Loah-Khor", primary_terrain: Terrain.where(name: "slliH").first, secondary_terrain: Terrain.where(name: "sniatnuoM").first, volcanism:0, leyline_strength:2)
+Province.find(30).update(name:"Loah-Khor", primary_terrain: Terrain.where(name: "slliH").first, secondary_terrain: Terrain.where(name: "sniatnuoM").first, volcanism:0, leyline_strength:2, suzerain:backvale)
 p_pid += 1
-Province.find(31).update(name:"Levush", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
+Province.find(31).update(name:"Levush", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(32).update(name:"Leeshkah", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:1)
+Province.find(32).update(name:"Leeshkah", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:1, suzerain:goblin_nation)
 p_pid += 1
-Province.find(33).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
+Province.find(33).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2, suzerain:goblin_nation)
 p_pid += 1
-Province.find(34).update(name:"Mountains of Ulog", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:1, leyline_strength:3)
+Province.find(34).update(name:"Mountains of Ulog", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:1, leyline_strength:3, suzerain:urd)
 p_pid += 1
-Province.find(35).update(name:"Vey'thu'wyr", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:7, leyline_strength:3)
+Province.find(35).update(name:"Vey'thu'wyr", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:7, leyline_strength:3, suzerain:roost)
 p_pid += 1
-Province.find(36).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2)
+Province.find(36).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Mountains").first, volcanism:0, leyline_strength:2, suzerain:wakkalob_tribe)
 p_pid += 1
-Province.find(37).update(name:"Pequdah", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2)
+Province.find(37).update(name:"Pequdah", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2, suzerain:goblin_nation)
 p_pid += 1
-Province.find(38).update(name:"In-Yat-Lo Highlands", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
+Province.find(38).update(name:"In-Yat-Lo Highlands", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:yat)
 p_pid += 1
-Province.find(39).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
+Province.find(39).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:thenindriel)
 p_pid += 1
-Province.find(40).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
+Province.find(40).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Mountains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
 p_pid += 1
-Province.find(41).update(name:"Thenindriel", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
+Province.find(41).update(name:"Thenindriel", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:thenindriel)
 p_pid += 1
-Province.find(42).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1)
+Province.find(42).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
 p_pid += 1
-Province.find(43).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2)
+Province.find(43).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2, suzerain:fireon)
 p_pid += 1
-Province.find(44).update(name:"Mere of Lagash", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:1)
+Province.find(44).update(name:"Mere of Lagash", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:1, suzerain:urd)
 p_pid += 1
-Province.find(45).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:0, leyline_strength:0)
+Province.find(45).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:0, leyline_strength:0, suzerain:thenindriel)
 p_pid += 1
-Province.find(46).update(name:"Urd", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Plateau").first, volcanism:0, leyline_strength:1)
+Province.find(46).update(name:"Urd", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Plateau").first, volcanism:0, leyline_strength:1, suzerain:urd)
 p_pid += 1
-Province.find(47).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2)
+Province.find(47).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2, suzerain:fireon)
 p_pid += 1
-Province.find(48).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
+Province.find(48).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(49).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
+Province.find(49).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(50).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:2)
+Province.find(50).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(51).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1)
+Province.find(51).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:redsails)
 p_pid += 1
-Province.find(52).update(name:"New Akatian States", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:3, leyline_strength:2)
+Province.find(52).update(name:"New Akatian States", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:3, leyline_strength:2, suzerain:akatian_cities)
 p_pid += 1
-Province.find(53).update(name:"Old Akatian States", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:2)
+Province.find(53).update(name:"Old Akatian States", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:2, suzerain:akatian_cities)
 p_pid += 1
-Province.find(54).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:2, leyline_strength:1)
+Province.find(54).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:2, leyline_strength:1, suzerain:redsails)
 p_pid += 1
-Province.find(55).update(name:"Rustle Wood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:1, leyline_strength:1)
+Province.find(55).update(name:"Rustle Wood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(56).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Marsh").first, volcanism:0, leyline_strength:2)
+Province.find(56).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Marsh").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(57).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1)
+Province.find(57).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:dix)
 p_pid += 1
-Province.find(58).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1)
+Province.find(58).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(59).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2)
+Province.find(59).update(name:"Ithel Wood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2, suzerain:ithelwood)
 p_pid += 1
-Province.find(60).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1)
+Province.find(60).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(61).update(name:"Sendeel Coast South", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Shrubland").first, volcanism:0, leyline_strength:2)
+Province.find(61).update(name:"Sendeel Coast South", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Shrubland").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(62).update(name:"Sendel Coast North", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1)
+Province.find(62).update(name:"Sendel Coast North", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:sendel)
 p_pid += 1
-Province.find(63).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0)
+Province.find(63).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
 p_pid += 1
-Province.find(64).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2)
+Province.find(64).update(name:"Starrs Plain", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:skytribe)
 p_pid += 1
-Province.find(65).update(name:"The Rusting Hills", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:1)
+Province.find(65).update(name:"The Rusting Hills", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:1, suzerain:blacktooth)
 p_pid += 1
-Province.find(66).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:1)
+Province.find(66).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(67).update(name:"Suenawel Forst", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1)
+Province.find(67).update(name:"Suenawel Forst", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(68).update(name:"Suenawel Forest North", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:1, leyline_strength:1)
+Province.find(68).update(name:"Suenawel Forest North", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(69).update(name:"Suenawel Forest South", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1)
+Province.find(69).update(name:"Suenawel Forest South", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:esteresse)
 p_pid += 1
-Province.find(70).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:1, leyline_strength:1)
+Province.find(70).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(71).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Lake").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:0, leyline_strength:2)
+Province.find(71).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Lake").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:0, leyline_strength:2, suzerain:chilldale)
 p_pid += 1
-Province.find(72).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:2)
+Province.find(72).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Tundra").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(73).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:1, leyline_strength:1)
+Province.find(73).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:1, leyline_strength:1, suzerain:esteresse)
 p_pid += 1
-Province.find(74).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1)
+Province.find(74).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:esteresse)
 p_pid += 1
-Province.find(75).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Marsh").first, volcanism:0, leyline_strength:1)
+Province.find(75).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Marsh").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(76).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:0)
+Province.find(76).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:0, suzerain:nil)
 p_pid += 1
-Province.find(77).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2)
+Province.find(77).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(78).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2)
+Province.find(78).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(79).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:1)
+Province.find(79).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:0, leyline_strength:1, suzerain:ashilion)
 p_pid += 1
-Province.find(80).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1)
+Province.find(80).update(name:"Geenwood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:ashilion)
 p_pid += 1
-Province.find(81).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2)
+Province.find(81).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:sendel)
 p_pid += 1
-Province.find(82).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:3)
+Province.find(82).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:3, suzerain:nil)
 p_pid += 1
-Province.find(83).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:0, leyline_strength:1)
+Province.find(83).update(name:"Little Wood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Grassland").first, volcanism:0, leyline_strength:1, suzerain:ashilion)
 p_pid += 1
-Province.find(84).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2)
+Province.find(84).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(85).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1)
+Province.find(85).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(86).update(name:"Lake of Steam", primary_terrain: Terrain.where(name: "Freshwater Sea").first, secondary_terrain: Terrain.where(name: "Freshwater Sea").first, volcanism:1, leyline_strength:2)
+Province.find(86).update(name:"Lake of Steam", primary_terrain: Terrain.where(name: "Freshwater Sea").first, secondary_terrain: Terrain.where(name: "Freshwater Sea").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(87).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:3)
+Province.find(87).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:3, suzerain:nil)
 p_pid += 1
-Province.find(88).update(name:"Chessen Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Rocky").first, volcanism:0, leyline_strength:2)
+Province.find(88).update(name:"Chessen Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Rocky").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(89).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:1)
+Province.find(89).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(90).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:1)
+Province.find(90).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(91).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2)
+Province.find(91).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(92).update(name:"Near Corwal Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2)
+Province.find(92).update(name:"Near Corwal Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(93).update(name:"Far Corwal Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1)
+Province.find(93).update(name:"Far Corwal Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(94).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2)
+Province.find(94).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(95).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2)
+Province.find(95).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(96).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2)
+Province.find(96).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(97).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2)
+Province.find(97).update(name:"Apothecary's Noose", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(98).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2)
+Province.find(98).update(name:"Oceanhill", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(99).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2)
+Province.find(99).update(name:"The Glowing Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(100).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2)
+Province.find(100).update(name:"The Swallowing Song", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(101).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1)
+Province.find(101).update(name:"The Glass Sea", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(102).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:1)
+Province.find(102).update(name:"The Caloinne Deep", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(103).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:2, leyline_strength:0)
+Province.find(103).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:2, leyline_strength:0, suzerain:nil)
 p_pid += 1
-Province.find(104).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1)
+Province.find(104).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(105).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:2, leyline_strength:2)
+Province.find(105).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:2, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(106).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1)
+Province.find(106).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(107).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:1, leyline_strength:2)
+Province.find(107).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(108).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(108).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(109).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(109).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(110).update(name:"Asheyrah", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:3)
+Province.find(110).update(name:"Asheyrah", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:3, suzerain:nil)
 p_pid += 1
-Province.find(111).update(name:"Adamah", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2)
+Province.find(111).update(name:"Adamah", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(112).update(name:"Okhel", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:1)
+Province.find(112).update(name:"Okhel", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(113).update(name:"Elkholdt", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2)
+Province.find(113).update(name:"Elkholdt", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2, suzerain:ice_tribe)
 p_pid += 1
-Province.find(114).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(114).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:ice_tribe)
 p_pid += 1
-Province.find(115).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(115).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(116).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(116).update(name:"The Deep Unknown - West", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(117).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(117).update(name:"The Deep Unknwon - East", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(118).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(118).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(119).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(119).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(120).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(120).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(121).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(121).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(122).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(122).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(123).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1)
+Province.find(123).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(124).update(name:"South Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:0)
+Province.find(124).update(name:"South Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:0, suzerain:nil)
 p_pid += 1
-Province.find(125).update(name:"North Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:2)
+Province.find(125).update(name:"North Terminus", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
 
 # --------------------------------------------
@@ -396,105 +478,77 @@ Province.all.each do |p|
 	p.populations = []
 end
 
-Population.where(province_id:83,race: Race.where(name: "Elf").first).first_or_create(province_id:83, race: Race.where(name:"Elf").first, count:40000)
-Population.where(province_id:81,race: Race.where(name: "Human").first).first_or_create(province_id:81, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:80,race: Race.where(name: "Elf").first).first_or_create(province_id:80, race: Race.where(name:"Elf").first, count:40000)
-Population.where(province_id:71,race: Race.where(name: "Human").first).first_or_create(province_id:71, race: Race.where(name:"Human").first, count:50000)
-Population.where(province_id:7,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:7, race: Race.where(name:"Wyveryn").first, count:20000)
-Population.where(province_id:65,race: Race.where(name: "Goblin").first).first_or_create(province_id:65, race: Race.where(name:"Goblin").first, count:70000)
-Population.where(province_id:64,race: Race.where(name: "Goblin").first).first_or_create(province_id:64, race: Race.where(name:"Goblin").first, count:40000)
-Population.where(province_id:62,race: Race.where(name: "Human").first).first_or_create(province_id:62, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:59,race: Race.where(name: "Elf").first).first_or_create(province_id:59, race: Race.where(name:"Elf").first, count:30000)
-Population.where(province_id:57,race: Race.where(name: "Human").first).first_or_create(province_id:57, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:54,race: Race.where(name: "Human").first).first_or_create(province_id:54, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:290000)
-Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:250000)
-Population.where(province_id:51,race: Race.where(name: "Human").first).first_or_create(province_id:51, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:47,race: Race.where(name: "Human").first).first_or_create(province_id:47, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:46,race: Race.where(name: "Undead").first).first_or_create(province_id:46, race: Race.where(name:"Undead").first, count:180000)
-Population.where(province_id:44,race: Race.where(name: "Undead").first).first_or_create(province_id:44, race: Race.where(name:"Undead").first, count:50000)
-Population.where(province_id:43,race: Race.where(name: "Human").first).first_or_create(province_id:43, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:41,race: Race.where(name: "Elf").first).first_or_create(province_id:41, race: Race.where(name:"Elf").first, count:170000)
-Population.where(province_id:36,race: Race.where(name: "Goblin").first).first_or_create(province_id:36, race: Race.where(name:"Goblin").first, count:70000)
-Population.where(province_id:35,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:35, race: Race.where(name:"Wyveryn").first, count:20000)
-Population.where(province_id:34,race: Race.where(name: "Undead").first).first_or_create(province_id:34, race: Race.where(name:"Undead").first, count:50000)
-Population.where(province_id:33,race: Race.where(name: "Goblin").first).first_or_create(province_id:33, race: Race.where(name:"Goblin").first, count:70000)
-Population.where(province_id:32,race: Race.where(name: "Goblin").first).first_or_create(province_id:32, race: Race.where(name:"Goblin").first, count:70000)
-Population.where(province_id:28,race: Race.where(name: "Human").first).first_or_create(province_id:28, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:25,race: Race.where(name: "Human").first).first_or_create(province_id:25, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:24,race: Race.where(name: "Human").first).first_or_create(province_id:24, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:21,race: Race.where(name: "Human").first).first_or_create(province_id:21, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:19,race: Race.where(name: "Human").first).first_or_create(province_id:19, race: Race.where(name:"Human").first, count:200000)
-Population.where(province_id:18,race: Race.where(name: "Human").first).first_or_create(province_id:18, race: Race.where(name:"Human").first, count:200000)
-Population.where(province_id:13,race: Race.where(name: "Goblin").first).first_or_create(province_id:13, race: Race.where(name:"Goblin").first, count:90000)
-Population.where(province_id:114,race: Race.where(name: "Human").first).first_or_create(province_id:114, race: Race.where(name:"Human").first, count:60000)
-Population.where(province_id:113,race: Race.where(name: "Human").first).first_or_create(province_id:113, race: Race.where(name:"Human").first, count:120000)
-Population.where(province_id:11,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:11, race: Race.where(name:"Wyveryn").first, count:25000)
 Population.where(province_id:10,race: Race.where(name: "Goblin").first).first_or_create(province_id:10, race: Race.where(name:"Goblin").first, count:90000)
+Population.where(province_id:11,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:11, race: Race.where(name:"Wyveryn").first, count:25000)
+Population.where(province_id:113,race: Race.where(name: "Human").first).first_or_create(province_id:113, race: Race.where(name:"Human").first, count:120000)
+Population.where(province_id:114,race: Race.where(name: "Human").first).first_or_create(province_id:114, race: Race.where(name:"Human").first, count:60000)
+Population.where(province_id:12,race: Race.where(name: "Goblin").first).first_or_create(province_id:12, race: Race.where(name:"Goblin").first, count:70000)
+Population.where(province_id:13,race: Race.where(name: "Goblin").first).first_or_create(province_id:13, race: Race.where(name:"Goblin").first, count:90000)
+Population.where(province_id:18,race: Race.where(name: "Human").first).first_or_create(province_id:18, race: Race.where(name:"Human").first, count:200000)
+Population.where(province_id:19,race: Race.where(name: "Human").first).first_or_create(province_id:19, race: Race.where(name:"Human").first, count:200000)
+Population.where(province_id:20,race: Race.where(name: "Human").first).first_or_create(province_id:20, race: Race.where(name:"Human").first, count:60000)
+Population.where(province_id:21,race: Race.where(name: "Human").first).first_or_create(province_id:21, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:22,race: Race.where(name: "Human").first).first_or_create(province_id:22, race: Race.where(name:"Human").first, count:120000)
+Population.where(province_id:23,race: Race.where(name: "Human").first).first_or_create(province_id:23, race: Race.where(name:"Human").first, count:70000)
+Population.where(province_id:24,race: Race.where(name: "Human").first).first_or_create(province_id:24, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:25,race: Race.where(name: "Human").first).first_or_create(province_id:25, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:26,race: Race.where(name: "Human").first).first_or_create(province_id:26, race: Race.where(name:"Human").first, count:40000)
+Population.where(province_id:28,race: Race.where(name: "Human").first).first_or_create(province_id:28, race: Race.where(name:"Human").first, count:60000)
+Population.where(province_id:30,race: Race.where(name: "Human").first).first_or_create(province_id:30, race: Race.where(name:"Human").first, count:240000)
+Population.where(province_id:32,race: Race.where(name: "Goblin").first).first_or_create(province_id:32, race: Race.where(name:"Goblin").first, count:70000)
+Population.where(province_id:33,race: Race.where(name: "Goblin").first).first_or_create(province_id:33, race: Race.where(name:"Goblin").first, count:70000)
+Population.where(province_id:34,race: Race.where(name: "Undead").first).first_or_create(province_id:34, race: Race.where(name:"Undead").first, count:50000)
+Population.where(province_id:35,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:35, race: Race.where(name:"Wyveryn").first, count:20000)
+Population.where(province_id:36,race: Race.where(name: "Goblin").first).first_or_create(province_id:36, race: Race.where(name:"Goblin").first, count:70000)
+Population.where(province_id:37,race: Race.where(name: "Goblin").first).first_or_create(province_id:37, race: Race.where(name:"Goblin").first, count:80000)
+Population.where(province_id:38,race: Race.where(name: "Human").first).first_or_create(province_id:38, race: Race.where(name:"Human").first, count:70000)
+Population.where(province_id:39,race: Race.where(name: "Elf").first).first_or_create(province_id:39, race: Race.where(name:"Elf").first, count:27000)
+Population.where(province_id:40,race: Race.where(name: "Human").first).first_or_create(province_id:40, race: Race.where(name:"Human").first, count:70000)
+Population.where(province_id:41,race: Race.where(name: "Elf").first).first_or_create(province_id:41, race: Race.where(name:"Elf").first, count:170000)
+Population.where(province_id:42,race: Race.where(name: "Human").first).first_or_create(province_id:42, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:43,race: Race.where(name: "Human").first).first_or_create(province_id:43, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:44,race: Race.where(name: "Undead").first).first_or_create(province_id:44, race: Race.where(name:"Undead").first, count:50000)
+Population.where(province_id:45,race: Race.where(name: "Elf").first).first_or_create(province_id:45, race: Race.where(name:"Elf").first, count:38000)
+Population.where(province_id:46,race: Race.where(name: "Undead").first).first_or_create(province_id:46, race: Race.where(name:"Undead").first, count:180000)
+Population.where(province_id:47,race: Race.where(name: "Human").first).first_or_create(province_id:47, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:51,race: Race.where(name: "Human").first).first_or_create(province_id:51, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:290000)
+Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:350000)
+Population.where(province_id:54,race: Race.where(name: "Human").first).first_or_create(province_id:54, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:57,race: Race.where(name: "Human").first).first_or_create(province_id:57, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:59,race: Race.where(name: "Elf").first).first_or_create(province_id:59, race: Race.where(name:"Elf").first, count:30000)
+Population.where(province_id:62,race: Race.where(name: "Human").first).first_or_create(province_id:62, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:63,race: Race.where(name: "Human").first).first_or_create(province_id:63, race: Race.where(name:"Human").first, count:43000)
+Population.where(province_id:64,race: Race.where(name: "Goblin").first).first_or_create(province_id:64, race: Race.where(name:"Goblin").first, count:23000)
+Population.where(province_id:65,race: Race.where(name: "Goblin").first).first_or_create(province_id:65, race: Race.where(name:"Goblin").first, count:70000)
+Population.where(province_id:69,race: Race.where(name: "Human").first).first_or_create(province_id:69, race: Race.where(name:"Human").first, count:90000)
+Population.where(province_id:7,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:7, race: Race.where(name:"Wyveryn").first, count:20000)
+Population.where(province_id:71,race: Race.where(name: "Human").first).first_or_create(province_id:71, race: Race.where(name:"Human").first, count:50000)
+Population.where(province_id:73,race: Race.where(name: "Human").first).first_or_create(province_id:73, race: Race.where(name:"Human").first, count:45000)
+Population.where(province_id:74,race: Race.where(name: "Elf").first).first_or_create(province_id:74, race: Race.where(name:"Elf").first, count:13000)
+Population.where(province_id:79,race: Race.where(name: "Human").first).first_or_create(province_id:79, race: Race.where(name:"Human").first, count:120000)
+Population.where(province_id:80,race: Race.where(name: "Elf").first).first_or_create(province_id:80, race: Race.where(name:"Elf").first, count:40000)
+Population.where(province_id:81,race: Race.where(name: "Human").first).first_or_create(province_id:81, race: Race.where(name:"Human").first, count:80000)
+Population.where(province_id:83,race: Race.where(name: "Elf").first).first_or_create(province_id:83, race: Race.where(name:"Elf").first, count:40000)
+Population.where(province_id:81,race: Race.where(name: "Human").first).first_or_create(province_id:81, race: Race.where(name:"Human").first, count:60000)
+Population.where(province_id:79,race: Race.where(name: "Elf").first).first_or_create(province_id:79, race: Race.where(name:"Elf").first, count:4300)
+Population.where(province_id:74,race: Race.where(name: "Human").first).first_or_create(province_id:74, race: Race.where(name:"Human").first, count:40000)
+Population.where(province_id:73,race: Race.where(name: "Elf").first).first_or_create(province_id:73, race: Race.where(name:"Elf").first, count:3000)
+Population.where(province_id:53,race: Race.where(name: "Goblin").first).first_or_create(province_id:53, race: Race.where(name:"Goblin").first, count:25000)
+Population.where(province_id:46,race: Race.where(name: "Human").first).first_or_create(province_id:46, race: Race.where(name:"Human").first, count:40000)
+Population.where(province_id:44,race: Race.where(name: "Human").first).first_or_create(province_id:44, race: Race.where(name:"Human").first, count:20000)
 Population.where(province_id:41,race: Race.where(name: "Undead").first).first_or_create(province_id:41, race: Race.where(name:"Undead").first, count:30000)
 Population.where(province_id:34,race: Race.where(name: "Goblin").first).first_or_create(province_id:34, race: Race.where(name:"Goblin").first, count:80000)
+Population.where(province_id:28,race: Race.where(name: "Goblin").first).first_or_create(province_id:28, race: Race.where(name:"Goblin").first, count:20000)
+Population.where(province_id:26,race: Race.where(name: "Goblin").first).first_or_create(province_id:26, race: Race.where(name:"Goblin").first, count:30000)
+Population.where(province_id:19,race: Race.where(name: "Goblin").first).first_or_create(province_id:19, race: Race.where(name:"Goblin").first, count:7500)
 Population.where(province_id:113,race: Race.where(name: "Snow-Elf").first).first_or_create(province_id:113, race: Race.where(name:"Snow-Elf").first, count:10000)
+Population.where(province_id:81,race: Race.where(name: "Goblin").first).first_or_create(province_id:81, race: Race.where(name:"Goblin").first, count:4000)
+Population.where(province_id:79,race: Race.where(name: "Goblin").first).first_or_create(province_id:79, race: Race.where(name:"Goblin").first, count:12000)
+Population.where(province_id:44,race: Race.where(name: "Elf").first).first_or_create(province_id:44, race: Race.where(name:"Elf").first, count:8000)
 Population.where(province_id:34,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:34, race: Race.where(name:"Wyveryn").first, count:5000)
-Population.where(province_id:39,race: Race.where(name: "Elf").first).first_or_create(province_id:39, race: Race.where(name:"Elf").first, count:28000)
-Population.where(province_id:45,race: Race.where(name: "Elf").first).first_or_create(province_id:45, race: Race.where(name:"Elf").first, count:39000)
-Population.where(province_id:30,race: Race.where(name: "Human").first).first_or_create(province_id:30, race: Race.where(name:"Human").first, count: 220000)
-Population.where(province_id:22,race: Race.where(name: "Human").first).first_or_create(province_id:22, race: Race.where(name:"Human").first, count: 120000)
-Population.where(province_id:79,race: Race.where(name: "Human").first).first_or_create(province_id:79, race: Race.where(name:"Human").first, count: 120000)
-Population.where(province_id:79,race: Race.where(name: "Elf").first).first_or_create(province_id:79, race: Race.where(name:"Elf").first, count: 43000)
-Population.where(province_id:74,race: Race.where(name: "Elf").first).first_or_create(province_id:74, race: Race.where(name:"Elf").first, count: 13000)
-Population.where(province_id:63,race: Race.where(name: "Human").first).first_or_create(province_id:63, race: Race.where(name:"Human").first, count: 43000)
-Population.where(province_id:12,race: Race.where(name: "Goblin").first).first_or_create(province_id:12, race: Race.where(name:"Goblin").first, count:80000)
-Population.where(province_id:37,race: Race.where(name: "Goblin").first).first_or_create(province_id:37, race: Race.where(name:"Goblin").first, count:100000)
-Population.where(province_id:38,race: Race.where(name: "Human").first).first_or_create(province_id:38, race: Race.where(name:"Human").first, count: 70000)
 
 
-#---------------------------------------------
-# 			Seedsa for kingdoms
-# org_united_goblin_tribes = Organization.create(name:"United Goblin Tribes", description:"A loose federation of free goblin tribes", is_church:0, is_kingdom:1, leader:act_globrat, governance:"Tribal Federation")
-
-goblin_nation = Organization.where(name: "The Goblin Nation").first_or_create(name: "The Goblin Nation", description:"A matriarchal society of globlins from the Worldbreak mountains", is_kingdom:1, is_church:0, governance:"Tribal Matriarchy")
-Province.find(32).update(suzerain: goblin_nation)
-Province.find(33).update(suzerain: goblin_nation)
-Province.find(34).update(suzerain: goblin_nation)
-Province.find(37).update(suzerain: goblin_nation)
-Province.find(13).update(suzerain: goblin_nation)
-ashanti = Organization.where(name: "Ashanti").first_or_create(name:"Ashanti", description:"This enterprising kingdom is used to living on the harsh coastal desert and steep plateaus of the Resal Akhani", is_kingdom:1, is_church:0, governance:"Kingdom")
-Province.find(18).update(suzerain: ashanti)
-Province.find(19).update(suzerain: ashanti)
-urd = Organization.where(name: "Urd").first_or_create(name:"Urd", description:"Urd and the four kingdoms... the theocracy of the undead.", is_kingdom:1, is_church:0, governance:"Gerontocracy")
-Province.find(46).update(suzerain: urd)
-Province.find(34).update(suzerain: urd)
-Province.find(44).update(suzerain: urd)
-akatian_cities = Organization.where(name:"Akatian Free Cities").first_or_create(name:"Akatian Free Cities", description:"A loose confedration of tree trading cities", is_kingdom:1, is_church:0, governance:"Squabbling Plutocracy")
-Province.find(52).update(suzerain: akatian_cities)
-Province.find(53).update(suzerain: akatian_cities)
-backvale = Organization.where(name:"Loah-Khor").first_or_create(name:"Loah-Khor", description:"A paradoxical realm, where up is down, and different is the usual", is_kingdom:1, is_church:0, governance:"Unanimous Committee")
-Province.find(30).update(suzerain: backvale)
-Province.where(name:"Luts").first.update(suzerain: backvale)
-thenindriel = Organization.where(name:"Thenindriel").first_or_create(name:"Thenindriel",description:"An ancient and forested kingdom of the elves", is_kingdom:1, is_church:0, governance:"Monarchy")
-Province.find(39).update(suzerain: thenindriel)
-Province.find(41).update(suzerain: thenindriel)
-Province.find(45).update(suzerain: thenindriel)
-wakkalob_tribe= Organization.where(name:"Wakkalob Tribe").first_or_create(name:"Wakkalob Tribe", description:"A disheveled conglomeration of runty gits", is_kingdom:1, is_church:0, governance:"Little to none")
-Province.find(12).update(suzerain: wakkalob_tribe)
-Province.find(36).update(suzerain: wakkalob_tribe)
-yat = Organization.where(name:"Yat").first_or_create(name:"Yat", description:"The Yat are a hardy and spiritual people who believe that the natural order must be followed to avoid bad luck.", is_kingdom:1, is_church:0, governance:"Tribal Federation")
-Province.find(38).update(suzerain: yat)
-ice_tribe = Organization.where(name:"Ice Tribe").first_or_create(name:"Ice Tribe", description: "Savage men who follow the old ways, riding the great Ice Worms to hunt the mammoth, and raid the soft sourthern people", is_kingdom:1, is_church:0, governance:"Monarchy")
-Province.find(113).update(suzerain: ice_tribe)
-Province.find(114).update(suzerain: ice_tribe)
-chilldale = Organization.where(name:"Chilldale").first_or_create(name:"Chilldale", description: "Simple farming folk, who only wish to be left in peace", is_kingdom:1, is_church:0, governance:"Monarchy")
-Province.find(71).update(suzerain: chilldale)
-roost = Organization.where(name:"Wyveryn Roosts").first_or_create(name:"Wyveryn Roosts", description: "Major stops on the migratory routes of the Wyveryn - though perhaps not technically a kingdom, the borders of the roosts are taken seriously by landbound nations", is_kingdom:1, is_church:0, governance:"Transitory")
-Province.find(7).update(suzerain: roost)
-Province.find(11).update(suzerain: roost)
-Province.find(35).update(suzerain: roost)
-blacktooth = Organization.where(name:"Blacktooth Tribe").first_or_create(name:"Blacktooth Tribe", description: "A primarily anarcho-arsonist community of sneaky backstabbing gits", is_kingdom:1, is_church: 0, governance:"Tribal Matriarchy")
-Province.find(65).update(suzerain: blacktooth)
-Province.find(10).update(suzerain: blacktooth)
-sendel = Organization.where(name:"Sendel Empire").first_or_create(name:"Sendel Empire",description: "A young empire, with perhpaps the most organized labor force and army in the world, prone to major land improvement projects", is_kingdom:1, is_church:0, governance:"Monarchy")
-Province.find(62).update(suzerain: sendel)
-Province.find(81).update(suzerain: sendel)
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
 
