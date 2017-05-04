@@ -115,16 +115,16 @@ Province.all.each do |prov|
 end
 
 # default all deity actors to generic
-r = Race.where(name: "Generic").first
-Deity.all.each do |deit|
-	deit.actor = Actor.where(name: deit.name).first_or_create(name: deit.name, race: r)
-	deit.save
-end
+	# r = Race.where(name: "Generic").first
+	# Deity.all.each do |deit|
+	# 	deit.actor = Actor.where(name: deit.name).first_or_create(name: deit.name, race: r)
+	# 	deit.save
+	# end
 
 # add boring statline to generic actors
-Actor.where(race: r).each do |a|
-	a.update(might: 3, will: 3, subtlety: 3, sagacity: 3, perception: 3, cunning: 3)
-end
+	# Actor.where(race: r).each do |a|
+	# 	a.update(might: 3, will: 3, subtlety: 3, sagacity: 3, perception: 3, cunning: 3)
+	# end
 
 # --------------------------------------------
 # 		   SEEDS FOR LEVEL 0 Terrain
@@ -549,11 +549,73 @@ Population.where(province_id:44,race: Race.where(name: "Elf").first).first_or_cr
 Population.where(province_id:34,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:34, race: Race.where(name:"Wyveryn").first, count:5000)
 
 
+#---------------------------------------------
+# 		   SEEDS FOR DEITY ACTORS
+#correct silly vexname issue
+#Deity.where(name: '???').first.update(name:"Vatharius'Vex")
+#Deity.where(name: 'Larswoha').first.update(name:'Lasrwoha')
+Deity.where(name: "Grita").first_or_create(name:"Grita")
+Deity.where(name: "Grundzel").first_or_create(name:"Grundzel")
+Deity.where(name: "Aleseus").first_or_create(name:"Aleseus")
+
+a = Actor.where(name:"Lasrwoha").first_or_create(name:"Lasrwoha", race: (Race.where(name:"Alohm").first), might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:5)
+Deity.where(name: a.name).first.update(actor: a)
+puts "added actor #{a.name}"
+a = Actor.where(name:"Ululantibus").first_or_create(race: Race.where(name: "Alohm").first, name: "Ululantibus", might:4,will:5,cunning:3,subtlety:2,sagacity:5,perception:2)
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Ehlisfaire").first_or_create(race: Race.where(name: "Alohm").first, name: "Ehlisfaire", might:6,will:1,cunning:3,subtlety:3,sagacity:4,perception:4)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Vatharius'Vex").first_or_create(race: Race.where(name: "Alohm").first, name: "Vatharius'Vex", might:6,will:5,cunning:3,subtlety:2,sagacity:1,perception:4)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Zephyrus").first_or_create(race: Race.where(name: "Alohm").first, name: "Zephyrus", might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:4)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Aleseus").first_or_create(race: Race.where(name: "Alohm").first, name: "Aleseus", might:3,will:2,cunning:5,subtlety:4,sagacity:2,perception:5)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Skaal").first_or_create(race: Race.where(name: "Alohm").first, name: "Skaal", might:1,will:3,cunning:3,subtlety:6,sagacity:4,perception:4)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Harkates").first_or_create(race: Race.where(name: "Alohm").first, name: "Harkates", might:5,will:4,cunning:3,subtlety:1,sagacity:2,perception:6)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Ordwyn").first_or_create(race: Race.where(name: "Alohm").first, name: "Ordwyn", might:3,will:3,cunning:5,subtlety:2,sagacity:5,perception:4)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Krolos").first_or_create(race: Race.where(name: "Alohm").first, name: "Krolos", might:2,will:3,cunning:4,subtlety:5,sagacity:1,perception:6)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Luogh").first_or_create(race: Race.where(name: "Alohm").first, name: "Luogh", might:5,will:6,cunning:2,subtlety:2,sagacity:3,perception:3)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Oscaro").first_or_create(race: Race.where(name: "Alohm").first, name: "Oscaro", might:1,will:5,cunning:4,subtlety:5,sagacity:4,perception:2)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Dartha").first_or_create(race: Race.where(name: "Alohm").first, name: "Dartha", might:5,will:4,cunning:2,subtlety:2,sagacity:3,perception:5)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Vaniya").first_or_create(race: Race.where(name: "Alohm").first, name: "Vaniya", might:5,will:5,cunning:3,subtlety:4,sagacity:2,perception:2)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Grita").first_or_create(race: Race.where(name: "Alohm").first, name: "Grita", might:4,will:5,cunning:3,subtlety:4,sagacity:2,perception:3)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Gawp").first_or_create(race: Race.where(name: "Alohm").first, name: "Gawp", might:1,will:3,cunning:3,subtlety:3,sagacity:4,perception:4)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+a = Actor.where(name:"Grundzel").first_or_create(race: Race.where(name: "Alohm").first, name: "Grundzel", might:3,will:3,cunning:3,subtlety:3,sagacity:3,perception:3)
+puts "added actor #{a.name}"
+Deity.where(name: a.name).first.update(actor: a)
+puts "added actor #{a.name}"
+
 # --------------------------------------------
 #          SEEDS FOR USER PROFILES
 
 # u = User.where(username: '???').first_or_create(username: '???', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
 # d = Deity.where(name: '???').first_or_create(name: '???', user: u)
+
 
 # u = User.where(username: 'Dartha').first_or_create(username: 'Dartha', email: '[%$securCred8347%]', password: '[%$securCred8347%]', access: '[%$securCred8347%]')
 # d = Deity.where(name: 'Dartha').first_or_create(name: 'Dartha', user: u)
