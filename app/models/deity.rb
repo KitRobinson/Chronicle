@@ -55,6 +55,93 @@ class Deity < ActiveRecord::Base
 		#determine infolevel
 		infolevel = profile_examine_info_level(examiner)
 		#determine output information
+		
+		#profile views of gawp should instead reveal FAKE data exept to gawp
+		if self.name == "Gawp" && examiner.name != "Gawp"
+			return fake_profile_examine(infolevel)
+		else
+			infotable = "<table>"
+			if infolevel < 0
+				infotable += "<th>no information avaliable</th>"
+			elsif infolevel == 0
+				infotable += "<th>Domains</th>"
+				associations.each do |a|
+					infotable += "<tr><td>#{a.domain.name}</td></tr>"
+				end
+			elsif infolevel == 1
+				infotable += "<tr><th>Domain</th><th>Score</th><tr>"
+				
+				associations.each do |a|
+					infotable += "<tr><td>#{a.strength}</td><td>#{a.domain.name}</td></tr>"
+				end
+				
+				infotable += "</table><table>"
+				infotable += "<tr><th>Attribute</th><th>Score</th><tr>"
+				if might < 3
+					infotable += "<tr><td>Might</td><td>Low</td></tr>"
+				elsif might < 5
+					infotable += "<tr><td>Might</td><td>Moderate</td></tr>"
+				else
+					infotable += "<tr><td>Might</td><td>High</td></tr>"
+				end
+				if will < 3
+					infotable += "<tr><td>Will</td><td>Low</td></tr>"
+				elsif will < 5
+					infotable += "<tr><td>Will</td><td>Moderate</td></tr>"
+				else
+					infotable += "<tr><td>Will</td><td>High</td></tr>"
+				end
+				if cunning < 3
+					infotable += "<tr><td>Cunning</td><td>Low</td></tr>"
+				elsif cunning < 5
+					infotable += "<tr><td>Cunning</td><td>Moderate</td></tr>"
+				else
+					infotable += "<tr><td>Cunning</td><td>High</td></tr>"
+				end
+				if subtlety < 3
+					infotable += "<tr><td>Subtlety</td><td>Low</td></tr>"
+				elsif subtlety < 5
+					infotable += "<tr><td>Subtlety</td><td>Moderate</td></tr>"
+				else
+					infotable += "<tr><td>Subtlety</td><td>High</td></tr>"
+				end
+				if perception < 3
+					infotable += "<tr><td>Perception</td><td>Low</td></tr>"
+				elsif perception < 5
+					infotable += "<tr><td>Perception</td><td>Moderate</td></tr>"
+				else
+					infotable += "<tr><td>Perception</td><td>High</td></tr>"
+				end
+				if sagacity < 3
+					infotable += "<tr><td>Sagacity</td><td>Low</td></tr>"
+				elsif sagacity < 5
+					infotable += "<tr><td>Sagacity</td><td>Moderate</td></tr>"
+				else
+					infotable += "<tr><td>Sagacity</td><td>High</td></tr>"
+				end
+			elsif infolevel > 1
+				infotable += "<tr><th>Domain</th><th>Score</th><tr>"
+				
+				associations.each do |a|
+					infotable += "<tr><td>#{a.domain.name}</td><td>#{a.strength}</td></tr>"
+				end
+				
+				infotable += "</table><table>"
+				infotable += "<tr><th>Attribute</th><th>Score</th><tr>"
+				infotable += "<tr><td>Might</td><td>#{might}</td></tr>"
+				infotable += "<tr><td>Will</td><td>#{will}</td></tr>"
+				infotable += "<tr><td>Cunning</td><td>#{cunning}</td></tr>"
+				infotable += "<tr><td>Subtlety</td><td>#{subtlety}</td></tr>"
+				infotable += "<tr><td>Perception</td><td>#{perception}</td></tr>"
+				infotable += "<tr><td>Sagacity</td><td>#{sagacity}</td></tr>"
+			end
+			infotable += "</table>"
+			return infotable
+			#turn directly into html
+		end
+	end
+
+	def fake_profile_examine(infolevel)
 		infotable = "<table>"
 		if infolevel < 0
 			infotable += "<th>no information avaliable</th>"
@@ -66,69 +153,37 @@ class Deity < ActiveRecord::Base
 		elsif infolevel == 1
 			infotable += "<tr><th>Domain</th><th>Score</th><tr>"
 			
-			associations.each do |a|
-				infotable += "<tr><td>#{a.strength}</td><td>#{a.domain.name}</td></tr>"
-			end
+			infotable += "<tr><td>Land</td><td>35</td></tr>"
+			infotable += "<tr><td>Fungus</td><td>25</td></tr>"
+			infotable += "<tr><td>Poverty</td><td>30</td></tr>"
 			
 			infotable += "</table><table>"
 			infotable += "<tr><th>Attribute</th><th>Score</th><tr>"
-			if might < 3
-				infotable += "<tr><td>Might</td><td>Low</td></tr>"
-			elsif might < 5
-				infotable += "<tr><td>Might</td><td>Moderate</td></tr>"
-			else
-				infotable += "<tr><td>Might</td><td>High</td></tr>"
-			end
-			if will < 3
-				infotable += "<tr><td>Will</td><td>Low</td></tr>"
-			elsif will < 5
-				infotable += "<tr><td>Will</td><td>Moderate</td></tr>"
-			else
-				infotable += "<tr><td>Will</td><td>High</td></tr>"
-			end
-			if cunning < 3
-				infotable += "<tr><td>Cunning</td><td>Low</td></tr>"
-			elsif cunning < 5
-				infotable += "<tr><td>Cunning</td><td>Moderate</td></tr>"
-			else
-				infotable += "<tr><td>Cunning</td><td>High</td></tr>"
-			end
-			if subtlety < 3
-				infotable += "<tr><td>Subtlety</td><td>Low</td></tr>"
-			elsif subtlety < 5
-				infotable += "<tr><td>Subtlety</td><td>Moderate</td></tr>"
-			else
-				infotable += "<tr><td>Subtlety</td><td>High</td></tr>"
-			end
-			if perception < 3
-				infotable += "<tr><td>Perception</td><td>Low</td></tr>"
-			elsif perception < 5
-				infotable += "<tr><td>Perception</td><td>Moderate</td></tr>"
-			else
-				infotable += "<tr><td>Perception</td><td>High</td></tr>"
-			end
-			if sagacity < 3
-				infotable += "<tr><td>Sagacity</td><td>Low</td></tr>"
-			elsif sagacity < 5
-				infotable += "<tr><td>Sagacity</td><td>Moderate</td></tr>"
-			else
-				infotable += "<tr><td>Sagacity</td><td>High</td></tr>"
-			end
+			infotable += "<tr><td>Might</td><td>Low</td></tr>"
+			infotable += "<tr><td>Will</td><td>Moderate</td></tr>"
+			infotable += "<tr><td>Cunning</td><td>Moderate</td></tr>"
+			infotable += "<tr><td>Subtlety</td><td>Moderate</td></tr>"
+			infotable += "<tr><td>Perception</td><td>High</td></tr>"
+			infotable += "<tr><td>Sagacity</td><td>Moderate</td></tr>"
+
+			
 		elsif infolevel > 1
 			infotable += "<tr><th>Domain</th><th>Score</th><tr>"
 			
-			associations.each do |a|
-				infotable += "<tr><td>#{a.strength}</td><td>#{a.domain.name}</td></tr>"
-			end
+			
+			infotable += "<tr><td>Land</td><td>35</td></tr>"
+			infotable += "<tr><td>Fungus</td><td>25</td></tr>"
+			infotable += "<tr><td>Poverty</td><td>30</td></tr>"
+
 			
 			infotable += "</table><table>"
 			infotable += "<tr><th>Attribute</th><th>Score</th><tr>"
-			infotable += "<tr><td>Might</td><td>#{might}</td></tr>"
-			infotable += "<tr><td>Will</td><td>#{will}</td></tr>"
-			infotable += "<tr><td>Cunning</td><td>#{cunning}</td></tr>"
-			infotable += "<tr><td>Subtlety</td><td>#{subtlety}</td></tr>"
-			infotable += "<tr><td>Perception</td><td>#{perception}</td></tr>"
-			infotable += "<tr><td>Sagacity</td><td>#{sagacity}</td></tr>"
+			infotable += "<tr><td>Might</td><td>2</td></tr>"
+			infotable += "<tr><td>Will</td><td>4</td></tr>"
+			infotable += "<tr><td>Cunning</td><td>3</td></tr>"
+			infotable += "<tr><td>Subtlety</td><td>3</td></tr>"
+			infotable += "<tr><td>Perception</td><td>5</td></tr>"
+			infotable += "<tr><td>Sagacity</td><td>4</td></tr>"
 		end
 		infotable += "</table>"
 		return infotable
