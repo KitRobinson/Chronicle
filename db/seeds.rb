@@ -594,11 +594,13 @@ Population.where(province_id:34,race: Race.where(name: "Wyveryn").first).first_o
 #---------------------------------------------
 # 		   SEEDS FOR DEITY ACTORS
 #correct silly vexname issue
-#Deity.where(name: '???').first.update(name:"Vatharius'Vex")
-#Deity.where(name: 'Larswoha').first.update(name:'Lasrwoha')
-Deity.where(name: "Grita").first_or_create(name:"Grita")
-Deity.where(name: "Grundzel").first_or_create(name:"Grundzel")
-Deity.where(name: "Aleseus").first_or_create(name:"Aleseus")
+d = Deity.where(name: '???').first
+d.update(name:"Vatharius'Vex") if d
+d = Deity.where(name: 'Larswoha').first
+d.update(name:'Lasrwoha') if d
+d = Deity.where(name: "Grita").first_or_create(name:"Grita")
+d = Deity.where(name: "Grundzel").first_or_create(name:"Grundzel")
+d = Deity.where(name: "Aleseus").first_or_create(name:"Aleseus")
 
 a = Actor.where(name:"Lasrwoha").first_or_create(name:"Lasrwoha", race: (Race.where(name:"Alohm").first), might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:5)
 a.update(name:"Lasrwoha", race: (Race.where(name:"Alohm").first), might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:5)
