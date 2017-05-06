@@ -617,7 +617,7 @@ a = Actor.where(name:"Vatharius'Vex").first_or_create(race: Race.where(name: "Al
 a.update(race: Race.where(name: "Alohm").first, name: "Vatharius'Vex", might:6,will:5,cunning:3,subtlety:2,sagacity:1,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
-a = Actor.where(name:"Zephyrus").first_or_create(race: Race.where(name: "Alohm").first, name: "Zephyrus", might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:4)
+a = Actor.where(name:"Zephyrus").first_or_create(race: Race.where(name: "Alohm").first, name: "Zephyrus", might:5,will:6,cunning:1,subtlety:1,sagacity:4,perception:4)
 a.update(race: Race.where(name: "Alohm").first, name: "Zephyrus", might:5,will:6,cunning:1,subtlety:1,sagacity:4,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
