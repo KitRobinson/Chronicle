@@ -224,7 +224,7 @@ damoclus = Organization.where(name:"Kingdom of Damoclus").first_or_create(name:"
 # Province.find(20).update(suzerain: damoclus)
 # Province.find(40).update(suzerain: damoclus)
 # Province.find(42).update(suzerain: damoclus)
-esteresse = Organization.where(name:"Kindom of Esteresse").first_or_create(name:"Kingdom of Esteresse", description: "The blood of the first men flows in this kingdom, whose anscestors came through the Thenindiel pass before the fall of Urd.  They are known for their long lived kings, and their relations with the Tancers", is_kingdom:1, is_church:0, governance:"Monarchy")
+esteresse = Organization.where(name:"Kindom of Esteresse").first_or_create(name:"Kingdom of Esteresse", description: "The blood of the first men flows thick in this kingdom, whose anscestors came through the Thenindiel pass before the fall of Urd.  They are known for their sense of honor, and their willingness to war.", is_kingdom:1, is_church:0, governance:"Monarchy")
 # Province.find(69).update(suzerain: esteresse)
 # Province.find(73).update(suzerain: esteresse)
 # Province.find(74).update(suzerain: esteresse)
@@ -250,7 +250,7 @@ fireon = Organization.where(name:"Fireon").first_or_create(name:"Fireon", descri
 # Province.find(47).update(suzerain: fireon)
 dix = Organization.where(name:"Republic of Dix").first_or_create(name:"Republic of Dix", description: "A Matriarchal Republic, known for herb lore, superior healers, and a lax attitude toward family values", is_kingdom: 1, is_church: 0, governance:"Republic")
 # Province.find(57).update(suzerain: dix)
-
+yoon = Organization.where(name:"Yoon").first_or_create(name:"Yoon", description:"The grasslands are fertile and provide ample opportunity to raise both herds and crops. The Yoon take advantage of this to grow abundant wheat, sesame seeds, and peanuts.They raise herds of takin and ibex, and they are skilled horse breeders.  Yoon is also known for the rule of the long-lived Pathik family", is_kingdom:1, is_church:0, governance:"Monarchy")
 #reset all names to basic
 for i in 1..125
 	temp_name = "province #{i}"
@@ -383,7 +383,7 @@ Province.find(61).update(name:"Sendeel Coast South", primary_terrain: Terrain.wh
 p_pid += 1
 Province.find(62).update(name:"Sendel Coast North", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:sendel)
 p_pid += 1
-Province.find(63).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
+Province.find(63).update(name:"Tyvaxia", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
 p_pid += 1
 Province.find(64).update(name:"Starrs Plain", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:skytribe)
 p_pid += 1
@@ -411,7 +411,7 @@ Province.find(75).update(name:"Province #{p_pid}", primary_terrain: Terrain.wher
 p_pid += 1
 Province.find(76).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:0, suzerain:nil)
 p_pid += 1
-Province.find(77).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:nil)
+Province.find(77).update(name:"The Plains of Yoon", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:yoon)
 p_pid += 1
 Province.find(78).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Plains").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
@@ -589,7 +589,7 @@ Population.where(province_id:81,race: Race.where(name: "Goblin").first).first_or
 Population.where(province_id:79,race: Race.where(name: "Goblin").first).first_or_create(province_id:79, race: Race.where(name:"Goblin").first, count:12000)
 Population.where(province_id:44,race: Race.where(name: "Elf").first).first_or_create(province_id:44, race: Race.where(name:"Elf").first, count:8000)
 Population.where(province_id:34,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:34, race: Race.where(name:"Wyveryn").first, count:5000)
-
+Population.where(province_id:77,race: Race.where(name: "Human").first).first_or_create(province_id:77, race: Race.where(name:"Human").first, count: 180000)
 
 #---------------------------------------------
 # 		   SEEDS FOR DEITY ACTORS
