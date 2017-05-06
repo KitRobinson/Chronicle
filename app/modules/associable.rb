@@ -50,7 +50,7 @@ module Associable
 	#generate a report hash for THIS associable based on the provinces visibility and the deity
 	def report(deity, p_visibility)
 		report_hash = {}
-
+d.
 		#get this items score for the deity - basically thie doubles the perception value of the object for reporting on itself
 		score = (deity_score(deity) * deity.actor.perception) + p_visibility
 

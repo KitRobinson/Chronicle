@@ -2,8 +2,13 @@
 <p id="notice"><%= notice %></p>
 
 	  <h3 class='deity-name'><%= @deity.name %></h3>
-		<div class='deity-pic'>
-			<%= image_tag @deity.profilepic, height: '400p', margin: 'auto' %>
+	  	<div class='row'>
+			<div class='deity-pic col m7'>
+				<%= image_tag @deity.profilepic, height: '400p', margin: 'auto' %>
+			</div>
+			<div class='deity-info col m5'>
+				<%= raw@deity.profile_examine(Deity.where(name: current_user.username).first) %>
+			</div>
 		</div>
 	<% if @deity.user == current_user %>
 		<%= form_for @deity, html: { multipart: true } do |f| %>

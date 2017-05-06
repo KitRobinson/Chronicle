@@ -49,4 +49,102 @@ class Deity < ActiveRecord::Base
 		}
 	end
 	
+	#return information on this deity when examined by another
+	def profile_examine(examiner) #class=Deity
+		
+		#determine infolevel
+		infolevel = profile_examine_info_level(examiner)
+		#determine output information
+		infotable = "<table>"
+		if infolevel < 0
+			infotable += "<th>no information avaliable</th>"
+		elsif infolevel == 0
+			infotable += "<th>Domains</th>"
+			associations.each do |a|
+				infotable += "<tr><td>#{a.domain.name}</td></tr>"
+			end
+		elsif infolevel == 1
+			infotable += "<tr><th>Domain</th><th>Score</th><tr>"
+			
+			associations.each do |a|
+				infotable += "<tr><td>#{a.strength}</td><td>#{a.domain.name}</td></tr>"
+			end
+			
+			infotable += "</table><table>"
+			infotable += "<tr><th>Attribute</th><th>Score</th><tr>"
+			if might < 3
+				infotable += "<tr><td>Might</td><td>Low</td></tr>"
+			elsif might < 5
+				infotable += "<tr><td>Might</td><td>Moderate</td></tr>"
+			else
+				infotable += "<tr><td>Might</td><td>High</td></tr>"
+			end
+			if will < 3
+				infotable += "<tr><td>Will</td><td>Low</td></tr>"
+			elsif will < 5
+				infotable += "<tr><td>Will</td><td>Moderate</td></tr>"
+			else
+				infotable += "<tr><td>Will</td><td>High</td></tr>"
+			end
+			if cunning < 3
+				infotable += "<tr><td>Cunning</td><td>Low</td></tr>"
+			elsif cunning < 5
+				infotable += "<tr><td>Cunning</td><td>Moderate</td></tr>"
+			else
+				infotable += "<tr><td>Cunning</td><td>High</td></tr>"
+			end
+			if subtlety < 3
+				infotable += "<tr><td>Subtlety</td><td>Low</td></tr>"
+			elsif subtlety < 5
+				infotable += "<tr><td>Subtlety</td><td>Moderate</td></tr>"
+			else
+				infotable += "<tr><td>Subtlety</td><td>High</td></tr>"
+			end
+			if perception < 3
+				infotable += "<tr><td>Perception</td><td>Low</td></tr>"
+			elsif perception < 5
+				infotable += "<tr><td>Perception</td><td>Moderate</td></tr>"
+			else
+				infotable += "<tr><td>Perception</td><td>High</td></tr>"
+			end
+			if sagacity < 3
+				infotable += "<tr><td>Sagacity</td><td>Low</td></tr>"
+			elsif sagacity < 5
+				infotable += "<tr><td>Sagacity</td><td>Moderate</td></tr>"
+			else
+				infotable += "<tr><td>Sagacity</td><td>High</td></tr>"
+			end
+		elsif infolevel > 1
+			infotable += "<tr><th>Domain</th><th>Score</th><tr>"
+			
+			associations.each do |a|
+				infotable += "<tr><td>#{a.strength}</td><td>#{a.domain.name}</td></tr>"
+			end
+			
+			infotable += "</table><table>"
+			infotable += "<tr><th>Attribute</th><th>Score</th><tr>"
+			infotable += "<tr><td>Might</td><td>#{might}</td></tr>"
+			infotable += "<tr><td>Will</td><td>#{will}</td></tr>"
+			infotable += "<tr><td>Cunning</td><td>#{cunning}</td></tr>"
+			infotable += "<tr><td>Subtlety</td><td>#{subtlety}</td></tr>"
+			infotable += "<tr><td>Perception</td><td>#{perception}</td></tr>"
+			infotable += "<tr><td>Sagacity</td><td>#{sagacity}</td></tr>"
+		end
+		infotable += "</table>"
+		return infotable
+		#turn directly into html
+	end
+
+	#determine information level (with exceptions)
+	def profile_examine_info_level(examiner) #class=Deity
+
+		if examiner == self
+			infolevel = 100
+		else 
+			infolevel = examiner.perception - self.subtlety
+		end
+		return infolevel
+
+	end
+
 end

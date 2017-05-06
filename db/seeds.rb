@@ -70,6 +70,8 @@ Domain.where(name: 'Nationalism').first_or_create(name: "Nationalism")
 Domain.where(name: 'Wit').first_or_create(name: "Wit")
 Domain.where(name: 'Agriculture').first_or_create(name: "Agriculture")
 Domain.where(name: 'Plunder').first_or_create(name: 'Plunder')
+Domain.where(name: 'Secrets').first_or_create(name: 'Secrets')
+Domain.where(name: 'Manipulation').first_or_create(name: "Manipulation")
 
 
 #---------------------------------------------
@@ -599,53 +601,70 @@ Deity.where(name: "Grundzel").first_or_create(name:"Grundzel")
 Deity.where(name: "Aleseus").first_or_create(name:"Aleseus")
 
 a = Actor.where(name:"Lasrwoha").first_or_create(name:"Lasrwoha", race: (Race.where(name:"Alohm").first), might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:5)
+a.update(name:"Lasrwoha", race: (Race.where(name:"Alohm").first), might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:5)
 Deity.where(name: a.name).first.update(actor: a)
 puts "added actor #{a.name}"
 a = Actor.where(name:"Ululantibus").first_or_create(race: Race.where(name: "Alohm").first, name: "Ululantibus", might:4,will:5,cunning:3,subtlety:2,sagacity:5,perception:2)
+a.update(race: Race.where(name: "Alohm").first, name: "Ululantibus", might:4,will:5,cunning:3,subtlety:2,sagacity:5,perception:2)
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Ehlisfaire").first_or_create(race: Race.where(name: "Alohm").first, name: "Ehlisfaire", might:6,will:1,cunning:3,subtlety:3,sagacity:4,perception:4)
+a.update(race: Race.where(name: "Alohm").first, name: "Ehlisfaire", might:6,will:1,cunning:3,subtlety:3,sagacity:4,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Vatharius'Vex").first_or_create(race: Race.where(name: "Alohm").first, name: "Vatharius'Vex", might:6,will:5,cunning:3,subtlety:2,sagacity:1,perception:4)
+a.update(race: Race.where(name: "Alohm").first, name: "Vatharius'Vex", might:6,will:5,cunning:3,subtlety:2,sagacity:1,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Zephyrus").first_or_create(race: Race.where(name: "Alohm").first, name: "Zephyrus", might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:4)
+a.update(race: Race.where(name: "Alohm").first, name: "Zephyrus", might:4,will:6,cunning:1,subtlety:1,sagacity:4,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Aleseus").first_or_create(race: Race.where(name: "Alohm").first, name: "Aleseus", might:3,will:2,cunning:5,subtlety:4,sagacity:2,perception:5)
+a.update(race: Race.where(name: "Alohm").first, name: "Aleseus", might:3,will:2,cunning:5,subtlety:4,sagacity:2,perception:5)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
-a = Actor.where(name:"Skaal").first_or_create(race: Race.where(name: "Alohm").first, name: "Skaal", might:1,will:3,cunning:3,subtlety:6,sagacity:4,perception:4)
+a = Actor.where(name:"Skaal").first_or_create(race: Race.where(name: "Alohm").first, name: "Skaal", might:1,will:3,cunning:3,subtlety:7,sagacity:4,perception:4)
+a.update(race: Race.where(name: "Alohm").first, name: "Skaal", might:1,will:3,cunning:3,subtlety:7,sagacity:4,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Harkates").first_or_create(race: Race.where(name: "Alohm").first, name: "Harkates", might:5,will:4,cunning:3,subtlety:1,sagacity:2,perception:6)
+a.update(race: Race.where(name: "Alohm").first, name: "Harkates", might:5,will:4,cunning:3,subtlety:1,sagacity:2,perception:6)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Ordwyn").first_or_create(race: Race.where(name: "Alohm").first, name: "Ordwyn", might:3,will:3,cunning:5,subtlety:2,sagacity:5,perception:4)
+a.update(race: Race.where(name: "Alohm").first, name: "Ordwyn", might:3,will:3,cunning:5,subtlety:2,sagacity:5,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
-a = Actor.where(name:"Krolos").first_or_create(race: Race.where(name: "Alohm").first, name: "Krolos", might:2,will:3,cunning:4,subtlety:5,sagacity:1,perception:6)
+a = Actor.where(name:"Krolos").first_or_create(race: Race.where(name: "Alohm").first, name: "Krolos", might:2,will:3,cunning:4,subtlety:6,sagacity:1,perception:6)
+a.update(race: Race.where(name: "Alohm").first, name: "Krolos", might:2,will:3,cunning:4,subtlety:6,sagacity:1,perception:6)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Luogh").first_or_create(race: Race.where(name: "Alohm").first, name: "Luogh", might:5,will:6,cunning:2,subtlety:2,sagacity:3,perception:3)
+a.update(race: Race.where(name: "Alohm").first, name: "Luogh", might:5,will:6,cunning:2,subtlety:2,sagacity:3,perception:3)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
-a = Actor.where(name:"Oscaro").first_or_create(race: Race.where(name: "Alohm").first, name: "Oscaro", might:1,will:5,cunning:4,subtlety:5,sagacity:4,perception:2)
+a = Actor.where(name:"Oscaro").first_or_create(race: Race.where(name: "Alohm").first, name: "Oscaro", might:1,will:5,cunning:4,subtlety:6,sagacity:4,perception:2)
+a.update(race: Race.where(name: "Alohm").first, name: "Oscaro", might:1,will:5,cunning:4,subtlety:6,sagacity:4,perception:2)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Dartha").first_or_create(race: Race.where(name: "Alohm").first, name: "Dartha", might:5,will:4,cunning:2,subtlety:2,sagacity:3,perception:5)
+a.update(race: Race.where(name: "Alohm").first, name: "Dartha", might:5,will:4,cunning:2,subtlety:2,sagacity:3,perception:5)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Vaniya").first_or_create(race: Race.where(name: "Alohm").first, name: "Vaniya", might:5,will:5,cunning:3,subtlety:4,sagacity:2,perception:2)
+a.update(race: Race.where(name: "Alohm").first, name: "Vaniya", might:5,will:5,cunning:3,subtlety:4,sagacity:2,perception:2)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Grita").first_or_create(race: Race.where(name: "Alohm").first, name: "Grita", might:4,will:5,cunning:3,subtlety:4,sagacity:2,perception:3)
+a.update(race: Race.where(name: "Alohm").first, name: "Grita", might:4,will:5,cunning:3,subtlety:4,sagacity:2,perception:3)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Gawp").first_or_create(race: Race.where(name: "Alohm").first, name: "Gawp", might:1,will:3,cunning:3,subtlety:3,sagacity:4,perception:4)
+a.update(race: Race.where(name: "Alohm").first, name: "Gawp", might:1,will:3,cunning:3,subtlety:3,sagacity:4,perception:4)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 a = Actor.where(name:"Grundzel").first_or_create(race: Race.where(name: "Alohm").first, name: "Grundzel", might:3,will:3,cunning:3,subtlety:3,sagacity:3,perception:3)
+a.update(race: Race.where(name: "Alohm").first, name: "Grundzel", might:3,will:3,cunning:3,subtlety:3,sagacity:3,perception:3)
 puts "added actor #{a.name}"
 Deity.where(name: a.name).first.update(actor: a)
 
@@ -786,6 +805,9 @@ d.associate({"Jealousy" => 25})
 d.associate({"Fertility" => 35})
 d.associate({"Nationalism" => 30})
 
+d = Deity.where(name: "Skaal").first
+d.associate({"Secrets" => 30})
+d.associate({"Manipulation" => 30})
 
 #-------------------------------------------
 # 		   SEEDS FROM TESTING
