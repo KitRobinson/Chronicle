@@ -341,9 +341,9 @@ Province.find(40).update(name:"Province #{p_pid}", primary_terrain: Terrain.wher
 p_pid += 1
 Province.find(41).update(name:"Thenindriel", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:thenindriel)
 p_pid += 1
-Province.find(42).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
+Province.find(42).update(name:"Snowoquiist", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
 p_pid += 1
-Province.find(43).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2, suzerain:fireon)
+Province.find(43).update(name:"Nobonor", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2, suzerain:fireon)
 p_pid += 1
 Province.find(44).update(name:"Mere of Lagash", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:1, suzerain:urd)
 p_pid += 1
@@ -371,19 +371,19 @@ Province.find(55).update(name:"Rustle Wood", primary_terrain: Terrain.where(name
 p_pid += 1
 Province.find(56).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Marsh").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(57).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:dix)
+Province.find(57).update(name:"Swampy Terrowyl", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:dix)
 p_pid += 1
-Province.find(58).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
+Province.find(58).update(name:"Nodquiist", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
 Province.find(59).update(name:"Ithel Wood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2, suzerain:ithelwood)
 p_pid += 1
 Province.find(60).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(61).update(name:"Sendeel Coast South", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Shrubland").first, volcanism:0, leyline_strength:2, suzerain:nil)
+Province.find(61).update(name:"Sendel Coast South", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Shrubland").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
 Province.find(62).update(name:"Sendel Coast North", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:sendel)
 p_pid += 1
-Province.find(63).update(name:"Tyvaxia", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
+Province.find(63).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
 p_pid += 1
 Province.find(64).update(name:"Starrs Plain", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:skytribe)
 p_pid += 1
@@ -447,9 +447,9 @@ Province.find(93).update(name:"Far Corwal Sea", primary_terrain: Terrain.where(n
 p_pid += 1
 Province.find(94).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(95).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
+Province.find(95).update(name:"Bay of Vzom", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(96).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
+Province.find(96).update(name:"Myrwyrm's Channel", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
 Province.find(97).update(name:"Apothecary's Noose", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
