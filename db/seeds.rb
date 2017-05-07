@@ -126,7 +126,7 @@ Race.where(name: "Human").first_or_create(name:"Human", description:"Humans are 
 Race.where(name: "Goblin").first_or_create(name:"Goblin", description:"Goblins are weak, sneaky, and fecund", longevity:2, fecundity: 4, might: 2, will: 2, cunning: 4, subtlety: 4, perception: 3, sagacity: 2, scale: 1)
 Race.where(name: "Elf").first_or_create(name:"Elf", description:"Elves spend their long lives in harmony with nature", longevity: 5, fecundity: 2, might: 3, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
 Race.where(name: "Snow-Elf").first_or_create(name:"Snow-Elf", description:"Snow Elves are like elves, but snowy", longevity: 6, fecundity: 0, might: 4, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
-Race.where(name: "Wyveryn").first_or_create(name:"Wyveryn", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
+Race.where(name: "Wyvern").first_or_create(name:"Wyvern", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
 Race.where(name: "Monster").first_or_create(name:"Monster", description:"A catch all term for great beasts", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 3)
 Race.where(name: "Titan").first_or_create(name:"Titan", description: "A catch all term for VERY great beings", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 5)
 Race.where(name: "Generic").first_or_create(name:"Generic", description: "If you see this, let Chris know, it means something is broken!", longevity:3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
@@ -206,7 +206,7 @@ ice_tribe = Organization.where(name:"Ice Tribe").first_or_create(name:"Ice Tribe
 # Province.find(114).update(suzerain: ice_tribe)
 chilldale = Organization.where(name:"Chilldale").first_or_create(name:"Chilldale", description: "Simple farming folk, who only wish to be left in peace", is_kingdom:1, is_church:0, governance:"Monarchy")
 # Province.find(71).update(suzerain: chilldale)
-roost = Organization.where(name:"Wyveryn Roosts").first_or_create(name:"Wyveryn Roosts", description: "Major stops on the migratory routes of the Wyveryn - though perhaps not technically a kingdom, the borders of the roosts are taken seriously by landbound nations", is_kingdom:1, is_church:0, governance:"Transitory")
+roost = Organization.where(name:"Wyvern Roosts").first_or_create(name:"Wyvern Roosts", description: "Major stops on the migratory routes of the Wyvern - though perhaps not technically a kingdom, the borders of the roosts are taken seriously by landbound nations", is_kingdom:1, is_church:0, governance:"Transitory")
 # Province.find(7).update(suzerain: roost)
 # Province.find(11).update(suzerain: roost)
 # Province.find(35).update(suzerain: roost)
@@ -267,7 +267,7 @@ Province.find(3).update(name:"Sandy Shores", primary_terrain: Terrain.where(name
 p_pid += 1
 Province.find(4).update(name:"Isle of Ashe", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:5, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(5).update(name:"M other's Womb", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:5, leyline_strength:0, suzerain:nil)
+Province.find(5).update(name:"Mother's Womb", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:5, leyline_strength:0, suzerain:nil)
 p_pid += 1
 Province.find(6).update(name:"Greater and Lesser Turtles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:2, leyline_strength:1, suzerain:nil)
 p_pid += 1
@@ -521,7 +521,7 @@ Province.all.each do |p|
 end
 
 Population.where(province_id:10,race: Race.where(name: "Goblin").first).first_or_create(province_id:10, race: Race.where(name:"Goblin").first, count:90000)
-Population.where(province_id:11,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:11, race: Race.where(name:"Wyveryn").first, count:25000)
+Population.where(province_id:11,race: Race.where(name: "Wyvern").first).first_or_create(province_id:11, race: Race.where(name:"Wyvern").first, count:25000)
 Population.where(province_id:113,race: Race.where(name: "Human").first).first_or_create(province_id:113, race: Race.where(name:"Human").first, count:120000)
 Population.where(province_id:114,race: Race.where(name: "Human").first).first_or_create(province_id:114, race: Race.where(name:"Human").first, count:60000)
 Population.where(province_id:12,race: Race.where(name: "Goblin").first).first_or_create(province_id:12, race: Race.where(name:"Goblin").first, count:70000)
@@ -540,7 +540,7 @@ Population.where(province_id:30,race: Race.where(name: "Human").first).first_or_
 Population.where(province_id:32,race: Race.where(name: "Goblin").first).first_or_create(province_id:32, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:33,race: Race.where(name: "Goblin").first).first_or_create(province_id:33, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:34,race: Race.where(name: "Undead").first).first_or_create(province_id:34, race: Race.where(name:"Undead").first, count:50000)
-Population.where(province_id:35,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:35, race: Race.where(name:"Wyveryn").first, count:20000)
+Population.where(province_id:35,race: Race.where(name: "Wyvern").first).first_or_create(province_id:35, race: Race.where(name:"Wyvern").first, count:20000)
 Population.where(province_id:36,race: Race.where(name: "Goblin").first).first_or_create(province_id:36, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:37,race: Race.where(name: "Goblin").first).first_or_create(province_id:37, race: Race.where(name:"Goblin").first, count:80000)
 Population.where(province_id:38,race: Race.where(name: "Human").first).first_or_create(province_id:38, race: Race.where(name:"Human").first, count:70000)
@@ -564,7 +564,7 @@ Population.where(province_id:63,race: Race.where(name: "Human").first).first_or_
 Population.where(province_id:64,race: Race.where(name: "Goblin").first).first_or_create(province_id:64, race: Race.where(name:"Goblin").first, count:23000)
 Population.where(province_id:65,race: Race.where(name: "Goblin").first).first_or_create(province_id:65, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:69,race: Race.where(name: "Human").first).first_or_create(province_id:69, race: Race.where(name:"Human").first, count:90000)
-Population.where(province_id:7,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:7, race: Race.where(name:"Wyveryn").first, count:20000)
+Population.where(province_id:7,race: Race.where(name: "Wyvern").first).first_or_create(province_id:7, race: Race.where(name:"Wyvern").first, count:20000)
 Population.where(province_id:71,race: Race.where(name: "Human").first).first_or_create(province_id:71, race: Race.where(name:"Human").first, count:50000)
 Population.where(province_id:73,race: Race.where(name: "Human").first).first_or_create(province_id:73, race: Race.where(name:"Human").first, count:45000)
 Population.where(province_id:74,race: Race.where(name: "Elf").first).first_or_create(province_id:74, race: Race.where(name:"Elf").first, count:13000)
@@ -588,7 +588,7 @@ Population.where(province_id:113,race: Race.where(name: "Snow-Elf").first).first
 Population.where(province_id:81,race: Race.where(name: "Goblin").first).first_or_create(province_id:81, race: Race.where(name:"Goblin").first, count:4000)
 Population.where(province_id:79,race: Race.where(name: "Goblin").first).first_or_create(province_id:79, race: Race.where(name:"Goblin").first, count:12000)
 Population.where(province_id:44,race: Race.where(name: "Elf").first).first_or_create(province_id:44, race: Race.where(name:"Elf").first, count:8000)
-Population.where(province_id:34,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:34, race: Race.where(name:"Wyveryn").first, count:5000)
+Population.where(province_id:34,race: Race.where(name: "Wyvern").first).first_or_create(province_id:34, race: Race.where(name:"Wyvern").first, count:5000)
 Population.where(province_id:77,race: Race.where(name: "Human").first).first_or_create(province_id:77, race: Race.where(name:"Human").first, count: 180000)
 
 #---------------------------------------------
@@ -917,7 +917,7 @@ d.associate({"Manipulation" => 30})
 # race_human = Race.create(name:"Human", description:"Humans are dull and normal", longevity:3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
 # race_goblin = Race.create(name:"Goblin", description:"Goblins are weak, sneaky, and evil", longevity:2, fecundity: 4, might: 2, will: 2, cunning: 4, subtlety: 4, perception: 3, sagacity: 2, scale: 1)
 # race_elf = Race.create(name:"Elf", description:"Elves spend their long lives in harmony with nature", longevity: 5, fecundity: 2, might: 3, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
-# race_wyvern = Race.create(name:"Wyveryn", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
+# race_wyvern = Race.create(name:"Wyvern", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
 # race_monster = Race.create(name:"Monster", description:"A catch all term for great beasts", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 3)
 # race_titan = Race.create(name:"Titan", description: "A catch all term for VERY great beings", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 5)
 
@@ -1019,3 +1019,18 @@ d.associate({"Manipulation" => 30})
 
 # ------------------------------------------------- #
 # seeds for user profiles
+
+
+#---------------------------------------------------#
+#  ----------Miscellany
+
+
+#remove offending 'Wyveryn now updated to Wyvern'
+wpops = Population.where(race: Race.where(name:"Wyveryn")).all
+wpops.each do |p|
+	p.destroy
+end
+
+d = Race.where(name: "Wyveryn").first
+d.destroy if d
+
