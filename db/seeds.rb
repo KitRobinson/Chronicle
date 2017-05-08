@@ -811,6 +811,190 @@ d = Deity.where(name: "Skaal").first
 d.associate({"Secrets" => 30})
 d.associate({"Manipulation" => 30})
 
+
+#-------------------------------------------
+# process for congregations
+
+#clear previous congregations for testing
+cs = Congregation.all
+cs.each do |c|
+	c.destroy
+end
+# ensure that each population has piety and devotion.
+Population.all.each do |p|
+	p.update(piety: 40 + Random.rand(20), devotion: 60 + Random.rand(20))
+end
+
+# seed existing racial congregations
+
+#elves
+Population.where(race: Race.where(name: "Elf")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	puts "elfpop #{p.id} has numworshippers #{numworshippers}"
+	puts "beacuse count: #{p.count} * devotion: #{p.devotion}"
+	Congregation.where(deity: Deity.where(name: "Vaniya").first, population: p).first_or_create(deity: Deity.where(name: "Vaniya").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Aleseus").first, population: p).first_or_create(deity: Deity.where(name: "Aleseus").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Vatharius'Vex").first, population: p).first_or_create(deity: Deity.where(name: "Vatharius'Vex").first, population: p, laity: (numworshippers * 0.15).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+end	
+
+Population.where(race: Race.where(name: "Snow-Elf")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Aleseus").first, population: p).first_or_create(deity: Deity.where(name: "Aleseus").first, population: p, laity: (numworshippers * 0.5).floor, clergy: (numworshippers * 0.5 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Dartha").first, population: p).first_or_create(deity: Deity.where(name: "Dartha").first, population: p, laity: (numworshippers * 0.5).floor, clergy: (numworshippers * 0.5 * 0.04).floor, loyalty: 100)
+end
+
+#goblins
+Population.where(race: Race.where(name: "Goblin")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Grita").first, population: p).first_or_create(deity: Deity.where(name: "Grita").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Grundzel").first, population: p).first_or_create(deity: Deity.where(name: "Grundzel").first, population: p, laity: (numworshippers * 0.1).floor, clergy: (numworshippers * 0.1 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Grita").first, population: p).first_or_create(deity: Deity.where(name: "Grita").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Grundzel").first, population: p).first_or_create(deity: Deity.where(name: "Grundzel").first, population: p, laity: (numworshippers * 0.1).floor, clergy: (numworshippers * 0.1 * 0.04).floor, loyalty: 100)
+end
+
+#Wyvern
+Population.where(race: Race.where(name: "Wyvern")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Vatharius'Vex").first, population: p).first_or_create(deity: Deity.where(name: "Vatharius'Vex").first, population: p, laity: (numworshippers * 0.6).floor, clergy: (numworshippers * 0.6 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Vaniya").first, population: p).first_or_create(deity: Deity.where(name: "Vaniya").first, population: p, laity: (numworshippers * 0.2).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+end
+
+#Undead
+Population.where(race: Race.where(name: "Undead")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Ululantibus").first, population: p).first_or_create(deity: Deity.where(name: "Ululantibus").first, population: p, laity: (numworshippers * 0.8).floor, clergy: (numworshippers * 0.9 * 0.04).floor, loyalty: 100)
+end
+
+# seed existing paid for province based congregations
+p = Province.where(name: "Windward Res Akhani").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Zephyrus").first, population: p).first_or_create(deity: Deity.where(name: "Zephyrus").first, population: p, laity: (numworshippers * 0.4).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+
+p = Province.where(name: "Leeward Res Akhani").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Zephyrus").first, population: p).first_or_create(deity: Deity.where(name: "Zephyrus").first, population: p, laity: (numworshippers * 0.4).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+
+p = Province.where(name: "Loah-Khor").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Lasrwoha").first, population: p).first_or_create(deity: Deity.where(name: "Lasrwoha").first, population: p, laity: (numworshippers * 0.5).floor, clergy: (numworshippers * 0.7 * 0.08).floor, loyalty: 100)
+
+p = Province.where(name: "Luts").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Lasrwoha").first, population: p).first_or_create(deity: Deity.where(name: "Lasrwoha").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+
+#calculate apportionments
+
+#give each deity a number of "apportionments"
+deity_apportionments = {}
+Deity.all.each do |d|
+	deity_apportionments[d.name] = 40
+end
+
+#add/set additional apportionments to specific deities.
+deity_apportionments["Oscaro"] += 20
+deity_apportionments["Ululantibus"] += 10
+deity_apportionments["Lasrwoha"] += 15
+deity_apportionments["Ordwyn"] += 10
+deity_apportionments.delete("Skaal")
+deity_apportionments["Zephyrus"] = 20
+deity_apportionments["Grundzel"] = 2
+
+
+def total_apportionments(deity_apportionments)
+	t = 0
+	deity_apportionments.each do |deity, num|
+		t += num
+	end
+	return t
+end
+
+def devoted_mortals(pop)
+	devotees = 0
+	cs = Congregation.where(population: pop)
+	cs.each do |c|
+		if c.laity
+			devotees += c.laity
+		end
+	end
+	devotees
+end
+
+def free_mortals(pop)
+	(pop.count * pop.devotion / 100).floor - devoted_mortals(pop)
+end
+
+#get total unassigned devoted population
+def total_free_mortals
+	total_free_devotees = 0
+	Population.all.each do |p|
+		total_free_devotees += free_mortals(p)
+	end
+	total_free_devotees
+end
+
+total_free_devotees = total_free_mortals
+
+#divide by number of apportionments.
+per_apportionment = total_free_devotees/total_apportionments(deity_apportionments)
+
+puts "total free: #{total_free_devotees}"
+puts "total apportionments = #{total_apportionments(deity_apportionments)}"
+puts "per per_apportionment = #{per_apportionment}"
+puts "accountable: #{(total_apportionments(deity_apportionments)) * per_apportionment}"
+#in each population, while non-assigned devotees remain - 
+Population.all.each do |p|
+	while free_mortals(p) > 0
+   	# randomly select a deity
+		if total_apportionments(deity_apportionments) > 0
+			d = Deity.all.sample
+		   	# if deity has apportionments
+		   	if deity_apportionments[d.name] && deity_apportionments[d.name] > 0
+		   # find_or_create an empty congregation
+		   		c = Congregation.where(population: p, deity: d).first_or_create(population: p, deity: d, loyalty: 100, laity: 0)
+		   # between 1-3 times do:
+		   		(Random.rand(2) + 1).times do
+			    	# if population and apportionments remain
+			    	if deity_apportionments[d.name] && deity_apportionments[d.name] > 0 && free_mortals(p) > 0
+		       			# add an apportionment of population +- 20% to the congregation
+		       			if c.laity == nil
+		       				c.laity = 0
+		       			end
+		       			if c.clergy == nil
+		       				c.clergy = 0
+		       			end
+		       			c.laity += ((80 + Random.rand(40)) * per_apportionment / 100).floor
+		       			c.clergy += ((80 + Random.rand(40)) * per_apportionment / 100 * 0.04).floor
+		       			# if this causes free mortals to go negative, limit the apportionment to the free mortals
+		       			c.laity += free_mortals if free_mortals(p) < 0
+		       			c.save
+
+		       			# remove apportionment from deity
+		       			deity_apportionments[d.name] += -1
+		       			if deity_apportionments[d.name] == 0
+		       				deity_apportionments.delete(d.name)
+		       				puts "finished #{d.name} - remaining: #{deity_apportionments.length}"
+		       				puts "remaining: #{deity_apportionments}"
+		       			end
+		       		end
+		       	end
+		    end
+		else
+			#if we run out of apportionments, as we may well do, add an extra 1 to each deity.
+			Deity.all.each do |d|
+				deity_apportionments[d.name] = 1
+			end
+		end
+	end
+	puts "assigned congregations to pop #{p.id}"
+	puts "free: #{total_free_mortals}"
+	puts "apportionments #{total_apportionments(deity_apportionments)}"
+
+end	
+
+	   
+
+
+
 #-------------------------------------------
 # 		   SEEDS FROM TESTING
 
@@ -1034,3 +1218,20 @@ end
 d = Race.where(name: "Wyveryn").first
 d.destroy if d
 
+#end of seed infomat
+Deity.all.each do |d|
+	puts "#{d.name} - followers #{d.total_laity}, clergy #{d.total_clergy}, congregations: #{d.congregations.count}"
+end
+
+populated_provs = 0
+Province.all.each do |p|
+	if p.populations.length > 0
+		populated_provs += 1
+		prov_congs = 0
+		p.populations.each do |pop|
+			prov_congs += pop.congregations.count
+		end
+		puts "prov #{p.name} has #{prov_congs}"
+	end
+end
+puts "overall #{populated_provs} populated provs have #{Congregation.all.count} to average #{Congregation.all.count / populated_provs}"

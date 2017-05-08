@@ -202,4 +202,24 @@ class Deity < ActiveRecord::Base
 
 	end
 
+	def total_laity
+		tf = 0
+		congregations.each do |c|
+			tf += c.laity
+		end
+		tf
+	end
+
+	def total_clergy
+		tc = 0
+		congregations.each do |c|
+			tc += c.clergy
+		end
+		tc
+	end
+
+	def total_followers
+		self.total_laity + self.total_clergy
+	end
+
 end

@@ -7,13 +7,13 @@ class Population < ActiveRecord::Base
 	belongs_to :province
 	has_many :associations, as: :associable
 
-	def calc_devotion
+	def calc_new_devotion
 		devoted_total = 0
 		congregations.each { |c| devoted_total += c.total }
 		devoted_total/self.count
 	end
 
-	def devotion
+	def new_devotion
 		calc_devotion
 	end
 
