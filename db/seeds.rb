@@ -1225,7 +1225,7 @@ end
 
 populated_provs = 0
 Province.all.each do |p|
-	if p.populations.length > 0
+	if p.populations.length > 0git 
 		populated_provs += 1
 		prov_congs = 0
 		p.populations.each do |pop|

@@ -92,15 +92,24 @@ class MapsController < ApplicationController
 		else	
 			if params[:source] == "property"
 				max_datum = Province.maximum(params[:criteria])
-			elsif params[:source] == "virtual"
+			elsif params[:source] == "virtual" && !params[:parameters]
 				max_datum = 0
 				Province.all.each do |p|
 					if p.send(params[:criteria]) && p.send(params[:criteria]) > max_datum
 						max_datum = p.send(params[:criteria])
 					end
 				end
+			elsif params[:source] == "virtual" && params[:parameters]
+				max_datum = 0
+				Province.all.each do |p|
+					if p.send(params[:criteria], [params[:parameters]]) && p.send(params[:criteria], [params[:parameters]]) > max_datum
+						max_datum = p.send(params[:criteria], [params[:parameters]])
+					end
+				end
+
 			end
-			areaArray = []
+			if !params[:parameters]
+				areaArray = []
 				Province.all.each do |p|
 					if p.send(params[:criteria]) && p.send(params[:criteria]) != 0
 						areaArray.push({
@@ -112,6 +121,20 @@ class MapsController < ApplicationController
 							})
 					end
 				end
+			elsif params[:parameters]
+				areaArray = []
+				Province.all.each do |p|
+					if p.send(params[:criteria], [params[:parameters]]) && p.send(params[:criteria], [params[:parameters]]) != 0
+						areaArray.push({
+							key: "Province#{p.id}",
+							fillColor: coloration(p.send(params[:criteria], [params[:parameters]]), max_datum, params[:pattern]),
+							staticState: true,
+							stroke: true,
+							strokeColor: '000000'
+							})
+					end
+				end
+			end
 			puts max_datum
 		end
 		render json: areaArray

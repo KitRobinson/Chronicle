@@ -21,6 +21,10 @@ class Population < ActiveRecord::Base
 		self.race.name
 	end
 
+	def total_devoted
+		(count * devotion / 100).floor
+	end
+
 	def report_definition
 		report_def = {
 			race: {difficulty: 40, approximator: "none", field_name:"race_name", max_datum:nil},

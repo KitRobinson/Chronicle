@@ -12,6 +12,7 @@
 
 <a class='dropdown-button btn' href='#' data-activates='dropdown-zooms'>Map Zoom</a>
 <a class='dropdown-button btn' href='#' data-activates='dropdown-zooms2'>Overlays</a>
+<a class='dropdown-button btn' href='#' data-activates='dropdown-zooms3'>Worshippers</a>
 <!-- 
 <ul id='drop-shaders' class='dropdown-content'>
     <li><a id="shader-volc" href="#!">Volcanism</a></li>
@@ -32,7 +33,26 @@
     <li><a id="shader-difficulty" href="#!">Terrain Difficulty</a></li>
     <li><a id="shader-dev-multiplier" href="#!">Development Multiplier</a></li>
     <li><a id="shader-total-pop" href="#!">Population</a></li>
-    <li><a id="shader-suzerain-num" herf="#!">Owner</a></li>
+    <li><a id="shader-suzerain-num" href="#!">Owner</a></li>
+</ul>
+
+<ul id='dropdown-zooms3' class='dropdown-content'>
+    <li><a class="shader-worshippers" id="Vaniya" href="#!">By Count</a></li>
+    <li><a class="shader-percent-worshippers" id="Vaniya" href="#!">Per Capita</a></li>
+    <li><a class='dropdown-button d' href='#' data-activates='others-worshippers' data-hover="hover" data-alignment="left">Others by #</a></li>
+    <li><a class='dropdown-button d' href='#' data-activates='others-percent-worshippers' data-hover="hover" data-alignment="left">Others by %</a></li>
+</ul>
+
+<ul id="others-worshippers" class="dropdown-content">
+	<% Deity.all.each do |d| %>
+		<li><a class='shader-worshippers' id=<%=d.name%> href='#!'><%=d.name%></a></li>"
+	<% end %>
+</ul>
+
+<ul id="others-percent-worshippers" class="dropdown-content">
+	<% Deity.all.each do |d| %>
+		<li><a class='shader-percent-worshippers' id=<%=d.name%> href='#!'><%=d.name%></a></li>"
+	<% end %>
 </ul>
 
 <div id="map-panel" class="container">
