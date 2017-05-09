@@ -419,7 +419,7 @@ Province.find(79).update(name:"Province #{p_pid}", primary_terrain: Terrain.wher
 p_pid += 1
 Province.find(80).update(name:"Geenwood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:ashilion)
 p_pid += 1
-Province.find(81).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:sendel)
+Province.find(81).update(name:"Fanged Coast", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:sendel)
 p_pid += 1
 Province.find(82).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:3, suzerain:nil)
 p_pid += 1
@@ -485,7 +485,7 @@ Province.find(112).update(name:"Okhel", primary_terrain: Terrain.where(name: "Gl
 p_pid += 1
 Province.find(113).update(name:"Elkholdt", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2, suzerain:ice_tribe)
 p_pid += 1
-Province.find(114).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:ice_tribe)
+Province.find(114).update(name:"Icedge", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:ice_tribe)
 p_pid += 1
 Province.find(115).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
@@ -554,8 +554,8 @@ Population.where(province_id:45,race: Race.where(name: "Elf").first).first_or_cr
 Population.where(province_id:46,race: Race.where(name: "Undead").first).first_or_create(province_id:46, race: Race.where(name:"Undead").first, count:180000)
 Population.where(province_id:47,race: Race.where(name: "Human").first).first_or_create(province_id:47, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:51,race: Race.where(name: "Human").first).first_or_create(province_id:51, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:290000)
-Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:350000)
+Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:240000)
+Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:220000)
 Population.where(province_id:54,race: Race.where(name: "Human").first).first_or_create(province_id:54, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:57,race: Race.where(name: "Human").first).first_or_create(province_id:57, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:59,race: Race.where(name: "Elf").first).first_or_create(province_id:59, race: Race.where(name:"Elf").first, count:30000)
@@ -882,6 +882,15 @@ p = Province.where(name: "Luts").first.populations.where(race: Race.where(name: 
 numworshippers = (p.count * p.devotion / 100).floor
 Congregation.where(deity: Deity.where(name: "Lasrwoha").first, population: p).first_or_create(deity: Deity.where(name: "Lasrwoha").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
 
+p = Province.where(name: "Elkholdt").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Dartha").first, population: p).first_or_create(deity: Deity.where(name:"Dartha").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.4).floor, loyalty: 100)
+
+p = Province.where(name: "Icedge").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Dartha").first, population: p).first_or_create(deity: Deity.where(name:"Dartha").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.4).floor, loyalty: 100)
+
+
 #calculate apportionments
 
 #give each deity a number of "apportionments"
@@ -900,6 +909,8 @@ deity_apportionments["Zephyrus"] = 20
 deity_apportionments["Grundzel"] = 2
 
 
+
+# methods for using apportionments
 def total_apportionments(deity_apportionments)
 	t = 0
 	deity_apportionments.each do |deity, num|
@@ -941,6 +952,44 @@ puts "total free: #{total_free_devotees}"
 puts "total apportionments = #{total_apportionments(deity_apportionments)}"
 puts "per per_apportionment = #{per_apportionment}"
 puts "accountable: #{(total_apportionments(deity_apportionments)) * per_apportionment}"
+
+# this would be rather nicer if added to the congregation model, when time permits
+# manually add apportionments
+def add_apportionment(deity, population, per_apportionment, deity_apportionments)
+	c = Congregation.where(population: population, deity: deity).first_or_create(population: population, deity: deity, laity:0, clergy: 0, loyalty: 100) 
+	if c.laity == nil
+		c.laity = 0
+	end
+	if c.clergy == nil
+		c.clergy = 0
+	end
+	c.laity += ((80 + Random.rand(40)) * per_apportionment / 100).floor
+	c.clergy += ((80 + Random.rand(40)) * per_apportionment / 100 * 0.04).floor
+	# if this causes free mortals to go negative, limit the apportionment to the free mortals
+	c.laity += free_mortals if free_mortals(population) < 0
+	c.save
+	deity_apportionments[deity.name] += -1
+	if deity_apportionments[deity.name] == 0
+		deity_apportionments.delete(deity.name)
+		puts "finished #{deity.name} - remaining: #{deity_apportionments.length}"
+		puts "remaining: #{deity_apportionments}"
+	end
+end
+
+#designate specific apportionments:
+
+#for flavor reasons, meaning we DO use up apportionments for this, and right now only affect humans:
+6.times { add_apportionment(Deity.where(name:"Lasrwoha").first, Population.where(province: Province.where(name: "Qatsaph").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+6.times { add_apportionment(Deity.where(name:"Lasrwoha").first, Population.where(province: Province.where(name: "Berakhah").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+6.times { add_apportionment(Deity.where(name:"Lasrwoha").first, Population.where(province: Province.where(name: "Lake-of-the-Sky").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Harkates").first, Population.where(province: Province.where(name: "Old Akatian States").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Harkates").first, Population.where(province: Province.where(name: "New Akatian States").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Luogh").first, Population.where(province: Province.where(name: "The Plains of Yoon").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Luogh").first, Population.where(province: Province.where(name: "In-Yat-Lo Highlands").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+6.times { add_apportionment(Deity.where(name:"Ordwyn").first, Population.where(province: Province.where(name: "Sendel Coast North").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+5.times { add_apportionment(Deity.where(name:"Ordwyn").first, Population.where(province: Province.where(name: "Fanged Coast").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+
+
 #in each population, while non-assigned devotees remain - 
 Population.all.each do |p|
 	while free_mortals(p) > 0
@@ -950,7 +999,7 @@ Population.all.each do |p|
 		   	# if deity has apportionments
 		   	if deity_apportionments[d.name] && deity_apportionments[d.name] > 0
 		   # find_or_create an empty congregation
-		   		c = Congregation.where(population: p, deity: d).first_or_create(population: p, deity: d, loyalty: 100, laity: 0)
+		   		c = Congregation.where(population: p, deity: d).first_or_create(population: p, deity: d, loyalty: 100, laity: 0, clergy: 0)
 		   # between 1-3 times do:
 		   		(Random.rand(2) + 1).times do
 			    	# if population and apportionments remain
@@ -1225,7 +1274,7 @@ end
 
 populated_provs = 0
 Province.all.each do |p|
-	if p.populations.length > 0git 
+	if p.populations.length > 0 
 		populated_provs += 1
 		prov_congs = 0
 		p.populations.each do |pop|
