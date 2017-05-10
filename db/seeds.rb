@@ -126,7 +126,7 @@ Race.where(name: "Human").first_or_create(name:"Human", description:"Humans are 
 Race.where(name: "Goblin").first_or_create(name:"Goblin", description:"Goblins are weak, sneaky, and fecund", longevity:2, fecundity: 4, might: 2, will: 2, cunning: 4, subtlety: 4, perception: 3, sagacity: 2, scale: 1)
 Race.where(name: "Elf").first_or_create(name:"Elf", description:"Elves spend their long lives in harmony with nature", longevity: 5, fecundity: 2, might: 3, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
 Race.where(name: "Snow-Elf").first_or_create(name:"Snow-Elf", description:"Snow Elves are like elves, but snowy", longevity: 6, fecundity: 0, might: 4, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
-Race.where(name: "Wyveryn").first_or_create(name:"Wyveryn", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
+Race.where(name: "Wyvern").first_or_create(name:"Wyvern", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
 Race.where(name: "Monster").first_or_create(name:"Monster", description:"A catch all term for great beasts", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 3)
 Race.where(name: "Titan").first_or_create(name:"Titan", description: "A catch all term for VERY great beings", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 5)
 Race.where(name: "Generic").first_or_create(name:"Generic", description: "If you see this, let Chris know, it means something is broken!", longevity:3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
@@ -206,7 +206,7 @@ ice_tribe = Organization.where(name:"Ice Tribe").first_or_create(name:"Ice Tribe
 # Province.find(114).update(suzerain: ice_tribe)
 chilldale = Organization.where(name:"Chilldale").first_or_create(name:"Chilldale", description: "Simple farming folk, who only wish to be left in peace", is_kingdom:1, is_church:0, governance:"Monarchy")
 # Province.find(71).update(suzerain: chilldale)
-roost = Organization.where(name:"Wyveryn Roosts").first_or_create(name:"Wyveryn Roosts", description: "Major stops on the migratory routes of the Wyveryn - though perhaps not technically a kingdom, the borders of the roosts are taken seriously by landbound nations", is_kingdom:1, is_church:0, governance:"Transitory")
+roost = Organization.where(name:"Wyvern Roosts").first_or_create(name:"Wyvern Roosts", description: "Major stops on the migratory routes of the Wyvern - though perhaps not technically a kingdom, the borders of the roosts are taken seriously by landbound nations", is_kingdom:1, is_church:0, governance:"Transitory")
 # Province.find(7).update(suzerain: roost)
 # Province.find(11).update(suzerain: roost)
 # Province.find(35).update(suzerain: roost)
@@ -267,7 +267,7 @@ Province.find(3).update(name:"Sandy Shores", primary_terrain: Terrain.where(name
 p_pid += 1
 Province.find(4).update(name:"Isle of Ashe", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Woodland").first, volcanism:5, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(5).update(name:"M other's Womb", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:5, leyline_strength:0, suzerain:nil)
+Province.find(5).update(name:"Mother's Womb", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Elysian").first, volcanism:5, leyline_strength:0, suzerain:nil)
 p_pid += 1
 Province.find(6).update(name:"Greater and Lesser Turtles", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:2, leyline_strength:1, suzerain:nil)
 p_pid += 1
@@ -341,9 +341,9 @@ Province.find(40).update(name:"Province #{p_pid}", primary_terrain: Terrain.wher
 p_pid += 1
 Province.find(41).update(name:"Thenindriel", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:thenindriel)
 p_pid += 1
-Province.find(42).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
+Province.find(42).update(name:"Snowoquiist", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:1, suzerain:damoclus)
 p_pid += 1
-Province.find(43).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2, suzerain:fireon)
+Province.find(43).update(name:"Nobonor", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Forest").first, volcanism:0, leyline_strength:2, suzerain:fireon)
 p_pid += 1
 Province.find(44).update(name:"Mere of Lagash", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Lake").first, volcanism:0, leyline_strength:1, suzerain:urd)
 p_pid += 1
@@ -371,19 +371,19 @@ Province.find(55).update(name:"Rustle Wood", primary_terrain: Terrain.where(name
 p_pid += 1
 Province.find(56).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Marsh").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(57).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:dix)
+Province.find(57).update(name:"Swampy Terrowyl", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:dix)
 p_pid += 1
-Province.find(58).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
+Province.find(58).update(name:"Nodquiist", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
 Province.find(59).update(name:"Ithel Wood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:2, suzerain:ithelwood)
 p_pid += 1
 Province.find(60).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Tundra").first, secondary_terrain: Terrain.where(name: "Hills").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
-Province.find(61).update(name:"Sendeel Coast South", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Shrubland").first, volcanism:0, leyline_strength:2, suzerain:nil)
+Province.find(61).update(name:"Sendel Coast South", primary_terrain: Terrain.where(name: "Coast").first, secondary_terrain: Terrain.where(name: "Shrubland").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
 Province.find(62).update(name:"Sendel Coast North", primary_terrain: Terrain.where(name: "Marsh").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:1, suzerain:sendel)
 p_pid += 1
-Province.find(63).update(name:"Tyvaxia", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
+Province.find(63).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Hills").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:0, suzerain:tyvax)
 p_pid += 1
 Province.find(64).update(name:"Starrs Plain", primary_terrain: Terrain.where(name: "Grassland").first, secondary_terrain: Terrain.where(name: "Plains").first, volcanism:0, leyline_strength:2, suzerain:skytribe)
 p_pid += 1
@@ -419,7 +419,7 @@ Province.find(79).update(name:"Province #{p_pid}", primary_terrain: Terrain.wher
 p_pid += 1
 Province.find(80).update(name:"Geenwood", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "River").first, volcanism:0, leyline_strength:1, suzerain:ashilion)
 p_pid += 1
-Province.find(81).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:sendel)
+Province.find(81).update(name:"Fanged Coast", primary_terrain: Terrain.where(name: "Elysian").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:2, suzerain:sendel)
 p_pid += 1
 Province.find(82).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Forest").first, secondary_terrain: Terrain.where(name: "Coast").first, volcanism:0, leyline_strength:3, suzerain:nil)
 p_pid += 1
@@ -447,9 +447,9 @@ Province.find(93).update(name:"Far Corwal Sea", primary_terrain: Terrain.where(n
 p_pid += 1
 Province.find(94).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(95).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
+Province.find(95).update(name:"Bay of Vzom", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:0, leyline_strength:2, suzerain:nil)
 p_pid += 1
-Province.find(96).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
+Province.find(96).update(name:"Myrwyrm's Channel", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
 Province.find(97).update(name:"Apothecary's Noose", primary_terrain: Terrain.where(name: "Ocean").first, secondary_terrain: Terrain.where(name: "Ocean").first, volcanism:1, leyline_strength:2, suzerain:nil)
 p_pid += 1
@@ -485,7 +485,7 @@ Province.find(112).update(name:"Okhel", primary_terrain: Terrain.where(name: "Gl
 p_pid += 1
 Province.find(113).update(name:"Elkholdt", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:2, suzerain:ice_tribe)
 p_pid += 1
-Province.find(114).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:ice_tribe)
+Province.find(114).update(name:"Icedge", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:ice_tribe)
 p_pid += 1
 Province.find(115).update(name:"Province #{p_pid}", primary_terrain: Terrain.where(name: "Glacier").first, secondary_terrain: Terrain.where(name: "Glacier").first, volcanism:0, leyline_strength:1, suzerain:nil)
 p_pid += 1
@@ -521,7 +521,7 @@ Province.all.each do |p|
 end
 
 Population.where(province_id:10,race: Race.where(name: "Goblin").first).first_or_create(province_id:10, race: Race.where(name:"Goblin").first, count:90000)
-Population.where(province_id:11,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:11, race: Race.where(name:"Wyveryn").first, count:25000)
+Population.where(province_id:11,race: Race.where(name: "Wyvern").first).first_or_create(province_id:11, race: Race.where(name:"Wyvern").first, count:25000)
 Population.where(province_id:113,race: Race.where(name: "Human").first).first_or_create(province_id:113, race: Race.where(name:"Human").first, count:120000)
 Population.where(province_id:114,race: Race.where(name: "Human").first).first_or_create(province_id:114, race: Race.where(name:"Human").first, count:60000)
 Population.where(province_id:12,race: Race.where(name: "Goblin").first).first_or_create(province_id:12, race: Race.where(name:"Goblin").first, count:70000)
@@ -540,7 +540,7 @@ Population.where(province_id:30,race: Race.where(name: "Human").first).first_or_
 Population.where(province_id:32,race: Race.where(name: "Goblin").first).first_or_create(province_id:32, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:33,race: Race.where(name: "Goblin").first).first_or_create(province_id:33, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:34,race: Race.where(name: "Undead").first).first_or_create(province_id:34, race: Race.where(name:"Undead").first, count:50000)
-Population.where(province_id:35,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:35, race: Race.where(name:"Wyveryn").first, count:20000)
+Population.where(province_id:35,race: Race.where(name: "Wyvern").first).first_or_create(province_id:35, race: Race.where(name:"Wyvern").first, count:20000)
 Population.where(province_id:36,race: Race.where(name: "Goblin").first).first_or_create(province_id:36, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:37,race: Race.where(name: "Goblin").first).first_or_create(province_id:37, race: Race.where(name:"Goblin").first, count:80000)
 Population.where(province_id:38,race: Race.where(name: "Human").first).first_or_create(province_id:38, race: Race.where(name:"Human").first, count:70000)
@@ -554,8 +554,8 @@ Population.where(province_id:45,race: Race.where(name: "Elf").first).first_or_cr
 Population.where(province_id:46,race: Race.where(name: "Undead").first).first_or_create(province_id:46, race: Race.where(name:"Undead").first, count:180000)
 Population.where(province_id:47,race: Race.where(name: "Human").first).first_or_create(province_id:47, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:51,race: Race.where(name: "Human").first).first_or_create(province_id:51, race: Race.where(name:"Human").first, count:80000)
-Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:290000)
-Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:350000)
+Population.where(province_id:52,race: Race.where(name: "Human").first).first_or_create(province_id:52, race: Race.where(name:"Human").first, count:240000)
+Population.where(province_id:53,race: Race.where(name: "Human").first).first_or_create(province_id:53, race: Race.where(name:"Human").first, count:220000)
 Population.where(province_id:54,race: Race.where(name: "Human").first).first_or_create(province_id:54, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:57,race: Race.where(name: "Human").first).first_or_create(province_id:57, race: Race.where(name:"Human").first, count:80000)
 Population.where(province_id:59,race: Race.where(name: "Elf").first).first_or_create(province_id:59, race: Race.where(name:"Elf").first, count:30000)
@@ -564,7 +564,7 @@ Population.where(province_id:63,race: Race.where(name: "Human").first).first_or_
 Population.where(province_id:64,race: Race.where(name: "Goblin").first).first_or_create(province_id:64, race: Race.where(name:"Goblin").first, count:23000)
 Population.where(province_id:65,race: Race.where(name: "Goblin").first).first_or_create(province_id:65, race: Race.where(name:"Goblin").first, count:70000)
 Population.where(province_id:69,race: Race.where(name: "Human").first).first_or_create(province_id:69, race: Race.where(name:"Human").first, count:90000)
-Population.where(province_id:7,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:7, race: Race.where(name:"Wyveryn").first, count:20000)
+Population.where(province_id:7,race: Race.where(name: "Wyvern").first).first_or_create(province_id:7, race: Race.where(name:"Wyvern").first, count:20000)
 Population.where(province_id:71,race: Race.where(name: "Human").first).first_or_create(province_id:71, race: Race.where(name:"Human").first, count:50000)
 Population.where(province_id:73,race: Race.where(name: "Human").first).first_or_create(province_id:73, race: Race.where(name:"Human").first, count:45000)
 Population.where(province_id:74,race: Race.where(name: "Elf").first).first_or_create(province_id:74, race: Race.where(name:"Elf").first, count:13000)
@@ -588,7 +588,7 @@ Population.where(province_id:113,race: Race.where(name: "Snow-Elf").first).first
 Population.where(province_id:81,race: Race.where(name: "Goblin").first).first_or_create(province_id:81, race: Race.where(name:"Goblin").first, count:4000)
 Population.where(province_id:79,race: Race.where(name: "Goblin").first).first_or_create(province_id:79, race: Race.where(name:"Goblin").first, count:12000)
 Population.where(province_id:44,race: Race.where(name: "Elf").first).first_or_create(province_id:44, race: Race.where(name:"Elf").first, count:8000)
-Population.where(province_id:34,race: Race.where(name: "Wyveryn").first).first_or_create(province_id:34, race: Race.where(name:"Wyveryn").first, count:5000)
+Population.where(province_id:34,race: Race.where(name: "Wyvern").first).first_or_create(province_id:34, race: Race.where(name:"Wyvern").first, count:5000)
 Population.where(province_id:77,race: Race.where(name: "Human").first).first_or_create(province_id:77, race: Race.where(name:"Human").first, count: 180000)
 
 #---------------------------------------------
@@ -811,6 +811,247 @@ d = Deity.where(name: "Skaal").first
 d.associate({"Secrets" => 30})
 d.associate({"Manipulation" => 30})
 
+
+#-------------------------------------------
+# process for congregations
+
+#clear previous congregations for testing
+cs = Congregation.all
+cs.each do |c|
+	c.destroy
+end
+# ensure that each population has piety and devotion.
+Population.all.each do |p|
+	p.update(piety: 40 + Random.rand(20), devotion: 60 + Random.rand(20))
+end
+
+# seed existing racial congregations
+
+#elves
+Population.where(race: Race.where(name: "Elf")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	puts "elfpop #{p.id} has numworshippers #{numworshippers}"
+	puts "beacuse count: #{p.count} * devotion: #{p.devotion}"
+	Congregation.where(deity: Deity.where(name: "Vaniya").first, population: p).first_or_create(deity: Deity.where(name: "Vaniya").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Aleseus").first, population: p).first_or_create(deity: Deity.where(name: "Aleseus").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Vatharius'Vex").first, population: p).first_or_create(deity: Deity.where(name: "Vatharius'Vex").first, population: p, laity: (numworshippers * 0.15).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+end	
+
+Population.where(race: Race.where(name: "Snow-Elf")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Aleseus").first, population: p).first_or_create(deity: Deity.where(name: "Aleseus").first, population: p, laity: (numworshippers * 0.5).floor, clergy: (numworshippers * 0.5 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Dartha").first, population: p).first_or_create(deity: Deity.where(name: "Dartha").first, population: p, laity: (numworshippers * 0.5).floor, clergy: (numworshippers * 0.5 * 0.04).floor, loyalty: 100)
+end
+
+#goblins
+Population.where(race: Race.where(name: "Goblin")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Grita").first, population: p).first_or_create(deity: Deity.where(name: "Grita").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Grundzel").first, population: p).first_or_create(deity: Deity.where(name: "Grundzel").first, population: p, laity: (numworshippers * 0.1).floor, clergy: (numworshippers * 0.1 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Grita").first, population: p).first_or_create(deity: Deity.where(name: "Grita").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Grundzel").first, population: p).first_or_create(deity: Deity.where(name: "Grundzel").first, population: p, laity: (numworshippers * 0.1).floor, clergy: (numworshippers * 0.1 * 0.04).floor, loyalty: 100)
+end
+
+#Wyvern
+Population.where(race: Race.where(name: "Wyvern")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Vatharius'Vex").first, population: p).first_or_create(deity: Deity.where(name: "Vatharius'Vex").first, population: p, laity: (numworshippers * 0.6).floor, clergy: (numworshippers * 0.6 * 0.04).floor, loyalty: 100)
+	Congregation.where(deity: Deity.where(name: "Vaniya").first, population: p).first_or_create(deity: Deity.where(name: "Vaniya").first, population: p, laity: (numworshippers * 0.2).floor, clergy: (numworshippers * 0.3 * 0.04).floor, loyalty: 100)
+end
+
+#Undead
+Population.where(race: Race.where(name: "Undead")).all.each do |p|
+	numworshippers = (p.count * p.devotion / 100).floor
+	Congregation.where(deity: Deity.where(name: "Ululantibus").first, population: p).first_or_create(deity: Deity.where(name: "Ululantibus").first, population: p, laity: (numworshippers * 0.8).floor, clergy: (numworshippers * 0.9 * 0.04).floor, loyalty: 100)
+end
+
+# seed existing paid for province based congregations
+p = Province.where(name: "Windward Res Akhani").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Zephyrus").first, population: p).first_or_create(deity: Deity.where(name: "Zephyrus").first, population: p, laity: (numworshippers * 0.4).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+
+p = Province.where(name: "Leeward Res Akhani").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Zephyrus").first, population: p).first_or_create(deity: Deity.where(name: "Zephyrus").first, population: p, laity: (numworshippers * 0.4).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+
+p = Province.where(name: "Loah-Khor").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Lasrwoha").first, population: p).first_or_create(deity: Deity.where(name: "Lasrwoha").first, population: p, laity: (numworshippers * 0.5).floor, clergy: (numworshippers * 0.7 * 0.08).floor, loyalty: 100)
+
+p = Province.where(name: "Luts").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Lasrwoha").first, population: p).first_or_create(deity: Deity.where(name: "Lasrwoha").first, population: p, laity: (numworshippers * 0.3).floor, clergy: (numworshippers * 0.7 * 0.04).floor, loyalty: 100)
+
+p = Province.where(name: "Elkholdt").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Dartha").first, population: p).first_or_create(deity: Deity.where(name:"Dartha").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.4).floor, loyalty: 100)
+
+p = Province.where(name: "Icedge").first.populations.where(race: Race.where(name: "Human").first).first
+numworshippers = (p.count * p.devotion / 100).floor
+Congregation.where(deity: Deity.where(name: "Dartha").first, population: p).first_or_create(deity: Deity.where(name:"Dartha").first, population: p, laity: (numworshippers * 0.7).floor, clergy: (numworshippers * 0.7 * 0.4).floor, loyalty: 100)
+
+
+#calculate apportionments
+
+#give each deity a number of "apportionments"
+deity_apportionments = {}
+Deity.all.each do |d|
+	deity_apportionments[d.name] = 40
+end
+
+#add/set additional apportionments to specific deities.
+deity_apportionments["Oscaro"] += 20
+deity_apportionments["Ululantibus"] += 10
+deity_apportionments["Lasrwoha"] += 15
+deity_apportionments["Ordwyn"] += 10
+deity_apportionments.delete("Skaal")
+deity_apportionments["Zephyrus"] = 20
+deity_apportionments["Grundzel"] = 2
+
+
+
+# methods for using apportionments
+def total_apportionments(deity_apportionments)
+	t = 0
+	deity_apportionments.each do |deity, num|
+		t += num
+	end
+	return t
+end
+
+def devoted_mortals(pop)
+	devotees = 0
+	cs = Congregation.where(population: pop)
+	cs.each do |c|
+		if c.laity
+			devotees += c.laity
+		end
+	end
+	devotees
+end
+
+def free_mortals(pop)
+	(pop.count * pop.devotion / 100).floor - devoted_mortals(pop)
+end
+
+#get total unassigned devoted population
+def total_free_mortals
+	total_free_devotees = 0
+	Population.all.each do |p|
+		total_free_devotees += free_mortals(p)
+	end
+	total_free_devotees
+end
+
+total_free_devotees = total_free_mortals
+
+#divide by number of apportionments.
+per_apportionment = total_free_devotees/total_apportionments(deity_apportionments)
+
+puts "total free: #{total_free_devotees}"
+puts "total apportionments = #{total_apportionments(deity_apportionments)}"
+puts "per per_apportionment = #{per_apportionment}"
+puts "accountable: #{(total_apportionments(deity_apportionments)) * per_apportionment}"
+
+# this would be rather nicer if added to the congregation model, when time permits
+# manually add apportionments
+def add_apportionment(deity, population, per_apportionment, deity_apportionments)
+	c = Congregation.where(population: population, deity: deity).first_or_create(population: population, deity: deity, laity:0, clergy: 0, loyalty: 100) 
+	if c.laity == nil
+		c.laity = 0
+	end
+	if c.clergy == nil
+		c.clergy = 0
+	end
+	c.laity += ((80 + Random.rand(40)) * per_apportionment / 100).floor
+	c.clergy += ((80 + Random.rand(40)) * per_apportionment / 100 * 0.04).floor
+	# if this causes free mortals to go negative, limit the apportionment to the free mortals
+	c.laity += free_mortals if free_mortals(population) < 0
+	c.save
+	deity_apportionments[deity.name] += -1
+	if deity_apportionments[deity.name] == 0
+		deity_apportionments.delete(deity.name)
+		puts "finished #{deity.name} - remaining: #{deity_apportionments.length}"
+		puts "remaining: #{deity_apportionments}"
+	end
+end
+
+#designate specific apportionments:
+
+#for flavor reasons, meaning we DO use up apportionments for this, and right now only affect humans:
+6.times { add_apportionment(Deity.where(name:"Lasrwoha").first, Population.where(province: Province.where(name: "Qatsaph").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+6.times { add_apportionment(Deity.where(name:"Lasrwoha").first, Population.where(province: Province.where(name: "Berakhah").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+6.times { add_apportionment(Deity.where(name:"Lasrwoha").first, Population.where(province: Province.where(name: "Lake-of-the-Sky").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+5.times { add_apportionment(Deity.where(name:"Harkates").first, Population.where(province: Province.where(name: "Old Akatian States").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Harkates").first, Population.where(province: Province.where(name: "New Akatian States").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Luogh").first, Population.where(province: Province.where(name: "The Plains of Yoon").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Luogh").first, Population.where(province: Province.where(name: "In-Yat-Lo Highlands").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+6.times { add_apportionment(Deity.where(name:"Ordwyn").first, Population.where(province: Province.where(name: "Sendel Coast North").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+5.times { add_apportionment(Deity.where(name:"Ordwyn").first, Population.where(province: Province.where(name: "Fanged Coast").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Gawp").first, Population.where(province: Province.where(name: "The Living Catacombs").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Gawp").first, Population.where(province: Province.where(name: "Quarp Marsh").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Snowoquiist").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Province 40").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Province 20").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Ehlisfaire").first, Population.where(province: Province.where(name: "Suenawel Forest South").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+7.times { add_apportionment(Deity.where(name:"Ululantibus").first, Population.where(province: Province.where(name: "Urd").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+5.times { add_apportionment(Deity.where(name:"Ululantibus").first, Population.where(province: Province.where(name: "Mere of Lagash").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+
+
+#in each population, while non-assigned devotees remain - 
+Population.all.each do |p|
+	while free_mortals(p) > 0
+   	# randomly select a deity
+		if total_apportionments(deity_apportionments) > 0
+			d = Deity.all.sample
+		   	# if deity has apportionments
+		   	if deity_apportionments[d.name] && deity_apportionments[d.name] > 0
+		   # find_or_create an empty congregation
+		   		c = Congregation.where(population: p, deity: d).first_or_create(population: p, deity: d, loyalty: 100, laity: 0, clergy: 0)
+		   # between 1-3 times do:
+		   		(Random.rand(3) + 1).times do
+			    	# if population and apportionments remain
+			    	if deity_apportionments[d.name] && deity_apportionments[d.name] > 0 && free_mortals(p) > 0
+		       			# add an apportionment of population +- 20% to the congregation
+		       			if c.laity == nil
+		       				c.laity = 0
+		       			end
+		       			if c.clergy == nil
+		       				c.clergy = 0
+		       			end
+		       			c.laity += ((80 + Random.rand(40)) * per_apportionment / 100).floor
+		       			c.clergy += ((80 + Random.rand(40)) * per_apportionment / 100 * 0.04).floor
+		       			# if this causes free mortals to go negative, limit the apportionment to the free mortals
+		       			c.laity += free_mortals if free_mortals(p) < 0
+		       			c.save
+
+		       			# remove apportionment from deity
+		       			deity_apportionments[d.name] += -1
+		       			if deity_apportionments[d.name] == 0
+		       				deity_apportionments.delete(d.name)
+		       				puts "finished #{d.name} - remaining: #{deity_apportionments.length}"
+		       				puts "remaining: #{deity_apportionments}"
+		       			end
+		       		end
+		       	end
+		    end
+		else
+			#if we run out of apportionments, as we may well do, add an extra 1 to each deity.
+			Deity.all.each do |d|
+				deity_apportionments[d.name] = 1
+			end
+		end
+	end
+	puts "assigned congregations to pop #{p.id}"
+	puts "free: #{total_free_mortals}"
+	puts "apportionments #{total_apportionments(deity_apportionments)}"
+
+end	
+
+	   
+
+
+
 #-------------------------------------------
 # 		   SEEDS FROM TESTING
 
@@ -917,7 +1158,7 @@ d.associate({"Manipulation" => 30})
 # race_human = Race.create(name:"Human", description:"Humans are dull and normal", longevity:3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
 # race_goblin = Race.create(name:"Goblin", description:"Goblins are weak, sneaky, and evil", longevity:2, fecundity: 4, might: 2, will: 2, cunning: 4, subtlety: 4, perception: 3, sagacity: 2, scale: 1)
 # race_elf = Race.create(name:"Elf", description:"Elves spend their long lives in harmony with nature", longevity: 5, fecundity: 2, might: 3, will: 4, cunning: 3, subtlety: 3, perception: 3, sagacity: 3, scale: 1)
-# race_wyvern = Race.create(name:"Wyveryn", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
+# race_wyvern = Race.create(name:"Wyvern", description:"Great winged reptiles with innate arcane talent, and an ancient language", longevity: 4, fecundity: 1, might: 5, will: 5, cunning: 3, subtlety: 2, perception: 3, sagacity: 4, scale: 3)
 # race_monster = Race.create(name:"Monster", description:"A catch all term for great beasts", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 3)
 # race_titan = Race.create(name:"Titan", description: "A catch all term for VERY great beings", longevity: 3, fecundity: 3, might: 3, will: 3, cunning: 3, subtlety: 3, sagacity: 3, scale: 5)
 
@@ -1019,3 +1260,35 @@ d.associate({"Manipulation" => 30})
 
 # ------------------------------------------------- #
 # seeds for user profiles
+
+
+#---------------------------------------------------#
+#  ----------Miscellany
+
+
+#remove offending 'Wyveryn now updated to Wyvern'
+wpops = Population.where(race: Race.where(name:"Wyveryn")).all
+wpops.each do |p|
+	p.destroy
+end
+
+d = Race.where(name: "Wyveryn").first
+d.destroy if d
+
+#end of seed infomat
+Deity.all.each do |d|
+	puts "#{d.name} - followers #{d.total_laity}, clergy #{d.total_clergy}, congregations: #{d.congregations.count}"
+end
+
+populated_provs = 0
+Province.all.each do |p|
+	if p.populations.length > 0 
+		populated_provs += 1
+		prov_congs = 0
+		p.populations.each do |pop|
+			prov_congs += pop.congregations.count
+		end
+		puts "prov #{p.name} has #{prov_congs}"
+	end
+end
+puts "overall #{populated_provs} populated provs have #{Congregation.all.count} to average #{Congregation.all.count / populated_provs}"

@@ -20,3 +20,11 @@
 #geo-tab #pol-tab #rel-tab #etc-tab{
 	font-size:36px;
 }
+
+.dropdown-content {
+   overflow-y: visible;
+}
+
+.dropdown-content .dropdown-content {
+   margin-left: 100%;
+}

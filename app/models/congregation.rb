@@ -31,4 +31,7 @@ class Congregation < ActiveRecord::Base
 		}
 	end
 
+	def province
+		population.province
+	end
 end

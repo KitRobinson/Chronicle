@@ -221,4 +221,22 @@ class Province < ActiveRecord::Base
 		end
 	end
 
+	def count_of_deities
+    	congregations.uniq.pluck(:deity).count
+  	end
+
+	def worshippers_by_deity(d_name)
+		d = Deity.where(name: d_name).first
+		congregations.where(deity: d).sum(:laity) + congregations.where(deity: d).sum(:clergy)
+	end
+
+	def total_devoted
+		populations.inject(0){ |sum, p| sum + p.total_devoted }
+	end
+
+	def percent_worshippers_by_deity(d_name)
+		puts "total devoted = #{total_devoted}"
+		total_devoted != 0 ? worshippers_by_deity(d_name).to_f / total_devoted : 0
+	end
+
 end

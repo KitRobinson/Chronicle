@@ -142,6 +142,35 @@
 			drawMap(areaArray);
 		})
     });
+
+	$('.shader-worshippers').bind('click', function() {
+		event.preventDefault()
+		var d_name = event.target.id
+		$.ajax({
+			url: "maps/shade",
+			data: {criteria: "worshippers_by_deity", source: "virtual", pattern:"standard", parameters: d_name}
+			})
+		.done(function(data) {
+			areaArray = data;
+			$('#small-map').mapster('unbind')
+			drawMap(areaArray);
+		})
+	});
+	
+
+	$('.shader-percent-worshippers').bind('click', function() {
+		event.preventDefault()
+		var d_name = event.target.id
+		$.ajax({
+			url: "maps/shade",
+			data: {criteria: "percent_worshippers_by_deity", source: "virtual", pattern:"standard", parameters: d_name}
+			})
+		.done(function(data) {
+			areaArray = data;
+			$('#small-map').mapster('unbind')
+			drawMap(areaArray);
+		})
+	});
 	//on tab select, reveal info
 
 	//some kind of control bar and masking - multiselect and cannot deselect perhaps?
