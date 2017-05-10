@@ -994,6 +994,9 @@ end
 4.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Province 40").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
 3.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Province 20").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
 4.times { add_apportionment(Deity.where(name:"Ehlisfaire").first, Population.where(province: Province.where(name: "Suenawel Forest South").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+7.times { add_apportionment(Deity.where(name:"Ululantibus").first, Population.where(province: Province.where(name: "Urd").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+5.times { add_apportionment(Deity.where(name:"Ululantibus").first, Population.where(province: Province.where(name: "Mere of Lagash").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+
 
 #in each population, while non-assigned devotees remain - 
 Population.all.each do |p|
