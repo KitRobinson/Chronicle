@@ -988,7 +988,12 @@ end
 3.times { add_apportionment(Deity.where(name:"Luogh").first, Population.where(province: Province.where(name: "In-Yat-Lo Highlands").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
 6.times { add_apportionment(Deity.where(name:"Ordwyn").first, Population.where(province: Province.where(name: "Sendel Coast North").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
 5.times { add_apportionment(Deity.where(name:"Ordwyn").first, Population.where(province: Province.where(name: "Fanged Coast").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
-
+4.times { add_apportionment(Deity.where(name:"Gawp").first, Population.where(province: Province.where(name: "The Living Catacombs").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Gawp").first, Population.where(province: Province.where(name: "Quarp Marsh").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Snowoquiist").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Province 40").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+3.times { add_apportionment(Deity.where(name:"Krolos").first, Population.where(province: Province.where(name: "Province 20").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
+4.times { add_apportionment(Deity.where(name:"Ehlisfaire").first, Population.where(province: Province.where(name: "Suenawel Forest South").first, race: Race.where(name: "Human").first).first, per_apportionment, deity_apportionments) }
 
 #in each population, while non-assigned devotees remain - 
 Population.all.each do |p|
@@ -1001,7 +1006,7 @@ Population.all.each do |p|
 		   # find_or_create an empty congregation
 		   		c = Congregation.where(population: p, deity: d).first_or_create(population: p, deity: d, loyalty: 100, laity: 0, clergy: 0)
 		   # between 1-3 times do:
-		   		(Random.rand(2) + 1).times do
+		   		(Random.rand(3) + 1).times do
 			    	# if population and apportionments remain
 			    	if deity_apportionments[d.name] && deity_apportionments[d.name] > 0 && free_mortals(p) > 0
 		       			# add an apportionment of population +- 20% to the congregation
